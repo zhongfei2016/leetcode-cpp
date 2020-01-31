@@ -1,3 +1,0 @@
-C:/codes/cpp/leetcode-cpp/cmake-build-debug/CMakeFiles/leetcode-cpp.dir
-C:/codes/cpp/leetcode-cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/codes/cpp/leetcode-cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
