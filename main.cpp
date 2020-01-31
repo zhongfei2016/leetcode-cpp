@@ -27,6 +27,8 @@
 #include "MinPathSumSolution.h"
 #include "ClimbStairSolution.h"
 #include "MinDistanceSolution.h"
+#include "SortColorSolution.h"
+#include "MinWindowSolution.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -211,5 +213,16 @@ int main() {
     MinDistanceSolution *minDistanceSln = new MinDistanceSolution();
     int minDistance = minDistanceSln->minDistance("horse", "ros");
     delete[] minDistanceSln;
+
+    // 颜色分类 https://leetcode-cn.com/problems/sort-colors/
+    SortColorSolution *sortColorSln = new SortColorSolution();
+    vector<int> sortColorVec = {2, 2, 1, 0, 0, 1, 2, 2};
+    sortColorSln->sortColors(sortColorVec);
+    delete[] sortColorSln;
+
+    // 最小覆盖子串 https://leetcode-cn.com/problems/minimum-window-substring/
+    MinWindowSolution *minWindowSln = new MinWindowSolution();
+    string minWindowStr = minWindowSln->minWindow("ADOBECODEBANC", "ABC");
+    delete[] minWindowSln;
     return 0;
 }
