@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="leetcode-cpp"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/codes/cpp/leetcode-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="leetcode-cpp">
+				<Option output="C:/codes/cpp/leetcode-cpp/cmake-build-debug/leetcode-cpp.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/codes/cpp/leetcode-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 leetcode-cpp"/>
+					<CompileFile command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="leetcode-cpp/fast">
+				<Option output="C:/codes/cpp/leetcode-cpp/cmake-build-debug/leetcode-cpp.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/codes/cpp/leetcode-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/tools/MinGW/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 leetcode-cpp/fast"/>
+					<CompileFile command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/codes/cpp/leetcode-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/codes/cpp/leetcode-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/tools/MinGW/MinGW64/bin/mingw32-make.exe -f &quot;C:/codes/cpp/leetcode-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/CanJumpSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/CanJumpSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/ClimbStairSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/ClimbStairSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/CombinationSumSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/CombinationSumSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/GenerateBacktraceSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/GenerateBacktraceSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/GroupAnagramsSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/GroupAnagramsSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/LetterCombiSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/LetterCombiSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/LongValidBracketSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/LongValidBracketSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/MaxSubArraySolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/MaxSubArraySolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/MergeIntervalSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/MergeIntervalSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/MergeKListsSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/MergeKListsSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/MinDistanceSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/MinDistanceSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/MinPathSumSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/MinPathSumSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/NextPermutationSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/NextPermutationSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/PremuteSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/PremuteSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/RotateSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/RotateSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SearchRangeSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SearchRangeSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SearchSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SearchSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionBracketValid.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionBracketValid.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionCountSmaller.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionCountSmaller.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionFindMedianSortedArrays.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionFindMedianSortedArrays.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionLengthOfLongestSubstring.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionLengthOfLongestSubstring.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionLongestPalindrome.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionLongestPalindrome.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionMaxArea.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionMaxArea.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionPatternMatch.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionPatternMatch.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionThreeSum.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/SolutionThreeSum.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/TrapSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/TrapSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/UniquePathSolution.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/UniquePathSolution.h">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/main.cpp">
+			<Option target="leetcode-cpp"/>
+		</Unit>
+		<Unit filename="C:/codes/cpp/leetcode-cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
