@@ -29,6 +29,8 @@
 #include "MinDistanceSolution.h"
 #include "SortColorSolution.h"
 #include "MinWindowSolution.h"
+#include "SubsetSolution.h"
+#include "WordExistSolution.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -224,5 +226,23 @@ int main() {
     MinWindowSolution *minWindowSln = new MinWindowSolution();
     string minWindowStr = minWindowSln->minWindow("ADOBECODEBANC", "ABC");
     delete[] minWindowSln;
+
+    // 子集 https://leetcode-cn.com/problems/subsets/
+    SubsetSolution *subsetSln = new SubsetSolution();
+    vector<int> subsetVec = {1,2,3};
+    vector<vector<int>> subsetVecRes = subsetSln->subsets(subsetVec);
+    delete [] subsetSln;
+
+    // 单词搜索 https://leetcode-cn.com/problems/word-search/
+    WordExistSolution *wordExistSln = new WordExistSolution();
+    vector<vector<char>> wordExistVec;
+    vector<char> wordExistVec1 = {'A','B','C','E'};
+    vector<char> wordExistVec2 = {'S','F','C','S'};
+    vector<char> wordExistVec3 = {'A','D','E','E'};
+    wordExistVec.push_back(wordExistVec1);
+    wordExistVec.push_back(wordExistVec2);
+    wordExistVec.push_back(wordExistVec3);
+    wordExistSln->exist(wordExistVec, "ABCCED");
+    delete [] wordExistSln;
     return 0;
 }
