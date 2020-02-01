@@ -31,6 +31,8 @@
 #include "MinWindowSolution.h"
 #include "SubsetSolution.h"
 #include "WordExistSolution.h"
+#include "MaxRecSolution.h"
+#include "InorderTraversalSolution.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -229,20 +231,50 @@ int main() {
 
     // 子集 https://leetcode-cn.com/problems/subsets/
     SubsetSolution *subsetSln = new SubsetSolution();
-    vector<int> subsetVec = {1,2,3};
+    vector<int> subsetVec = {1, 2, 3};
     vector<vector<int>> subsetVecRes = subsetSln->subsets(subsetVec);
-    delete [] subsetSln;
+    delete[] subsetSln;
 
     // 单词搜索 https://leetcode-cn.com/problems/word-search/
     WordExistSolution *wordExistSln = new WordExistSolution();
     vector<vector<char>> wordExistVec;
-    vector<char> wordExistVec1 = {'A','B','C','E'};
-    vector<char> wordExistVec2 = {'S','F','C','S'};
-    vector<char> wordExistVec3 = {'A','D','E','E'};
+    vector<char> wordExistVec1 = {'A', 'B', 'C', 'E'};
+    vector<char> wordExistVec2 = {'S', 'F', 'C', 'S'};
+    vector<char> wordExistVec3 = {'A', 'D', 'E', 'E'};
     wordExistVec.push_back(wordExistVec1);
     wordExistVec.push_back(wordExistVec2);
     wordExistVec.push_back(wordExistVec3);
     wordExistSln->exist(wordExistVec, "ABCCED");
-    delete [] wordExistSln;
+    delete[] wordExistSln;
+
+    // 最大矩形 https://leetcode-cn.com/problems/maximal-rectangle/
+    MaxRecSolution *maxRecSln = new MaxRecSolution();
+    vector<vector<char>> maxRecVec;
+    vector<char> maxRecVec1 = {'1', '0', '1', '0', '0'};
+    vector<char> maxRecVec2 = {'1', '0', '1', '1', '1'};
+    vector<char> maxRecVec3 = {'1', '1', '1', '1', '1'};
+    vector<char> maxRecVec4 = {'1', '0', '0', '1', '0'};
+    maxRecVec.push_back(maxRecVec1);
+    maxRecVec.push_back(maxRecVec2);
+    maxRecVec.push_back(maxRecVec3);
+    maxRecVec.push_back(maxRecVec4);
+    maxRecSln->maximalRectangle(maxRecVec);
+    delete[] maxRecSln;
+
+    // 二叉树的中序遍历 https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+    // 前序遍历规则：根结点 ---> 左子树 ---> 右子树
+    // 中序遍历规则：左子树---> 根结点 ---> 右子树
+    // 后序遍历规则：左子树 ---> 右子树 ---> 根结点
+    InorderTraversalSolution *inorderTraversalSln = new InorderTraversalSolution();
+    TreeNode *nodeRL = new TreeNode(3);
+    TreeNode *nodeR = new TreeNode(2);
+    nodeR->left = nodeRL;
+    TreeNode *node = new TreeNode(1);
+    node->right = nodeR;
+    inorderTraversalSln->inorderTraversal(node);
+    delete [] nodeRL;
+    delete [] nodeR;
+    delete [] node;
+    delete[] inorderTraversalSln;
     return 0;
 }
