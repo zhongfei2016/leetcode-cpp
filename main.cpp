@@ -33,6 +33,9 @@
 #include "WordExistSolution.h"
 #include "MaxRecSolution.h"
 #include "InorderTraversalSolution.h"
+#include "NumTreesSolution.h"
+#include "ValidBSTSolution.h"
+#include "SymmetricSolution.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -272,9 +275,36 @@ int main() {
     TreeNode *node = new TreeNode(1);
     node->right = nodeR;
     inorderTraversalSln->inorderTraversal(node);
-    delete [] nodeRL;
-    delete [] nodeR;
-    delete [] node;
+    delete[] nodeRL;
+    delete[] nodeR;
+    delete[] node;
     delete[] inorderTraversalSln;
+
+    // 不同的二叉搜索树 https://leetcode-cn.com/problems/unique-binary-search-trees/
+    NumTreesSolution *numTreesSln = new NumTreesSolution();
+    int numTreesRes = numTreesSln->numTrees(3);
+    delete[] numTreesSln;
+
+    // 验证二叉搜索树 https://leetcode-cn.com/problems/validate-binary-search-tree/
+    ValidBSTSolution *validBstSln = new ValidBSTSolution();
+    TreeNode *validBstNodeR = new TreeNode(2147483647);
+    TreeNode *validBstNode = new TreeNode(-2147483648);
+    validBstNode->right = validBstNodeR;
+    bool validBstFlag = validBstSln->isValidBST(validBstNode);
+    delete[] validBstSln;
+
+    // 对称二叉树 https://leetcode-cn.com/problems/symmetric-tree/
+    SymmetricSolution *symmetricSln = new SymmetricSolution();
+    TreeNode *symmetricNode = new TreeNode(1);
+    TreeNode *symmetricNodeL = new TreeNode(2);
+    TreeNode *symmetricNodeR = new TreeNode(2);
+    TreeNode *symmetricNodeLR = new TreeNode(3);
+    TreeNode *symmetricNodeRR = new TreeNode(3);
+    symmetricNodeL->right=symmetricNodeLR;
+    symmetricNodeR->right=symmetricNodeRR;
+    symmetricNode->left = symmetricNodeL;
+    symmetricNode->right = symmetricNodeR;
+    bool isSymmetric = symmetricSln->isSymmetric(symmetricNode);
+    delete [] symmetricSln;
     return 0;
 }
