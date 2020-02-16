@@ -36,6 +36,8 @@
 #include "NumTreesSolution.h"
 #include "ValidBSTSolution.h"
 #include "SymmetricSolution.h"
+#include "LevelOrderSolution.h"
+#include "MaxDepthSolution.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -306,5 +308,23 @@ int main() {
     symmetricNode->right = symmetricNodeR;
     bool isSymmetric = symmetricSln->isSymmetric(symmetricNode);
     delete [] symmetricSln;
+
+    // 二叉树层次遍历 https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+    LevelOrderSolution *levelOrderSln = new LevelOrderSolution();
+    TreeNode *levelOrderNode = new TreeNode(3);
+    TreeNode *levelOrderNodeL = new TreeNode(9);
+    TreeNode *levelOrderNodeR = new TreeNode(20);
+    TreeNode *levelOrderNodeRL = new TreeNode(15);
+    TreeNode *levelOrderNodeRR = new TreeNode(7);
+    levelOrderNode->left = levelOrderNodeL;
+    levelOrderNode->right = levelOrderNodeR;
+    levelOrderNodeR->left = levelOrderNodeRL;
+    levelOrderNodeR->right = levelOrderNodeRR;
+    levelOrderSln->levelOrder(levelOrderNode);
+    delete [] levelOrderSln;
+
+    //  二叉树的最大深度 https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+    MaxDepthSolution *maxDepthSln = new MaxDepthSolution();
+    maxDepthSln->maxDepth(levelOrderNode);
     return 0;
 }
