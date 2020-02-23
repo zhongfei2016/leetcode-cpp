@@ -32,12 +32,14 @@
 #include "SubsetSolution.h"
 #include "WordExistSolution.h"
 #include "MaxRecSolution.h"
-#include "InorderTraversalSolution.h"
-#include "NumTreesSolution.h"
-#include "ValidBSTSolution.h"
-#include "SymmetricSolution.h"
-#include "LevelOrderSolution.h"
-#include "MaxDepthSolution.h"
+#include "tree/InorderTraversalSolution.h"
+#include "tree/NumTreesSolution.h"
+#include "tree/ValidBSTSolution.h"
+#include "tree/SymmetricSolution.h"
+#include "tree/LevelOrderSolution.h"
+#include "tree/MaxDepthSolution.h"
+#include "tree/BuildTreeSolution.h"
+#include "tree/FlattenSolution.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -302,12 +304,12 @@ int main() {
     TreeNode *symmetricNodeR = new TreeNode(2);
     TreeNode *symmetricNodeLR = new TreeNode(3);
     TreeNode *symmetricNodeRR = new TreeNode(3);
-    symmetricNodeL->right=symmetricNodeLR;
-    symmetricNodeR->right=symmetricNodeRR;
+    symmetricNodeL->right = symmetricNodeLR;
+    symmetricNodeR->right = symmetricNodeRR;
     symmetricNode->left = symmetricNodeL;
     symmetricNode->right = symmetricNodeR;
     bool isSymmetric = symmetricSln->isSymmetric(symmetricNode);
-    delete [] symmetricSln;
+    delete[] symmetricSln;
 
     // 二叉树层次遍历 https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
     LevelOrderSolution *levelOrderSln = new LevelOrderSolution();
@@ -321,10 +323,33 @@ int main() {
     levelOrderNodeR->left = levelOrderNodeRL;
     levelOrderNodeR->right = levelOrderNodeRR;
     levelOrderSln->levelOrder(levelOrderNode);
-    delete [] levelOrderSln;
+    delete[] levelOrderSln;
 
     //  二叉树的最大深度 https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
     MaxDepthSolution *maxDepthSln = new MaxDepthSolution();
     maxDepthSln->maxDepth(levelOrderNode);
+    delete[] maxDepthSln;
+
+    // 从前序与中序遍历序列构造二叉树 https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+    BuildTreeSolution *buildTreeSln = new BuildTreeSolution();
+    vector<int> preOrder = {3,9,20,15,7};
+    vector<int> inOrder = {9,3,15,20,7};
+    TreeNode *root = buildTreeSln->buildTree(preOrder, inOrder);
+    delete[] buildTreeSln;
+
+    // 二叉树展开为链表 https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
+    FlattenSolution *flattenSln = new FlattenSolution();
+    TreeNode *flattenNode = new TreeNode(3);
+    TreeNode *flattenNodeL = new TreeNode(9);
+    TreeNode *flattenNodeR = new TreeNode(20);
+    TreeNode *flattenNodeRL = new TreeNode(15);
+    TreeNode *flattenNodeRR = new TreeNode(7);
+    flattenNode->left = flattenNodeL;
+    flattenNode->right = flattenNodeR;
+    flattenNodeR->left = flattenNodeRL;
+    flattenNodeR->right = flattenNodeRR;
+    flattenSln->flatten(flattenNode);
+    delete [] flattenSln;
+
     return 0;
 }
