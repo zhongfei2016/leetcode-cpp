@@ -40,6 +40,8 @@
 #include "tree/MaxDepthSolution.h"
 #include "tree/BuildTreeSolution.h"
 #include "tree/FlattenSolution.h"
+#include "MaxProfitSolution.h"
+#include "LongestConsecutiveSln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -350,6 +352,18 @@ int main() {
     flattenNodeR->right = flattenNodeRR;
     flattenSln->flatten(flattenNode);
     delete [] flattenSln;
+
+    // 买股票最佳时机 https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
+    MaxProfitSolution *maxProfitSln = new MaxProfitSolution();
+    vector<int> maxProfitVec = {7,1,5,3,6,4};
+    maxProfitSln->maxProfit(maxProfitVec);
+    delete [] maxProfitSln;
+
+    // 最长连续序列 https://leetcode-cn.com/problems/longest-consecutive-sequence/
+    LongestConsecutiveSln *longestConsecutiveSln = new LongestConsecutiveSln();
+    vector<int> longestConsecutiveVec = {100, 4, 200, 1, 3, 2};
+    longestConsecutiveSln->longestConsecutive(longestConsecutiveVec);
+    delete [] longestConsecutiveSln;
 
     return 0;
 }
