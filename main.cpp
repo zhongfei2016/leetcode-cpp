@@ -10,7 +10,7 @@
 #include "LetterCombiSolution.h"
 #include "SolutionBracketValid.h"
 #include "GenerateBacktraceSolution.h"
-#include "MergeKListsSolution.h"
+#include "list/MergeKListsSolution.h"
 #include "NextPermutationSolution.h"
 #include "LongValidBracketSolution.h"
 #include "SearchSolution.h"
@@ -42,6 +42,8 @@
 #include "tree/FlattenSolution.h"
 #include "MaxProfitSolution.h"
 #include "LongestConsecutiveSln.h"
+#include "WordBreakSln.h"
+#include "list/HasCycleSln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -365,5 +367,22 @@ int main() {
     longestConsecutiveSln->longestConsecutive(longestConsecutiveVec);
     delete [] longestConsecutiveSln;
 
+    // 单词拆分 动态规划 https://leetcode-cn.com/problems/word-break/
+    WordBreakSln wordBreakSln;
+    string wordBreakWord = "leetcode";
+    vector<string> wordBreakDict = {"leet", "code"};
+    wordBreakSln.wordBreak(wordBreakWord, wordBreakDict);
+
+    // 环形链表 https://leetcode-cn.com/problems/linked-list-cycle/
+    HasCycleSln hasCycleSln;
+    ListNode *hasCycleNode1 = new ListNode(3);
+    ListNode *hasCycleNode2 = new ListNode(2);
+    ListNode *hasCycleNode3 = new ListNode(0);
+    ListNode *hasCycleNode4 = new ListNode(-4);
+    hasCycleNode1->next = hasCycleNode2;
+    hasCycleNode2->next = hasCycleNode3;
+    hasCycleNode3->next = hasCycleNode4;
+    hasCycleNode4->next = hasCycleNode2;
+    hasCycleSln.hasCycle(hasCycleNode1);
     return 0;
 }

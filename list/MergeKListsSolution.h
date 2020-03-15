@@ -7,6 +7,7 @@
 
 #include <cstring>
 #include <vector>
+#include "ListCommon.h"
 
 using namespace std;
 
@@ -14,11 +15,6 @@ using namespace std;
  * Definition for singly-linked list.
  *
  */
-struct ListNode {
-       int val;
-       ListNode *next;
-       ListNode(int x) : val(x), next(NULL) {}
-     };
 
 class MergeKListsSolution {
 public:

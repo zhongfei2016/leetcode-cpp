@@ -1,6 +1,15 @@
 cmake_minimum_required(VERSION 3.15)
-project(leetcode-cpp)
+set(PROJECT_NAME leetcode-cpp)
+project(${PROJECT_NAME})
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(leetcode-cpp main.cpp SolutionCountSmaller.cpp SolutionLengthOfLongestSubstring.cpp SolutionLengthOfLongestSubstring.h SolutionFindMedianSortedArrays.cpp SolutionFindMedianSortedArrays.h SolutionLongestPalindrome.cpp SolutionLongestPalindrome.h SolutionPatternMatch.cpp SolutionPatternMatch.h SolutionMaxArea.cpp SolutionMaxArea.h SolutionThreeSum.cpp SolutionThreeSum.h LetterCombiSolution.cpp LetterCombiSolution.h SolutionBracketValid.cpp SolutionBracketValid.h GenerateBacktraceSolution.cpp GenerateBacktraceSolution.h MergeKListsSolution.cpp MergeKListsSolution.h NextPermutationSolution.cpp NextPermutationSolution.h LongValidBracketSolution.cpp LongValidBracketSolution.h SearchSolution.cpp SearchSolution.h SearchRangeSolution.cpp SearchRangeSolution.h CombinationSumSolution.cpp CombinationSumSolution.h TrapSolution.cpp TrapSolution.h PremuteSolution.cpp PremuteSolution.h RotateSolution.cpp RotateSolution.h GroupAnagramsSolution.cpp GroupAnagramsSolution.h MaxSubArraySolution.cpp MaxSubArraySolution.h CanJumpSolution.cpp CanJumpSolution.h MergeIntervalSolution.cpp MergeIntervalSolution.h UniquePathSolution.cpp UniquePathSolution.h MinPathSumSolution.cpp MinPathSumSolution.h ClimbStairSolution.cpp ClimbStairSolution.h MinDistanceSolution.cpp MinDistanceSolution.h SortColorSolution.cpp SortColorSolution.h MinWindowSolution.cpp MinWindowSolution.h SubsetSolution.cpp SubsetSolution.h WordExistSolution.cpp WordExistSolution.h MaxRecSolution.cpp MaxRecSolution.h tree/InorderTraversalSolution.cpp tree/InorderTraversalSolution.h tree/NumTreesSolution.cpp tree/NumTreesSolution.h tree/ValidBSTSolution.cpp tree/ValidBSTSolution.h tree/Common.h tree/SymmetricSolution.cpp tree/SymmetricSolution.h tree/LevelOrderSolution.cpp tree/LevelOrderSolution.h tree/MaxDepthSolution.cpp tree/MaxDepthSolution.h tree/BuildTreeSolution.cpp tree/BuildTreeSolution.h tree/FlattenSolution.cpp tree/FlattenSolution.h MaxProfitSolution.cpp MaxProfitSolution.h LongestConsecutiveSln.cpp LongestConsecutiveSln.h SingleNumberSln.cpp SingleNumberSln.h)
+include_directories(${CMAKE_CURRENT_LIST_DIR})
+include_directories(${CMAKE_CURRENT_LIST_DIR}/tree)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/list)
+
+aux_source_directory(${CMAKE_CURRENT_LIST_DIR} SOURCES)
+aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/tree SOURCES)
+aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/list SOURCES)
+
+add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
