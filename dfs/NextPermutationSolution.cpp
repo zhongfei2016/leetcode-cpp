@@ -49,7 +49,7 @@ void NextPermutationSolution::nextPermutation(vector<int> &nums) {
         reverse(nums);
         return;
     }
-    //总能找到，最大l索引是size-1
+    //总能找到，因为k只遍历到size-2，所以索引l的最大值是size-1
     if (nums[nums.size() - 1] > nums[k]) {
         l = nums.size() - 1;
     }
