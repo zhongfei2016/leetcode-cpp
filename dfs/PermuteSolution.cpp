@@ -2,7 +2,7 @@
 // Created by ZHONGFEI on 2020/1/29.
 //
 
-#include "PremuteSolution.h"
+#include "PermuteSolution.h"
 #include <algorithm>
 
 void backtrack(vector<int> &nums, vector<int> &trace, vector<vector<int>> &traces) {
@@ -23,7 +23,7 @@ void backtrack(vector<int> &nums, vector<int> &trace, vector<vector<int>> &trace
     }
 }
 
-vector<vector<int>> PremuteSolution::permute(vector<int> &nums) {
+vector<vector<int>> PermuteSolution::permute(vector<int> &nums) {
     vector<vector<int>> traces;
     vector<int> trace;
     backtrack(nums, trace, traces);

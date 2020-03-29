@@ -7,9 +7,14 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories(${CMAKE_CURRENT_LIST_DIR})
 include_directories(${CMAKE_CURRENT_LIST_DIR}/tree)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/list)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/dfs)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/LRU)
 
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR} SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/tree SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/list SOURCES)
+aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/dfs SOURCES)
 
 add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
+
+add_definitions(-g)

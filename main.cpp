@@ -11,13 +11,14 @@
 #include "SolutionBracketValid.h"
 #include "GenerateBacktraceSolution.h"
 #include "list/MergeKListsSolution.h"
-#include "NextPermutationSolution.h"
 #include "LongValidBracketSolution.h"
 #include "SearchSolution.h"
 #include "SearchRangeSolution.h"
-#include "CombinationSumSolution.h"
 #include "TrapSolution.h"
-#include "PremuteSolution.h"
+#include "dfs/PermuteSolution.h"
+#include "dfs/PermuteSolutionII.h"
+#include "dfs/CombinationSumSolution.h"
+#include "dfs/NextPermutationSolution.h"
 #include "RotateSolution.h"
 #include "GroupAnagramsSolution.h"
 #include "MaxSubArraySolution.h"
@@ -43,7 +44,9 @@
 #include "MaxProfitSolution.h"
 #include "LongestConsecutiveSln.h"
 #include "WordBreakSln.h"
+#include "LuckFibonacciStrSln.h"
 #include "list/HasCycleSln.h"
+#include "LRU/LRUCache.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -120,10 +123,9 @@ int main() {
     delete[] mkls;
 
     // 获取当前排列的下一排字典序的排列 https://leetcode-cn.com/problems/next-permutation/
-    NextPermutationSolution *nps = new NextPermutationSolution();
-    vector<int> npsVec = {1, 1};
-    nps->nextPermutation(npsVec);
-    delete[] nps;
+    NextPermutationSolution nps;
+    vector<int> npsVec = {1, 3, 2, 4};
+    nps.nextPermutation(npsVec);
 
     // 最长有效括号  https://leetcode-cn.com/problems/longest-valid-parentheses/
     LongValidBracketSolution *lvbs = new LongValidBracketSolution();
@@ -155,10 +157,14 @@ int main() {
     delete[] trapSln;
 
     // 全排列 https://leetcode-cn.com/problems/permutations/
-    PremuteSolution *premuteSln = new PremuteSolution();
+    PermuteSolution permuteSln;
     vector<int> premuteSlnVec = {1, 2, 3};
-    premuteSln->permute(premuteSlnVec);
-    delete[] premuteSln;
+    permuteSln.permute(premuteSlnVec);
+
+    // 全排列2 https://leetcode-cn.com/problems/permutations-ii/
+    PermuteSolutionII permuteSlnII;
+    vector<int> permuteSlnIIVec = {3,3,0,3};
+    permuteSlnII.permuteUnique(permuteSlnIIVec);
 
     // 旋转图像 https://leetcode-cn.com/problems/rotate-image/
     RotateSolution *rotateSln = new RotateSolution();
@@ -384,5 +390,21 @@ int main() {
     hasCycleNode3->next = hasCycleNode4;
     hasCycleNode4->next = hasCycleNode2;
     hasCycleSln.hasCycle(hasCycleNode1);
+
+    // LRU缓存机制 least recently used https://leetcode-cn.com/problems/lru-cache/
+    LRUCache cache( 2 /* 缓存容量 */ );
+    cache.put(1,1);
+    cache.put(2,2);
+    cache.get(1);
+    cache.put(3,3);
+    cache.get(2);
+    cache.put(4,4);
+    cache.get(1);
+    cache.get(3);
+    cache.get(4);
+
+    // 符合斐波那契数列的子字符串
+    LuckFibonacciStrSln luckFibonacciStrSln;
+    luckFibonacciStrSln.ListLuckFiboSubStr("aabcd");
     return 0;
 }

@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class PremuteSolution {
+class PermuteSolution {
 public:
     vector<vector<int>> permute(vector<int>& nums);
 };
