@@ -19,22 +19,29 @@
 #include "dfs/PermuteSolutionII.h"
 #include "dfs/CombinationSumSolution.h"
 #include "dfs/NextPermutationSolution.h"
+#include "dfs/FindTargetSumSln.h"
 #include "RotateSolution.h"
 #include "GroupAnagramsSolution.h"
 #include "MaxSubArraySolution.h"
 #include "CanJumpSolution.h"
 #include "MergeIntervalSolution.h"
 #include "UniquePathSolution.h"
-#include "MinPathSumSolution.h"
+#include "dp/MinPathSumSolution.h"
+#include "dp/MinDistanceSolution.h"
+#include "dp/CoinChangeSln.h"
+#include "dp/CoinChangeIISln.h"
+#include "dp/MinCostTicketsSln.h"
+#include "dp/NumTreesSolution.h"
+#include "dp/UniquePathWithObstacleSln.h"
+#include "dp/CountSubstrSln.h"
+#include "dp/LongestPalindromeSequenceSln.h"
 #include "ClimbStairSolution.h"
-#include "MinDistanceSolution.h"
 #include "SortColorSolution.h"
 #include "MinWindowSolution.h"
 #include "SubsetSolution.h"
 #include "WordExistSolution.h"
 #include "MaxRecSolution.h"
 #include "tree/InorderTraversalSolution.h"
-#include "tree/NumTreesSolution.h"
 #include "tree/ValidBSTSolution.h"
 #include "tree/SymmetricSolution.h"
 #include "tree/LevelOrderSolution.h"
@@ -163,7 +170,7 @@ int main() {
 
     // 全排列2 https://leetcode-cn.com/problems/permutations-ii/
     PermuteSolutionII permuteSlnII;
-    vector<int> permuteSlnIIVec = {3,3,0,3};
+    vector<int> permuteSlnIIVec = {3, 3, 0, 3};
     permuteSlnII.permuteUnique(permuteSlnIIVec);
 
     // 旋转图像 https://leetcode-cn.com/problems/rotate-image/
@@ -341,14 +348,13 @@ int main() {
     delete[] maxDepthSln;
 
     // 从前序与中序遍历序列构造二叉树 https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
-    BuildTreeSolution *buildTreeSln = new BuildTreeSolution();
-    vector<int> preOrder = {3,9,20,15,7};
-    vector<int> inOrder = {9,3,15,20,7};
-    TreeNode *root = buildTreeSln->buildTree(preOrder, inOrder);
-    delete[] buildTreeSln;
+    BuildTreeSolution buildTreeSln;
+    vector<int> preOrder = {3, 9, 20, 15, 7};
+    vector<int> inOrder = {9, 3, 15, 20, 7};
+    TreeNode *root = buildTreeSln.buildTree(preOrder, inOrder);
 
     // 二叉树展开为链表 https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
-    FlattenSolution *flattenSln = new FlattenSolution();
+    FlattenSolution flattenSln;
     TreeNode *flattenNode = new TreeNode(3);
     TreeNode *flattenNodeL = new TreeNode(9);
     TreeNode *flattenNodeR = new TreeNode(20);
@@ -358,20 +364,17 @@ int main() {
     flattenNode->right = flattenNodeR;
     flattenNodeR->left = flattenNodeRL;
     flattenNodeR->right = flattenNodeRR;
-    flattenSln->flatten(flattenNode);
-    delete [] flattenSln;
+    flattenSln.flatten(flattenNode);
 
     // 买股票最佳时机 https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
-    MaxProfitSolution *maxProfitSln = new MaxProfitSolution();
-    vector<int> maxProfitVec = {7,1,5,3,6,4};
-    maxProfitSln->maxProfit(maxProfitVec);
-    delete [] maxProfitSln;
+    MaxProfitSolution maxProfitSln;
+    vector<int> maxProfitVec = {7, 1, 5, 3, 6, 4};
+    maxProfitSln.maxProfit(maxProfitVec);
 
     // 最长连续序列 https://leetcode-cn.com/problems/longest-consecutive-sequence/
-    LongestConsecutiveSln *longestConsecutiveSln = new LongestConsecutiveSln();
+    LongestConsecutiveSln longestConsecutiveSln;
     vector<int> longestConsecutiveVec = {100, 4, 200, 1, 3, 2};
-    longestConsecutiveSln->longestConsecutive(longestConsecutiveVec);
-    delete [] longestConsecutiveSln;
+    longestConsecutiveSln.longestConsecutive(longestConsecutiveVec);
 
     // 单词拆分 动态规划 https://leetcode-cn.com/problems/word-break/
     WordBreakSln wordBreakSln;
@@ -392,13 +395,13 @@ int main() {
     hasCycleSln.hasCycle(hasCycleNode1);
 
     // LRU缓存机制 least recently used https://leetcode-cn.com/problems/lru-cache/
-    LRUCache cache( 2 /* 缓存容量 */ );
-    cache.put(1,1);
-    cache.put(2,2);
+    LRUCache cache(2 /* 缓存容量 */ );
+    cache.put(1, 1);
+    cache.put(2, 2);
     cache.get(1);
-    cache.put(3,3);
+    cache.put(3, 3);
     cache.get(2);
-    cache.put(4,4);
+    cache.put(4, 4);
     cache.get(1);
     cache.get(3);
     cache.get(4);
@@ -406,5 +409,40 @@ int main() {
     // 符合斐波那契数列的子字符串
     LuckFibonacciStrSln luckFibonacciStrSln;
     luckFibonacciStrSln.ListLuckFiboSubStr("aabcd");
+
+    // 零钱兑换 https://leetcode-cn.com/problems/coin-change/solution/
+    CoinChangeSln coinChangeSln;
+    vector<int> coinChangeVec = {2, 5, 10, 1};
+    coinChangeSln.coinChange(coinChangeVec, 27);
+
+    // 零钱兑换 II https://leetcode-cn.com/problems/coin-change-2/
+    CoinChangeIISln coinChangeIISln;
+    vector<int> coinChangeIIVec = {1, 2, 5};
+    coinChangeIISln.change(5, coinChangeIIVec);
+
+    // 最低票价 https://leetcode-cn.com/problems/minimum-cost-for-tickets/
+    MinCostTicketsSln minCostTicketsSln;
+    vector<int> minCostTicketsVec = {1, 4, 6, 7, 8, 20};
+    vector<int> minCostTicketsCostsVec = {2, 7, 15};
+    minCostTicketsSln.mincostTickets(minCostTicketsVec, minCostTicketsCostsVec);
+
+    // 目标和 https://leetcode-cn.com/problems/target-sum/
+    FindTargetSumSln findTargetSumSln;
+    vector<int> findTargetSumVec = {1,1,1,1,1};
+    findTargetSumSln.findTargetSumWays(findTargetSumVec, 3);
+
+    // 不同路径 II https://leetcode-cn.com/problems/unique-paths-ii/
+    UniquePathWithObstacleSln uniquePathWithObstacleSln;
+    vector<vector<int>> uniPathObsVec = {{0,0,0},{0,1,0},{0,0,0}};
+    std::cout << "UniquePathWithObstacleSln result: " << uniquePathWithObstacleSln.uniquePathsWithObstacles(uniPathObsVec) << std::endl;
+
+    // 回文子串 https://leetcode-cn.com/problems/palindromic-substrings/
+    CountSubstrSln countSubstrSln;
+    countSubstrSln.countSubstrings("abc");
+
+    // 最长回文子序列 https://leetcode-cn.com/problems/longest-palindromic-subsequence/
+    LongestPalindromeSequenceSln longestPalindromeSequenceSln;
+    longestPalindromeSequenceSln.longestPalindromeSubseq("bbbab");
+
     return 0;
 }

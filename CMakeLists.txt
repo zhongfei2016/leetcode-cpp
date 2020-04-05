@@ -9,11 +9,13 @@ include_directories(${CMAKE_CURRENT_LIST_DIR}/tree)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/list)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/dfs)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/LRU)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/dp)
 
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR} SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/tree SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/list SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/dfs SOURCES)
+aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/dp SOURCES)
 
 add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
 

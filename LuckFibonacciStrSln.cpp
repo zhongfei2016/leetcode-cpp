@@ -7,6 +7,8 @@
 #include <algorithm>
 #include <cstring>
 
+// https://www.kancloud.cn/kancloud/data-structure-and-algorithm-notes/73129
+
 set<int> GetFibonacciNums(int n) {
     set<int> fibonacciSet;
     if (n == 1 || n == 2) {
