@@ -20,6 +20,7 @@
 #include "dfs/CombinationSumSolution.h"
 #include "dfs/NextPermutationSolution.h"
 #include "dfs/FindTargetSumSln.h"
+#include "bfs/OrangeRotSln.h"
 #include "RotateSolution.h"
 #include "GroupAnagramsSolution.h"
 #include "MaxSubArraySolution.h"
@@ -54,6 +55,7 @@
 #include "LuckFibonacciStrSln.h"
 #include "list/HasCycleSln.h"
 #include "LRU/LRUCache.h"
+#include "IncDecArraySln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -443,6 +445,16 @@ int main() {
     // 最长回文子序列 https://leetcode-cn.com/problems/longest-palindromic-subsequence/
     LongestPalindromeSequenceSln longestPalindromeSequenceSln;
     longestPalindromeSequenceSln.longestPalindromeSubseq("bbbab");
+
+    // 腐烂的橘子 https://leetcode-cn.com/problems/rotting-oranges/
+    OrangeRotSln orangeRotSln;
+    vector<vector<int>> orangeRotVec = {{1},{2},{1},{1}};
+    orangeRotSln.orangesRotting(orangeRotVec);
+
+    // 给定一个数组，如果去掉一个数后数组非严格单调增/减，则求出这个数，如果有多种方案，求最小值
+    IncDecArraySln incDecArraySln;
+    vector<int> incDecArrayVec = {5,3,4,4,5};
+    incDecArraySln.GetIncDecNum(incDecArrayVec);
 
     return 0;
 }
