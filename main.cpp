@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include <algorithm>
+
 #include "SolutionLengthOfLongestSubstring.h"
 #include "SolutionCountSmaller.h"
 #include "SolutionFindMedianSortedArrays.h"
@@ -36,6 +38,7 @@
 #include "dp/UniquePathWithObstacleSln.h"
 #include "dp/CountSubstrSln.h"
 #include "dp/LongestPalindromeSequenceSln.h"
+#include "dp/YangHuiTriangleSln.hpp"
 #include "ClimbStairSolution.h"
 #include "SortColorSolution.h"
 #include "MinWindowSolution.h"
@@ -54,8 +57,17 @@
 #include "WordBreakSln.h"
 #include "LuckFibonacciStrSln.h"
 #include "list/HasCycleSln.h"
+#include "list/RotateListNodeSln.hpp"
+#include "list/ReverseListSln.hpp"
 #include "LRU/LRUCache.h"
 #include "IncDecArraySln.h"
+#include "LongestSeqSln.h"
+#include "array/CenterIndexSln.h"
+#include "array/DominantIndexSln.h"
+#include "array/RemoveElementSln.h"
+#include "array/PlusOneSln.h"
+#include "array/RotateSln.hpp"
+#include "string/AddBinarySln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -430,13 +442,16 @@ int main() {
 
     // 目标和 https://leetcode-cn.com/problems/target-sum/
     FindTargetSumSln findTargetSumSln;
-    vector<int> findTargetSumVec = {1,1,1,1,1};
+    vector<int> findTargetSumVec = {1, 1, 1, 1, 1};
     findTargetSumSln.findTargetSumWays(findTargetSumVec, 3);
 
     // 不同路径 II https://leetcode-cn.com/problems/unique-paths-ii/
     UniquePathWithObstacleSln uniquePathWithObstacleSln;
-    vector<vector<int>> uniPathObsVec = {{0,0,0},{0,1,0},{0,0,0}};
-    std::cout << "UniquePathWithObstacleSln result: " << uniquePathWithObstacleSln.uniquePathsWithObstacles(uniPathObsVec) << std::endl;
+    vector<vector<int>> uniPathObsVec = {{0, 0, 0},
+                                         {0, 1, 0},
+                                         {0, 0, 0}};
+    std::cout << "UniquePathWithObstacleSln result: "
+              << uniquePathWithObstacleSln.uniquePathsWithObstacles(uniPathObsVec) << std::endl;
 
     // 回文子串 https://leetcode-cn.com/problems/palindromic-substrings/
     CountSubstrSln countSubstrSln;
@@ -448,13 +463,83 @@ int main() {
 
     // 腐烂的橘子 https://leetcode-cn.com/problems/rotting-oranges/
     OrangeRotSln orangeRotSln;
-    vector<vector<int>> orangeRotVec = {{1},{2},{1},{1}};
+    vector<vector<int>> orangeRotVec = {{1},
+                                        {2},
+                                        {1},
+                                        {1}};
     orangeRotSln.orangesRotting(orangeRotVec);
 
     // 给定一个数组，如果去掉一个数后数组非严格单调增/减，则求出这个数，如果有多种方案，求最小值
     IncDecArraySln incDecArraySln;
-    vector<int> incDecArrayVec = {5,3,4,4,5};
+    vector<int> incDecArrayVec = {5, 3, 4, 4, 5};
     incDecArraySln.GetIncDecNum(incDecArrayVec);
 
+    LongestSeqSln longestSeqSln;
+//    longestSeqSln.LongestSeq("cbacdcdac");
+//    vector<string> test = {"1","2","3"};
+//    std::for_each(test.begin(), test.end(), [] (std::string &t) {std::cout << t << " ";});
+//    copy(test.begin(),test.end(),std::ostream_iterator<string>(cout," "));
+
+    // 寻找中位数 https://leetcode-cn.com/problems/find-pivot-index/
+    CenterIndexSln centerIndexSln;
+    vector<int> pivotIndexVec = {1, 2, 3};
+    centerIndexSln.pivotIndex(pivotIndexVec);
+
+    // 至少是其他数字两倍的最大数 https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/
+    DominantIndexSln dominantIndexSln;
+    vector<int> dominantIndexVec = {0, 0, 2, 3};
+    dominantIndexSln.dominantIndex(dominantIndexVec);
+
+    // 加一 https://leetcode-cn.com/problems/plus-one/
+    PlusOneSln plusOneSln;
+    vector<int> plusOneVec = {9, 9};
+    plusOneSln.plusOne(plusOneVec);
+
+    // 二进制求和 https://leetcode-cn.com/problems/add-binary/
+    AddBinarySln addBinarySln;
+    addBinarySln.addBinary("101", "10111");
+    vector<char> reverseVec = {'H'};
+    // 使用双指针翻转字符串
+    addBinarySln.reverseString(reverseVec);
+
+    // 使用快慢双指针移除指定元素
+    RemoveElementSln removeElementSln;
+    vector<int> rmEleVec = {6, 1, 4, 5, 7, 6, 2, 6};
+    removeElementSln.removeElement(rmEleVec, 6);
+
+    // 旋转数组 https://leetcode-cn.com/problems/rotate-array/
+    RotateSln rotateArrSln;
+    vector<int> rotateArrVec = {1,2,3,4,5,6,7};
+    rotateArrSln.rotate(rotateArrVec,3);
+
+    // 旋转链表
+    RotateListNodeSln rotateListNodeSln;
+    ListNode rotateListNode1(1);
+    ListNode rotateListNode2(2);
+    ListNode rotateListNode3(3);
+    ListNode rotateListNode4(4);
+    ListNode rotateListNode5(5);
+    rotateListNode1.next = &rotateListNode2;
+    rotateListNode2.next = &rotateListNode3;
+    rotateListNode3.next = &rotateListNode4;
+    rotateListNode4.next = &rotateListNode5;
+    rotateListNodeSln.rotateRight(&rotateListNode1, 3);
+
+    // 翻转链表
+    ReverseListSln reverseListSln;
+    ListNode reverseListNode1(1);
+    ListNode reverseListNode2(2);
+    ListNode reverseListNode3(3);
+    ListNode reverseListNode4(4);
+    ListNode reverseListNode5(5);
+    reverseListNode1.next = &reverseListNode2;
+    reverseListNode2.next = &reverseListNode3;
+    reverseListNode3.next = &reverseListNode4;
+    reverseListNode4.next = &reverseListNode5;
+    reverseListSln.reverseList(&reverseListNode1);
+
+    // 杨辉三角
+    YangHuiTriangleSln yangHuiTriangleSln;
+    yangHuiTriangleSln.generate(5);
     return 0;
 }

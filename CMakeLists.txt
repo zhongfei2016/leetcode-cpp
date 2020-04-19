@@ -11,6 +11,8 @@ include_directories(${CMAKE_CURRENT_LIST_DIR}/dfs)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/bfs)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/LRU)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/dp)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/array)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/string)
 
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR} SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/tree SOURCES)
@@ -18,6 +20,8 @@ aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/list SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/dfs SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/bfs SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/dp SOURCES)
+aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/array SOURCES)
+aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/string SOURCES)
 
 add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
 
