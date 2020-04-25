@@ -23,6 +23,11 @@
 #include "dfs/NextPermutationSolution.h"
 #include "dfs/FindTargetSumSln.h"
 #include "bfs/OrangeRotSln.h"
+#include "bfs/WaterMeasureSln.hpp"
+#include "bfs/WaterMeasureSln2.hpp"
+#include "bfs/ShortestDistanceSln.hpp"
+#include "bfs/NumBusToDestSln.hpp"
+#include "bfs/LadderLengthSln.hpp"
 #include "RotateSolution.h"
 #include "GroupAnagramsSolution.h"
 #include "MaxSubArraySolution.h"
@@ -285,6 +290,11 @@ int main() {
     wordExistSln->exist(wordExistVec, "ABCCED");
     delete[] wordExistSln;
 
+    // 最大矩形面积
+    MaxRecSolution maxRecSolution;
+    vector<int> largestRectVec = {2, 1, 5, 6, 2, 3};
+    maxRecSolution.largestRectangleArea(largestRectVec);
+
     // 最大矩形 https://leetcode-cn.com/problems/maximal-rectangle/
     MaxRecSolution *maxRecSln = new MaxRecSolution();
     vector<vector<char>> maxRecVec;
@@ -297,6 +307,7 @@ int main() {
     maxRecVec.push_back(maxRecVec3);
     maxRecVec.push_back(maxRecVec4);
     maxRecSln->maximalRectangle(maxRecVec);
+    maxRecSln->maximalRectangle2(maxRecVec);
     delete[] maxRecSln;
 
     // 二叉树的中序遍历 https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
@@ -509,8 +520,8 @@ int main() {
 
     // 旋转数组 https://leetcode-cn.com/problems/rotate-array/
     RotateSln rotateArrSln;
-    vector<int> rotateArrVec = {1,2,3,4,5,6,7};
-    rotateArrSln.rotate(rotateArrVec,3);
+    vector<int> rotateArrVec = {1, 2, 3, 4, 5, 6, 7};
+    rotateArrSln.rotate(rotateArrVec, 3);
 
     // 旋转链表
     RotateListNodeSln rotateListNodeSln;
@@ -541,5 +552,31 @@ int main() {
     // 杨辉三角
     YangHuiTriangleSln yangHuiTriangleSln;
     yangHuiTriangleSln.generate(5);
+
+    // 水壶问题
+    WaterMeasureSln waterMeasureSln;
+    waterMeasureSln.canMeasureWater(5, 3, 4);
+    waterMeasureSln.canMeasureWater2(5, 3, 4);
+
+    WaterMeasureSln2 waterMeasureSln2;
+    waterMeasureSln2.canMeasureWater(5, 4, 3);
+
+    // 离建筑物最近的距离 https://www.cnblogs.com/FdWzy/p/12382657.html
+    ShortestDistanceSln shortestDistanceSln;
+    vector<vector<int>> shortDistanceVec = {{1, 0, 2, 0, 1},
+                                            {0, 0, 0, 0, 0},
+                                            {0, 0, 1, 0, 0}};
+    shortestDistanceSln.shortestDistance2(shortDistanceVec);
+
+    // 公交路线 https://leetcode-cn.com/problems/bus-routes/
+    NumBusToDestSln numBusToDestSln;
+    vector<vector<int>> numBusToDestVec = {{1, 2, 7},
+                                           {3, 6, 7}};
+    numBusToDestSln.numBusesToDestination(numBusToDestVec, 1, 6);
+
+    // 单词接龙 https://leetcode-cn.com/problems/word-ladder/
+    LadderLengthSln ladderLengthSln;
+    vector<string> ladderLengthWordList = {"hot","dot","dog","lot","log","cog"};
+    ladderLengthSln.ladderLength("hit", "cog", ladderLengthWordList);
     return 0;
 }

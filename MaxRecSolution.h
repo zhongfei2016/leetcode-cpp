@@ -12,6 +12,8 @@ using namespace std;
 class MaxRecSolution {
 public:
     int maximalRectangle(vector<vector<char>>& matrix);
+    int maximalRectangle2(vector<vector<char>>& matrix);
+    int largestRectangleArea(vector<int>& heights);
 };
 
 

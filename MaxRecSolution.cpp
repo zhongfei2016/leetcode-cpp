@@ -98,3 +98,33 @@ int largestRectangleArea(vector<int> heights) {
     return maxArea;
 }
 
+int MaxRecSolution::maximalRectangle2(vector<vector<char>> &matrix) {
+    if (matrix.empty()) return 0;
+    vector<int> height(matrix[0].size(), 0);
+    int maxRect = 0;
+    for (int i = 0; i < matrix.size(); ++i) {
+        for (int j = 0; j < height.size(); ++j) {
+            if (matrix[i][j] == '0') { height[j] = 0; }
+            else { ++height[j]; }
+        }
+        maxRect = max(maxRect, largestRectangleArea(height));
+        height.pop_back();
+    }
+    return maxRect;
+}
+
+int MaxRecSolution::largestRectangleArea(vector<int> &heights) {
+    int maxArea = 0;
+    stack<int> idxStack;
+    heights.push_back(0);
+    for (int i = 0; i < heights.size(); i++) {
+        while (!idxStack.empty() && heights[idxStack.top()] >= heights[i]) {
+            int h = heights[idxStack.top()];
+            idxStack.pop();
+            int leftSideIdx = idxStack.empty() ? -1 : idxStack.top();
+            maxArea = max(maxArea, h * (i - leftSideIdx - 1));
+        }
+        idxStack.push(i);
+    }
+    return maxArea;
+}

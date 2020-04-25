@@ -12,6 +12,7 @@ using namespace std;
 class TrapSolution {
 public:
     int trap(vector<int>& height);
+    int trap2(vector<int>& height);
 };
 
 
