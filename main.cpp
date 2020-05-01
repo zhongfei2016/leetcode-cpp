@@ -28,6 +28,7 @@
 #include "bfs/ShortestDistanceSln.hpp"
 #include "bfs/NumBusToDestSln.hpp"
 #include "bfs/LadderLengthSln.hpp"
+#include "bfs/WordBreakBfsSln.hpp"
 #include "RotateSolution.h"
 #include "GroupAnagramsSolution.h"
 #include "MaxSubArraySolution.h"
@@ -73,6 +74,9 @@
 #include "array/PlusOneSln.h"
 #include "array/RotateSln.hpp"
 #include "string/AddBinarySln.h"
+#include "UnionFound/UnionFoundSln.hpp"
+#include "greedy/DivideChocolateSln.hpp"
+#include "topology/FindCourseOrderSln.hpp"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -578,5 +582,25 @@ int main() {
     LadderLengthSln ladderLengthSln;
     vector<string> ladderLengthWordList = {"hot","dot","dog","lot","log","cog"};
     ladderLengthSln.ladderLength("hit", "cog", ladderLengthWordList);
+
+    // 单词拆分 https://leetcode-cn.com/problems/word-break/
+    WordBreakBfsSln wordBreakBfsSln;
+    vector<string> wordBreakBfsVec = {"leet", "code"};
+    wordBreakBfsSln.wordBreak("leetcode",wordBreakBfsVec);
+
+    // 并查集 朋友圈 https://leetcode-cn.com/problems/friend-circles/
+    UnionFoundSln unionFoundSln;
+    vector<vector<int>> unionFoundVec = {{1,0,0,1},{0,1,1,0},{0,1,1,1},{1,0,1,1}};
+    unionFoundSln.findCircleNum(unionFoundVec);
+
+    // 贪心算法 分享巧克力 https://www.cnblogs.com/slowbirdoflsh/p/11738134.html
+    DivideChocolateSln divideChocolateSln;
+    vector<int> divideChocolateVec = {1,2,3,4,5,6,7,8,9};
+    divideChocolateSln.maximizeSweetness2(divideChocolateVec, 5);
+
+    // 拓扑排序 课程表II https://leetcode-cn.com/problems/course-schedule-ii/
+    FindCourseOrderSln findCourseOrderSln;
+    vector<vector<int>> findCourseVec = {{1,0},{2,0},{3,1},{3,2}};
+    findCourseOrderSln.findOrder(4, findCourseVec);
     return 0;
 }
