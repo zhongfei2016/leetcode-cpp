@@ -5,7 +5,8 @@
 #include "SolutionLengthOfLongestSubstring.h"
 #include "SolutionCountSmaller.h"
 #include "SolutionFindMedianSortedArrays.h"
-#include "SolutionLongestPalindrome.h"
+#include "string/SolutionLongestPalindrome.h"
+#include "string/LongestPalindromeSln.hpp"
 #include "SolutionPatternMatch.h"
 #include "SolutionMaxArea.h"
 #include "SolutionThreeSum.h"
@@ -113,6 +114,10 @@ int main() {
     SolutionLongestPalindrome *lp = new SolutionLongestPalindrome();
     lp->longestPalindrome("aaaa");
     delete[] lp;
+
+    // 最长回文串 取给定字符串的字符凑最长回文串 https://leetcode-cn.com/problems/longest-palindrome/
+    LongestPalindromeSln longestPalindromeSln;
+    longestPalindromeSln.longestPalindrome("abccccdd");
 
     // 正则匹配 https://leetcode-cn.com/problems/regular-expression-matching/
     SolutionPatternMatch *pm = new SolutionPatternMatch();
@@ -639,19 +644,19 @@ int main() {
     vector<int> checkSubArraySumVec = {23, 2, 4, 6, 7};
     checkSubArraySumSln.checkSubarraySum(checkSubArraySumVec, 6);
 
-    //
+    // 拼车 差分 1094
     CarPoolingSln carPoolingSln;
     vector<vector<int>> carPoolTrip = {{3, 2, 7},
                                        {3, 7, 9},
                                        {8, 3, 9}};
     carPoolingSln.carPooling(carPoolTrip, 11);
 
-    //
+    // 单词的压缩编码 820 拓扑排序
     MinLengthEncodeSln minLengthEncodeSln;
     vector<string> minLenEncodeVec = {"time", "me", "bell"};
     minLengthEncodeSln.minimumLengthEncoding(minLenEncodeVec);
 
-    // 单词替换 https://leetcode-cn.com/problems/replace-words/
+    // 单词替换 拓扑排序 https://leetcode-cn.com/problems/replace-words/
     ReplaceWordsSln replaceWordsSln;
     vector<string> replaceWordVec = {"cat", "bat", "rat"};
     replaceWordsSln.replaceWords(replaceWordVec, "the cattle was rattled by the battery");
