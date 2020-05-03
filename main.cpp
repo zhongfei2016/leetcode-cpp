@@ -77,6 +77,14 @@
 #include "UnionFound/UnionFoundSln.hpp"
 #include "greedy/DivideChocolateSln.hpp"
 #include "topology/FindCourseOrderSln.hpp"
+#include "topology/CanFinCourseSln.hpp"
+#include "SlideWindow/EqualSubStrSln.hpp"
+#include "PrefixSumHash/SubArraySumSln.hpp"
+#include "PrefixSumHash/CheckSubArraySumSln.hpp"
+#include "diff/CarPoolingSln.hpp"
+#include "trie/MinLengthEncodeSln.hpp"
+#include "trie/ReplaceWordsSln.hpp"
+#include "trie/Trie.hpp"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -580,27 +588,72 @@ int main() {
 
     // 单词接龙 https://leetcode-cn.com/problems/word-ladder/
     LadderLengthSln ladderLengthSln;
-    vector<string> ladderLengthWordList = {"hot","dot","dog","lot","log","cog"};
+    vector<string> ladderLengthWordList = {"hot", "dot", "dog", "lot", "log", "cog"};
     ladderLengthSln.ladderLength("hit", "cog", ladderLengthWordList);
 
     // 单词拆分 https://leetcode-cn.com/problems/word-break/
     WordBreakBfsSln wordBreakBfsSln;
     vector<string> wordBreakBfsVec = {"leet", "code"};
-    wordBreakBfsSln.wordBreak("leetcode",wordBreakBfsVec);
+    wordBreakBfsSln.wordBreak("leetcode", wordBreakBfsVec);
 
     // 并查集 朋友圈 https://leetcode-cn.com/problems/friend-circles/
     UnionFoundSln unionFoundSln;
-    vector<vector<int>> unionFoundVec = {{1,0,0,1},{0,1,1,0},{0,1,1,1},{1,0,1,1}};
+    vector<vector<int>> unionFoundVec = {{1, 0, 0, 1},
+                                         {0, 1, 1, 0},
+                                         {0, 1, 1, 1},
+                                         {1, 0, 1, 1}};
     unionFoundSln.findCircleNum(unionFoundVec);
 
     // 贪心算法 分享巧克力 https://www.cnblogs.com/slowbirdoflsh/p/11738134.html
     DivideChocolateSln divideChocolateSln;
-    vector<int> divideChocolateVec = {1,2,3,4,5,6,7,8,9};
+    vector<int> divideChocolateVec = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     divideChocolateSln.maximizeSweetness2(divideChocolateVec, 5);
 
     // 拓扑排序 课程表II https://leetcode-cn.com/problems/course-schedule-ii/
     FindCourseOrderSln findCourseOrderSln;
-    vector<vector<int>> findCourseVec = {{1,0},{2,0},{3,1},{3,2}};
+    vector<vector<int>> findCourseVec = {{1, 0},
+                                         {2, 0},
+                                         {3, 1},
+                                         {3, 2}};
     findCourseOrderSln.findOrder(4, findCourseVec);
+
+    // 滑动窗口 尽可能使字符串相等 https://leetcode-cn.com/problems/get-equal-substrings-within-budget/
+    EqualSubStrSln equalSubStrSln;
+    equalSubStrSln.equalSubstring("pxezla", "loewbi", 25);
+
+    // 拓扑排序 课程表I https://leetcode-cn.com/problems/course-schedule/
+    CanFinCourseSln canFinCourseSln;
+    vector<vector<int>> canFinCourseVec = {{1, 0},
+                                           {2, 0},
+                                           {3, 1},
+                                           {3, 2}};
+    canFinCourseSln.canFinish(4, canFinCourseVec);
+
+    // 前缀和Hash 和为K的子数组 https://leetcode-cn.com/problems/subarray-sum-equals-k/
+    SubArraySumSln subArraySumSln;
+    vector<int> subArraySumVec = {1, 5, 4, 3, 6, 2, 8, 6};
+    subArraySumSln.subarraySum2(subArraySumVec, 10);
+
+    // 连续子数组的和 https://leetcode-cn.com/problems/continuous-subarray-sum/
+    CheckSubArraySumSln checkSubArraySumSln;
+    vector<int> checkSubArraySumVec = {23, 2, 4, 6, 7};
+    checkSubArraySumSln.checkSubarraySum(checkSubArraySumVec, 6);
+
+    //
+    CarPoolingSln carPoolingSln;
+    vector<vector<int>> carPoolTrip = {{3, 2, 7},
+                                       {3, 7, 9},
+                                       {8, 3, 9}};
+    carPoolingSln.carPooling(carPoolTrip, 11);
+
+    //
+    MinLengthEncodeSln minLengthEncodeSln;
+    vector<string> minLenEncodeVec = {"time", "me", "bell"};
+    minLengthEncodeSln.minimumLengthEncoding(minLenEncodeVec);
+
+    // 单词替换 https://leetcode-cn.com/problems/replace-words/
+    ReplaceWordsSln replaceWordsSln;
+    vector<string> replaceWordVec = {"cat", "bat", "rat"};
+    replaceWordsSln.replaceWords(replaceWordVec, "the cattle was rattled by the battery");
     return 0;
 }
