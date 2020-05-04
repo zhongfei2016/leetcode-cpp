@@ -3,6 +3,7 @@
 //
 
 #include "SolutionFindMedianSortedArrays.h"
+#include <algorithm>
 
 void SolutionFindMedianSortedArrays::mergeVec(vector<int> &vec, int left, int mid, int right) {
     int pLeft = left;
@@ -49,4 +50,17 @@ double SolutionFindMedianSortedArrays::findMedianSortedArrays(vector<int> &nums1
         res = temp[mid];
     }
     return res;
+}
+
+double SolutionFindMedianSortedArrays::findMedianSortedArrays2(vector<int> &nums1, vector<int> &nums2) {
+    vector<int> temp;
+    temp.insert(temp.end(), nums1.begin(), nums1.end());
+    temp.insert(temp.end(), nums2.begin(), nums2.end());
+    std::sort(temp.begin(), temp.end());
+    int size = temp.size();
+    if (size & 1) {
+        return temp[size / 2];
+    } else {
+        return (temp[size / 2 - 1] + temp[size / 2]) / 2.0;
+    }
 }

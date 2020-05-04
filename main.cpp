@@ -4,9 +4,9 @@
 
 #include "SolutionLengthOfLongestSubstring.h"
 #include "SolutionCountSmaller.h"
-#include "SolutionFindMedianSortedArrays.h"
 #include "string/SolutionLongestPalindrome.h"
 #include "string/LongestPalindromeSln.hpp"
+#include "string/RestoreIPAddrSln.hpp"
 #include "SolutionPatternMatch.h"
 #include "SolutionMaxArea.h"
 #include "SolutionThreeSum.h"
@@ -79,6 +79,7 @@
 #include "greedy/DivideChocolateSln.hpp"
 #include "topology/FindCourseOrderSln.hpp"
 #include "topology/CanFinCourseSln.hpp"
+#include "topology/SeqReconstructSln.hpp"
 #include "SlideWindow/EqualSubStrSln.hpp"
 #include "PrefixSumHash/SubArraySumSln.hpp"
 #include "PrefixSumHash/CheckSubArraySumSln.hpp"
@@ -86,6 +87,8 @@
 #include "trie/MinLengthEncodeSln.hpp"
 #include "trie/ReplaceWordsSln.hpp"
 #include "trie/Trie.hpp"
+#include "dichotomy/SearchMatrixSln.hpp"
+#include "dichotomy/SolutionFindMedianSortedArrays.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -106,9 +109,10 @@ int main() {
     // 两数组中位数 https://leetcode-cn.com/problems/median-of-two-sorted-arrays/
     std::vector<int> nums1 = {5, 3, 6, 1};
     std::vector<int> nums2 = {2, 4};
-    SolutionFindMedianSortedArrays *fmsa = new SolutionFindMedianSortedArrays();
-    fmsa->findMedianSortedArrays(nums1, nums2);
-    delete[] fmsa;
+    SolutionFindMedianSortedArrays fmsa;
+    double fmsaRes = fmsa.findMedianSortedArrays(nums1, nums2);
+    double fmsaRes2 = fmsa.findMedianSortedArrays2(nums1, nums2);
+    cout << fmsaRes << "," << fmsaRes2 << endl;
 
     // 最长回文子串 https://leetcode-cn.com/problems/longest-palindromic-substring/
     SolutionLongestPalindrome *lp = new SolutionLongestPalindrome();
@@ -634,6 +638,11 @@ int main() {
                                            {3, 2}};
     canFinCourseSln.canFinish(4, canFinCourseVec);
 
+    SeqReconstructSln seqReconstructSln;
+    vector<int> seqReconstructOrg = {4,1,5,2,6,3};
+    vector<vector<int>> seqReconstructSeqs = {{5,2,6,3},{4,1,5,2}};
+    seqReconstructSln.sequenceReconstruction(seqReconstructOrg, seqReconstructSeqs);
+
     // 前缀和Hash 和为K的子数组 https://leetcode-cn.com/problems/subarray-sum-equals-k/
     SubArraySumSln subArraySumSln;
     vector<int> subArraySumVec = {1, 5, 4, 3, 6, 2, 8, 6};
@@ -660,5 +669,18 @@ int main() {
     ReplaceWordsSln replaceWordsSln;
     vector<string> replaceWordVec = {"cat", "bat", "rat"};
     replaceWordsSln.replaceWords(replaceWordVec, "the cattle was rattled by the battery");
+
+    // 复原IP地址，dfs深度遍历 https://leetcode-cn.com/problems/restore-ip-addresses/
+    RestoreIPAddrSln restoreIpAddrSln;
+    restoreIpAddrSln.restoreIpAddresses("25525511135");
+
+    SearchMatrixSln searchMatrixSln;
+    vector<vector<int>> searchMatrixVec = {{1,  4,  7,  11, 15},
+                                           {2,  5,  8,  12, 19},
+                                           {3,  6,  9,  16, 22},
+                                           {10, 13, 14, 17, 24},
+                                           {18, 21, 23, 26, 30}
+    };
+    searchMatrixSln.searchMatrix(searchMatrixVec, 5);
     return 0;
 }

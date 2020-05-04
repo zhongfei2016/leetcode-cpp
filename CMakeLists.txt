@@ -21,6 +21,7 @@ include_directories(${CMAKE_CURRENT_LIST_DIR}/SlideWindow)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/PrefixSumHash)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/diff)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/trie)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/dichotomy)
 
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR} SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/tree SOURCES)
@@ -38,6 +39,7 @@ aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/SlideWindow SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/PrefixSumHash SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/diff SOURCES)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/trie SOURCES)
+aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/dichotomy SOURCES)
 
 add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
 
