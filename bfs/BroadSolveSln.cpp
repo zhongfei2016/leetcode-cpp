@@ -1,47 +1,79 @@
 //
 // Created by ZHONGFEI on 2020/4/6.
+// 被围绕的区域 https://leetcode-cn.com/problems/surrounded-regions/
 //
 
 #include "BroadSolveSln.h"
 
 #include <queue>
 
+struct Pos {
+    int i;
+    int j;
+
+    Pos(int i, int j) {
+        this->i = i;
+        this->j = j;
+    }
+};
+
 void BroadSolveSln::solve(vector<vector<char>> &board) {
+    if (board.size() == 0) return;
     int m = board.size();
     int n = board[0].size();
-    queue<pair<int, int>> que;
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            if (board[i][j] == 'O') {
-                que.push(make_pair(i, j));
+            // 从边缘第一个是o的开始搜索
+            bool isEdge = i == 0 || j == 0 || i == m - 1 || j == n - 1;
+            if (isEdge && board[i][j] == 'O') {
+                bfs(board, i, j);
             }
         }
     }
-    queue<pair<int, int>> queTemp;
-    while (!que.empty()) {
-        auto loc = que.front();
-        que.pop();
-        if (loc.first == 0 || loc.first == m - 1 || loc.second == 0 || loc.second == n - 1) {
-            board[loc.first][loc.second] = 'Y';
-        } else {
-            queTemp.push(loc);
-        }
-    }
-    while (!queTemp.empty()) {
-        auto loc = queTemp.front();
-        queTemp.pop();
-        if (board[loc.first - 1][loc.second] == 'Y' || board[loc.first + 1][loc.second] == 'Y'
-            || board[loc.first][loc.second - 1] == 'Y' || board[loc.first][loc.second + 1] == 'Y') {
-            board[loc.first][loc.second] = 'Y';
-        }
-    }
+
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
             if (board[i][j] == 'O') {
                 board[i][j] = 'X';
-            } else if (board[i][j] == 'Y') {
+            }
+            if (board[i][j] == '#') {
                 board[i][j] = 'O';
             }
+        }
+    }
+};
+
+void BroadSolveSln::bfs(vector<vector<char>> &board, int i, int j) {
+    std::queue<Pos> queue;
+    queue.push(Pos(i, j));
+    board[i][j] = '#';
+    while (!queue.empty()) {
+        Pos current = queue.front();
+        queue.pop();
+        // 上
+        if (current.i - 1 >= 0
+            && board[current.i - 1][current.j] == 'O') {
+            queue.push(Pos(current.i - 1, current.j));
+            board[current.i - 1][current.j] = '#';
+            // 没有continue.
+        }
+        // 下
+        if (current.i + 1 <= board.size() - 1
+            && board[current.i + 1][current.j] == 'O') {
+            queue.push(Pos(current.i + 1, current.j));
+            board[current.i + 1][current.j] = '#';
+        }
+        // 左
+        if (current.j - 1 >= 0
+            && board[current.i][current.j - 1] == 'O') {
+            queue.push(Pos(current.i, current.j - 1));
+            board[current.i][current.j - 1] = '#';
+        }
+        // 右
+        if (current.j + 1 <= board[0].size() - 1
+            && board[current.i][current.j + 1] == 'O') {
+            queue.push(Pos(current.i, current.j + 1));
+            board[current.i][current.j + 1] = '#';
         }
     }
 }
