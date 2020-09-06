@@ -77,10 +77,12 @@
 #include "string/AddBinarySln.h"
 #include "UnionFound/UnionFoundSln.hpp"
 #include "greedy/DivideChocolateSln.hpp"
+#include "greedy/FindMinArrowShotSln.h"
 #include "topology/FindCourseOrderSln.hpp"
 #include "topology/CanFinCourseSln.hpp"
 #include "topology/SeqReconstructSln.hpp"
 #include "SlideWindow/EqualSubStrSln.hpp"
+#include "SlideWindow/MinSubArrayLenSln.h"
 #include "PrefixSumHash/SubArraySumSln.hpp"
 #include "PrefixSumHash/CheckSubArraySumSln.hpp"
 #include "diff/CarPoolingSln.hpp"
@@ -509,7 +511,7 @@ int main() {
     LongestSeqSln longestSeqSln;
 //    longestSeqSln.LongestSeq("cbacdcdac");
 //    vector<string> test = {"1","2","3"};
-//    std::for_each(test.begin(), test.end(), [] (std::string &t) {std::cout << t << " ";});
+//    std::for_each(test.begin(), test.end(), [} (std::string &t) {std::cout << t << " ";});
 //    copy(test.begin(),test.end(),std::ostream_iterator<string>(cout," "));
 
     // 寻找中位数 https://leetcode-cn.com/problems/find-pivot-index/
@@ -617,6 +619,8 @@ int main() {
     DivideChocolateSln divideChocolateSln;
     vector<int> divideChocolateVec = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     divideChocolateSln.maximizeSweetness2(divideChocolateVec, 5);
+    divideChocolateVec = {2,2,2,2,2};
+    divideChocolateSln.maximizeSweetness(divideChocolateVec, 1);
 
     // 拓扑排序 课程表II https://leetcode-cn.com/problems/course-schedule-ii/
     FindCourseOrderSln findCourseOrderSln;
@@ -682,5 +686,19 @@ int main() {
                                            {18, 21, 23, 26, 30}
     };
     searchMatrixSln.searchMatrix(searchMatrixVec, 5);
+
+    MinSubArrayLenSln minSubArrayLenSln;
+    vector<int> minSubArrayLenVec = {1,2,1,3,4};
+    minSubArrayLenSln.minSubArrayLen(7, minSubArrayLenVec);
+
+    FindMinArrowShotSln findMinArrowShotSln;
+    vector<vector<int>> findMinArrowShotVec = {{10,16}, {2,8}, {1,6}, {7,12}};
+    findMinArrowShotSln.findMinArrowShots(findMinArrowShotVec);
+    findMinArrowShotVec = {{2,3}, {2,3}};
+    findMinArrowShotSln.findMinArrowShots(findMinArrowShotVec);
+    findMinArrowShotVec = {{3,9},{7,12},{3,8},{6,8},{9,10},{2,9},{0,9},{3,9},{0,6},{2,8}};
+    findMinArrowShotSln.findMinArrowShots(findMinArrowShotVec);
+    findMinArrowShotVec = {{9,17},{4,12},{4,8},{4,8},{7,13},{3,4},{7,12},{9,15}};
+    findMinArrowShotSln.findMinArrowShots(findMinArrowShotVec);
     return 0;
 }
