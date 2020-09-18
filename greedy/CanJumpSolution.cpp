@@ -45,3 +45,45 @@ bool CanJumpSolution::canJump(vector<int> &nums) {
     }
     return true;
 }
+
+bool CanJumpSolution::canJump1(vector<int> &nums) {
+    int n = nums.size();
+    // 可以到达的最大的索引数
+    int maxRightNum = 0;
+    for (int i = 0; i < nums.size(); i++) {
+        // 只有每次的最大索引数大于等于当前索引值，才有可能继续往右走
+        if (maxRightNum >= i) {
+            maxRightNum = max(maxRightNum, i + nums[i]);
+            // 如果本次最大索引数大于数组最大索引，则可以到达终点
+            if (maxRightNum > n - 1) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+int CanJumpSolution::canJump2(vector<int> &nums) {
+    int step = 0;
+    int pos = 0;
+    int n = nums.size() - 1;// 最后一个值不考虑，要么跳到他，要么跳过他，都符合条件
+    while (pos < n) {
+        if (pos + nums[pos] >= n) { //第一步可以直接跳到终点
+            step++;
+            break;
+        } else {
+            // 计算当前这一步可以跳到的最大值，pos+j是当前位置可以跳的每一个值
+            int maxIdx = 0;
+            int maxVal = 0;
+            for (int j = 1; j <= nums[pos]; j++) {
+                if (maxVal < j + nums[pos+j]) {
+                    maxVal = j + nums[pos+j];
+                    maxIdx = j;
+                }
+            }
+            pos += maxIdx;
+            step++;
+        }
+    }
+    return step;
+}

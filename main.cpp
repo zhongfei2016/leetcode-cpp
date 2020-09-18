@@ -2,6 +2,7 @@
 
 #include <algorithm>
 
+#include "CommonUtils.h"
 #include "SolutionLengthOfLongestSubstring.h"
 #include "SolutionCountSmaller.h"
 #include "string/SolutionLongestPalindrome.h"
@@ -240,10 +241,20 @@ int main() {
     delete[] maxSubArrSln;
 
     // 跳跃游戏 https://leetcode-cn.com/problems/jump-game/
-    CanJumpSolution *canJumpSln = new CanJumpSolution();
+    CanJumpSolution canJumpSln;
     vector<int> canJumpVec = {2, 0, 1, 0, 1};
-    bool canJumpFlag = canJumpSln->canJump(canJumpVec);
-    delete[] canJumpSln;
+    bool canJumpFlag = canJumpSln.canJump(canJumpVec);
+    CommonUtils::ExpectFalse("CanJumpSolution", canJumpFlag);
+    canJumpFlag = canJumpSln.canJump1(canJumpVec);
+    CommonUtils::ExpectFalse("CanJumpSolution", canJumpFlag);
+    canJumpVec = {0};
+    canJumpFlag = canJumpSln.canJump1(canJumpVec);
+    CommonUtils::ExpectFalse("CanJumpSolution", canJumpFlag);
+    canJumpVec = {1,2,1,1,1};
+//    canJumpVec = {5,3,1,1,4};
+    int jumpSteps = canJumpSln.canJump2(canJumpVec);
+    CommonUtils::ExpectEqual("CanJumpSolution", jumpSteps, 3);
+
 
     // 合并区间 https://leetcode-cn.com/problems/merge-intervals/
     MergeIntervalSolution *mergeIntervalSln = new MergeIntervalSolution();

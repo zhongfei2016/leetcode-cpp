@@ -11,7 +11,11 @@ using namespace std;
 
 class CanJumpSolution {
 public:
-    bool canJump(vector<int>& nums);
+    bool canJump(vector<int> &nums);
+
+    bool canJump1(vector<int> &nums);
+
+    int canJump2(vector<int> &nums);
 };
 
 
