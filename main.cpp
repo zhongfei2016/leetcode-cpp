@@ -31,6 +31,7 @@
 #include "bfs/NumBusToDestSln.hpp"
 #include "bfs/LadderLengthSln.hpp"
 #include "bfs/WordBreakBfsSln.hpp"
+#include "bfs/RescueSln.h"
 #include "RotateSolution.h"
 #include "GroupAnagramsSolution.h"
 #include "MaxSubArraySolution.h"
@@ -618,6 +619,9 @@ int main() {
     vector<string> wordBreakBfsVec = {"leet", "code"};
     wordBreakBfsSln.wordBreak("leetcode", wordBreakBfsVec);
 
+    RescueSln rescueSln;
+    vector<vector<int>> rescueVec = {{0,1,0,1,0},{0,0,0,0,0}};
+    rescueSln.rescue(rescueVec,0,0,0,5);
     // 并查集 朋友圈 https://leetcode-cn.com/problems/friend-circles/
     UnionFoundSln unionFoundSln;
     vector<vector<int>> unionFoundVec = {{1, 0, 0, 1},
