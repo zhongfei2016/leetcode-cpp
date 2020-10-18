@@ -96,6 +96,7 @@
 #include "dichotomy/SearchMatrixSln.hpp"
 #include "dichotomy/SolutionFindMedianSortedArrays.h"
 #include "operation/SuffixOperationSln.h"
+#include "queue/PriorityQueueSln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -547,7 +548,9 @@ int main() {
 
     // 二进制求和 https://leetcode-cn.com/problems/add-binary/
     AddBinarySln addBinarySln;
-    addBinarySln.addBinary("101", "10111");
+    string addBinStr1 = addBinarySln.addBinary("101", "10111");
+    string addBinStr2 = addBinarySln.addBinary("10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101",
+                                                "110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011");
     vector<char> reverseVec = {'H'};
     // 使用双指针翻转字符串
     addBinarySln.reverseString(reverseVec);
@@ -729,5 +732,9 @@ int main() {
     // 中缀表达式转成后缀表达式并计算结果
     SuffixOperationSln suffixOperationSln;
     double resultSuffix = suffixOperationSln.CalOperation("1+((21+315)*40)-15");
+
+    // 优先级队列
+    PriorityQueueSln priorityQueueSln;
+    priorityQueueSln.PriorityQueueTest();
     return 0;
 }
