@@ -68,6 +68,9 @@ int CanJumpSolution::canJump2(vector<int> &nums) {
     int pos = 0;
     int n = nums.size() - 1;// 最后一个值不考虑，要么跳到他，要么跳过他，都符合条件
     while (pos < n) {
+        if (step == n) {
+            return -1;
+        }
         if (pos + nums[pos] >= n) { //第一步可以直接跳到终点
             step++;
             break;

@@ -4,16 +4,20 @@
 
 #include "RescueSln.h"
 
+vector<vector<bool>> usedPrivileges;
+vector<vector<bool>> noUsedPrivileges;
+
 int RescueSln::rescue(vector<vector<int> > &path, int startX, int startY, int endX, int endY) {
     int width = path.size();
     int height = path[0].size();
-    vector<vector<bool>> usedPrivileges(width, vector<bool>(height));
-    vector<vector<bool>> noUsedPrivileges(width, vector<bool>(height));
+    usedPrivileges.resize(width, vector<bool>(height));
+    noUsedPrivileges.resize(width, vector<bool>(height));
 
     queue<Status> que;
     que.emplace(startX, startY, false, 0);
     while (!que.empty()) {
-        auto &status = que.back();
+        auto &status = que.front();
+        que.pop();
         if (status.posX == endX && status.posY == endY) {
             return status.step;
         }
@@ -22,27 +26,29 @@ int RescueSln::rescue(vector<vector<int> > &path, int startX, int startY, int en
             continue;
         }
         if (status.posX < width - 1) {
-            TryNextStatus(que, visited, status.posX + 1, status.posY, status.usePrivilege, status.step + 1);
+            TryNextStatus(path, que, status, status.posX + 1, status.posY);
         }
         if (status.posX > 0) {
-            TryNextStatus(que, visited, status.posX - 1, status.posY, status.usePrivilege, status.step + 1);
+            TryNextStatus(path, que, status, status.posX - 1, status.posY);
         }
         if (status.posY < height - 1) {
-            TryNextStatus(que, visited, status.posX, status.posY + 1, status.usePrivilege, status.step + 1);
+            TryNextStatus(path, que, status, status.posX, status.posY + 1);
         }
         if (status.posY > 0) {
-            TryNextStatus(que, visited, status.posX, status.posY - 1, status.usePrivilege, status.step + 1);
+            TryNextStatus(path, que, status, status.posX, status.posY - 1);
         }
     }
     return -1;
 }
 
-void RescueSln::TryNextStatus(queue<Status> &que, vector<vector<bool>> &visited, int posX, int posY, bool usePrivilege,
-                             int step) {
-    if (usePrivilege) {
-        que.emplace(posX, posY, false, step);
-    } else {
-        que.emplace(posX, posY, true, step);
+void RescueSln::TryNextStatus(vector<vector<int>> &path, queue<Status> &que, Status &status, int nextPosX,
+                              int nextPosY) {
+    if (!status.usePrivilege && path[nextPosX][nextPosY] == 1) {
+        que.emplace(Status(nextPosX, nextPosY, true, status.step + 1));
+        usedPrivileges[status.posX][status.posY] = true;
+    } else if (path[nextPosX][nextPosY] == 0) {
+        que.emplace(Status(nextPosX, nextPosY, status.usePrivilege, status.step + 1));
+        vector<vector<bool>> &visited = status.usePrivilege ? usedPrivileges : noUsedPrivileges;
+        visited[status.posX][status.posY] = true;
     }
-    visited[posX][posY] = true;
 }

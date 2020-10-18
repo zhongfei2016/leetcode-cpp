@@ -29,7 +29,7 @@ class RescueSln {
 public:
     int rescue(vector<vector<int>> &path, int startX, int startY, int endX, int endY);
 
-    void TryNextStatus(queue<Status> &que, vector<vector<bool>> &visited, int posX, int posY, bool usePrivilege, int step);
+    void TryNextStatus(vector<vector<int> > &path, queue<Status> &que, Status& status, int nextPosX, int nextPosY);
 };
 
 #endif //LEETCODE_CPP_RESCUESLN_H

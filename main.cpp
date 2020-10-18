@@ -8,6 +8,8 @@
 #include "string/SolutionLongestPalindrome.h"
 #include "string/LongestPalindromeSln.hpp"
 #include "string/RestoreIPAddrSln.hpp"
+#include "string/NumConvertSln.h"
+#include "string/StringConvertSln.h"
 #include "SolutionPatternMatch.h"
 #include "SolutionMaxArea.h"
 #include "SolutionThreeSum.h"
@@ -93,6 +95,7 @@
 #include "trie/Trie.hpp"
 #include "dichotomy/SearchMatrixSln.hpp"
 #include "dichotomy/SolutionFindMedianSortedArrays.h"
+#include "operation/SuffixOperationSln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -253,6 +256,7 @@ int main() {
     CommonUtils::ExpectFalse("CanJumpSolution", canJumpFlag);
     canJumpVec = {1,2,1,1,1};
 //    canJumpVec = {5,3,1,1,4};
+    canJumpVec = {1,0,0,0,0};
     int jumpSteps = canJumpSln.canJump2(canJumpVec);
     CommonUtils::ExpectEqual("CanJumpSolution", jumpSteps, 3);
 
@@ -621,7 +625,7 @@ int main() {
 
     RescueSln rescueSln;
     vector<vector<int>> rescueVec = {{0,1,0,1,0},{0,0,0,0,0}};
-    rescueSln.rescue(rescueVec,0,0,0,5);
+    rescueSln.rescue(rescueVec,0,0,0,4);
     // 并查集 朋友圈 https://leetcode-cn.com/problems/friend-circles/
     UnionFoundSln unionFoundSln;
     vector<vector<int>> unionFoundVec = {{1, 0, 0, 1},
@@ -693,6 +697,12 @@ int main() {
     RestoreIPAddrSln restoreIpAddrSln;
     restoreIpAddrSln.restoreIpAddresses("25525511135");
 
+    NumConvertSln numConvertSln;
+    numConvertSln.NumConvertTest();
+
+    StringConvertSln stringConvertSln;
+    stringConvertSln.StringConvertTest();
+
     SearchMatrixSln searchMatrixSln;
     vector<vector<int>> searchMatrixVec = {{1,  4,  7,  11, 15},
                                            {2,  5,  8,  12, 19},
@@ -715,5 +725,9 @@ int main() {
     findMinArrowShotSln.findMinArrowShots(findMinArrowShotVec);
     findMinArrowShotVec = {{9,17},{4,12},{4,8},{4,8},{7,13},{3,4},{7,12},{9,15}};
     findMinArrowShotSln.findMinArrowShots(findMinArrowShotVec);
+
+    // 中缀表达式转成后缀表达式并计算结果
+    SuffixOperationSln suffixOperationSln;
+    double resultSuffix = suffixOperationSln.CalOperation("1+((21+315)*40)-15");
     return 0;
 }
