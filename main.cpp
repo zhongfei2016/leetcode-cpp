@@ -10,6 +10,8 @@
 #include "string/RestoreIPAddrSln.hpp"
 #include "string/NumConvertSln.h"
 #include "string/StringConvertSln.h"
+#include "string/MaxSameStrSln.h"
+#include "string/MaxUnduplicateStrSln.h"
 #include "SolutionPatternMatch.h"
 #include "SolutionMaxArea.h"
 #include "SolutionThreeSum.h"
@@ -34,6 +36,7 @@
 #include "bfs/LadderLengthSln.hpp"
 #include "bfs/WordBreakBfsSln.hpp"
 #include "bfs/RescueSln.h"
+#include "bfs/NoiseCalSln.h"
 #include "RotateSolution.h"
 #include "GroupAnagramsSolution.h"
 #include "MaxSubArraySolution.h"
@@ -736,5 +739,15 @@ int main() {
     // 优先级队列
     PriorityQueueSln priorityQueueSln;
     priorityQueueSln.PriorityQueueTest();
+
+    // 最长不含重复字符的子字符串
+    MaxUnduplicateStrSln maxUnduplicateStrSln;
+    maxUnduplicateStrSln.lengthOfLongestSubstring("bbbbb");
+
+    MaxSameStrSln maxSameStrSln;
+    maxSameStrSln.maxSameStr("abcadgbcs","vavcadgbccacsvb");
+
+    NoiseCalSln noiseCalSln;
+    noiseCalSln.calculateNoise(5,6,{{3,4,3},{1,1,4}});
     return 0;
 }
