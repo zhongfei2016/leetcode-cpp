@@ -100,6 +100,7 @@
 #include "dichotomy/SolutionFindMedianSortedArrays.h"
 #include "operation/SuffixOperationSln.h"
 #include "queue/PriorityQueueSln.h"
+#include "queue/RerangeStrSln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -749,5 +750,8 @@ int main() {
 
     NoiseCalSln noiseCalSln;
     noiseCalSln.calculateNoise(5,6,{{3,4,3},{1,1,4}});
+
+    RerangeStrSln rerangeStrSln;
+    rerangeStrSln.rearrangeString("aabbcc",3);
     return 0;
 }
