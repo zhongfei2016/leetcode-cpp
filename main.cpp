@@ -28,6 +28,7 @@
 #include "dfs/CombinationSumSolution.h"
 #include "dfs/NextPermutationSolution.h"
 #include "dfs/FindTargetSumSln.h"
+#include "bfs/WordBreakIIBfsSln.h"
 #include "bfs/OrangeRotSln.h"
 #include "bfs/WaterMeasureSln.hpp"
 #include "bfs/WaterMeasureSln2.hpp"
@@ -37,6 +38,7 @@
 #include "bfs/WordBreakBfsSln.hpp"
 #include "bfs/RescueSln.h"
 #include "bfs/NoiseCalSln.h"
+#include "bfs/ShortestPathSln.h"
 #include "RotateSolution.h"
 #include "GroupAnagramsSolution.h"
 #include "MaxSubArraySolution.h"
@@ -98,9 +100,11 @@
 #include "trie/Trie.hpp"
 #include "dichotomy/SearchMatrixSln.hpp"
 #include "dichotomy/SolutionFindMedianSortedArrays.h"
+#include "dichotomy/SnowMountainSln.h"
 #include "operation/SuffixOperationSln.h"
 #include "queue/PriorityQueueSln.h"
 #include "queue/RerangeStrSln.h"
+#include "queue/TaskScheduleSln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -259,9 +263,9 @@ int main() {
     canJumpVec = {0};
     canJumpFlag = canJumpSln.canJump1(canJumpVec);
     CommonUtils::ExpectFalse("CanJumpSolution", canJumpFlag);
-    canJumpVec = {1,2,1,1,1};
+    canJumpVec = {1, 2, 1, 1, 1};
 //    canJumpVec = {5,3,1,1,4};
-    canJumpVec = {1,0,0,0,0};
+    canJumpVec = {1, 0, 0, 0, 0};
     int jumpSteps = canJumpSln.canJump2(canJumpVec);
     CommonUtils::ExpectEqual("CanJumpSolution", jumpSteps, 3);
 
@@ -553,8 +557,9 @@ int main() {
     // 二进制求和 https://leetcode-cn.com/problems/add-binary/
     AddBinarySln addBinarySln;
     string addBinStr1 = addBinarySln.addBinary("101", "10111");
-    string addBinStr2 = addBinarySln.addBinary("10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101",
-                                                "110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011");
+    string addBinStr2 = addBinarySln.addBinary(
+            "10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101",
+            "110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011");
     vector<char> reverseVec = {'H'};
     // 使用双指针翻转字符串
     addBinarySln.reverseString(reverseVec);
@@ -631,8 +636,9 @@ int main() {
     wordBreakBfsSln.wordBreak("leetcode", wordBreakBfsVec);
 
     RescueSln rescueSln;
-    vector<vector<int>> rescueVec = {{0,1,0,1,0},{0,0,0,0,0}};
-    rescueSln.rescue(rescueVec,0,0,0,4);
+    vector<vector<int>> rescueVec = {{0, 1, 0, 1, 0},
+                                     {0, 0, 0, 0, 0}};
+    rescueSln.rescue(rescueVec, 0, 0, 0, 4);
     // 并查集 朋友圈 https://leetcode-cn.com/problems/friend-circles/
     UnionFoundSln unionFoundSln;
     vector<vector<int>> unionFoundVec = {{1, 0, 0, 1},
@@ -645,7 +651,7 @@ int main() {
     DivideChocolateSln divideChocolateSln;
     vector<int> divideChocolateVec = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     divideChocolateSln.maximizeSweetness2(divideChocolateVec, 5);
-    divideChocolateVec = {2,2,2,2,2};
+    divideChocolateVec = {2, 2, 2, 2, 2};
     divideChocolateSln.maximizeSweetness(divideChocolateVec, 1);
 
     // 拓扑排序 课程表II https://leetcode-cn.com/problems/course-schedule-ii/
@@ -669,8 +675,9 @@ int main() {
     canFinCourseSln.canFinish(4, canFinCourseVec);
 
     SeqReconstructSln seqReconstructSln;
-    vector<int> seqReconstructOrg = {4,1,5,2,6,3};
-    vector<vector<int>> seqReconstructSeqs = {{5,2,6,3},{4,1,5,2}};
+    vector<int> seqReconstructOrg = {4, 1, 5, 2, 6, 3};
+    vector<vector<int>> seqReconstructSeqs = {{5, 2, 6, 3},
+                                              {4, 1, 5, 2}};
     seqReconstructSln.sequenceReconstruction(seqReconstructOrg, seqReconstructSeqs);
 
     // 前缀和Hash 和为K的子数组 https://leetcode-cn.com/problems/subarray-sum-equals-k/
@@ -720,17 +727,37 @@ int main() {
     searchMatrixSln.searchMatrix(searchMatrixVec, 5);
 
     MinSubArrayLenSln minSubArrayLenSln;
-    vector<int> minSubArrayLenVec = {1,2,1,3,4};
+    vector<int> minSubArrayLenVec = {1, 2, 1, 3, 4};
     minSubArrayLenSln.minSubArrayLen(7, minSubArrayLenVec);
 
     FindMinArrowShotSln findMinArrowShotSln;
-    vector<vector<int>> findMinArrowShotVec = {{10,16}, {2,8}, {1,6}, {7,12}};
+    vector<vector<int>> findMinArrowShotVec = {{10, 16},
+                                               {2,  8},
+                                               {1,  6},
+                                               {7,  12}};
     findMinArrowShotSln.findMinArrowShots(findMinArrowShotVec);
-    findMinArrowShotVec = {{2,3}, {2,3}};
+    findMinArrowShotVec = {{2, 3},
+                           {2, 3}};
     findMinArrowShotSln.findMinArrowShots(findMinArrowShotVec);
-    findMinArrowShotVec = {{3,9},{7,12},{3,8},{6,8},{9,10},{2,9},{0,9},{3,9},{0,6},{2,8}};
+    findMinArrowShotVec = {{3, 9},
+                           {7, 12},
+                           {3, 8},
+                           {6, 8},
+                           {9, 10},
+                           {2, 9},
+                           {0, 9},
+                           {3, 9},
+                           {0, 6},
+                           {2, 8}};
     findMinArrowShotSln.findMinArrowShots(findMinArrowShotVec);
-    findMinArrowShotVec = {{9,17},{4,12},{4,8},{4,8},{7,13},{3,4},{7,12},{9,15}};
+    findMinArrowShotVec = {{9, 17},
+                           {4, 12},
+                           {4, 8},
+                           {4, 8},
+                           {7, 13},
+                           {3, 4},
+                           {7, 12},
+                           {9, 15}};
     findMinArrowShotSln.findMinArrowShots(findMinArrowShotVec);
 
     // 中缀表达式转成后缀表达式并计算结果
@@ -746,12 +773,27 @@ int main() {
     maxUnduplicateStrSln.lengthOfLongestSubstring("bbbbb");
 
     MaxSameStrSln maxSameStrSln;
-    maxSameStrSln.maxSameStr("abcadgbcs","vavcadgbccacsvb");
+    maxSameStrSln.maxSameStr("abcadgbcs", "vavcadgbccacsvb");
 
     NoiseCalSln noiseCalSln;
-    noiseCalSln.calculateNoise(5,6,{{3,4,3},{1,1,4}});
+    noiseCalSln.calculateNoise(5, 6, {{3, 4, 3},
+                                      {1, 1, 4}});
 
     RerangeStrSln rerangeStrSln;
-    rerangeStrSln.rearrangeString("aabbcc",3);
+    rerangeStrSln.rearrangeString("aabbcc", 3);
+
+    SnowMountainSln snowMountainSln;
+//    int mountainCost = snowMountainSln.snowMountainCost({5,1,4,3,8},3);
+    int mountainCost = snowMountainSln.snowMountainCost({1, 2, 99999, 3, 100000}, 3);
+
+    TaskScheduleSln taskScheduleSln;
+    taskScheduleSln.leastInterval({'A', 'A', 'A', 'B', 'B', 'B'}, 2);
+
+    ShortestPathSln shortestPathSln;
+    shortestPathSln.shortestPath({{0,0,1,0,0,0,0,1,0,1,1,0,0,1,1},{0,0,0,1,1,0,0,1,1,0,1,0,0,0,1},{1,1,0,0,0,0,0,1,0,1,0,0,1,0,0},{1,0,1,1,1,1,0,0,1,1,0,1,0,0,1},{1,0,0,0,1,1,0,1,1,0,0,1,1,1,1},{0,0,0,1,1,1,0,1,1,0,0,1,1,1,1},{0,0,0,1,0,1,0,0,0,0,1,1,0,1,1},{1,0,0,1,1,1,1,1,1,0,0,0,1,1,0},{0,0,1,0,0,1,1,1,1,1,0,1,0,0,0},{0,0,0,1,1,0,0,1,1,1,1,1,1,0,0},{0,0,0,0,1,1,1,0,0,1,1,1,0,1,0}}
+   , 27);
+
+    WordBreakIIBfsSln wordBreakIiBfsSln;
+    wordBreakIiBfsSln.wordBreak("catsanddog",{"cat", "cats", "and", "sand", "dog"});
     return 0;
 }
