@@ -13,6 +13,7 @@ void dfs(vector<int> &nums, vector<int> &list, vector<bool> &visited, vector<vec
     }
 
     for (int i = 0; i < nums.size(); i++) {
+        // 因为前一个相同值用完会被置为未访问，所以要判断未访问，同级只保证第一个相同值访问即可，下一级访问下一个相同值
         if (visited[i] || (i>0 && nums[i]==nums[i-1] && !visited[i-1])) {
             continue;
         }
