@@ -71,5 +71,18 @@ void StringConvertSln::StringConvertTest() {
     ipNums = split(str, sep);
 
     string ipRes = join(ipNums, sep);
+
     std::cout << ipRes << std::endl;
+
+    string testReplace = "ax+5=-1+2x";
+    int pos = 0;
+    string search = "x";
+    string replace = "a";
+    while ((pos = testReplace.find(search)) != string::npos) {
+        testReplace.replace(pos,search.length(),replace);
+        pos+=replace.length();
+    }
+    regex reg("[a-zA-Z]");
+    string replaceRes = std::regex_replace(testReplace, reg, "x");
+    std::cout << "srcStr: " << testReplace << ", destStr: " << replaceRes << std::endl;
 }
