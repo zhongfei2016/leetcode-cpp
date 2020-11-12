@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/3/8.
 //
+// 最长连续序列 https://leetcode-cn.com/problems/longest-consecutive-sequence/
 
 #ifndef LEETCODE_CPP_LONGESTCONSECUTIVESLN_H
 #define LEETCODE_CPP_LONGESTCONSECUTIVESLN_H

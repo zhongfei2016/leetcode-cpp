@@ -1,4 +1,4 @@
-// https://leetcode-cn.com/problems/water-and-jug-problem/
+// 水壶问题 https://leetcode-cn.com/problems/water-and-jug-problem/
 #include <queue>
 #include <unordered_set>
 

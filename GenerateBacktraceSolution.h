@@ -1,6 +1,7 @@
 //
 // Created by fei on 2020/1/1.
 //
+//给出 n 生成全部有效括号组合，回溯法 https://leetcode-cn.com/problems/generate-parentheses/
 
 #ifndef LEETCODE_GENERATEBACKTRACESOLUTION_H
 #define LEETCODE_GENERATEBACKTRACESOLUTION_H

@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/4/25.
 //
+// 离建筑物最近的距离 https://www.cnblogs.com/FdWzy/p/12382657.html
 
 #ifndef LEETCODE_CPP_SHORTESTDISTANCESLN_HPP
 #define LEETCODE_CPP_SHORTESTDISTANCESLN_HPP

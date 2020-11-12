@@ -1,3 +1,6 @@
+// 旋转链表
+
+
 class RotateListNodeSln {
 public:
     ListNode *rotateRight(ListNode *head, int k);

@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/4/12.
 //
+// 使用快慢双指针移除指定元素
 
 #ifndef LEETCODE_CPP_REMOVEELEMENTSLN_H
 #define LEETCODE_CPP_REMOVEELEMENTSLN_H

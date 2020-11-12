@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/5/2.
 //
+// 单词的压缩编码 820 拓扑排序
 
 #ifndef LEETCODE_CPP_MINLENGTHENCODESLN_HPP
 #define LEETCODE_CPP_MINLENGTHENCODESLN_HPP

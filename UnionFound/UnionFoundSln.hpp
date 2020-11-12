@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/5/1.
 //
+// 并查集 朋友圈 https://leetcode-cn.com/problems/friend-circles/
 
 #ifndef LEETCODE_CPP_UNIONFOUNDSLN_HPP
 #define LEETCODE_CPP_UNIONFOUNDSLN_HPP

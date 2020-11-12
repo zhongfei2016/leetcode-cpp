@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/3/15.
 //
+// 单词拆分 动态规划 https://leetcode-cn.com/problems/word-break/
 
 #ifndef LEETCODE_CPP_WORDBREAKSLN_H
 #define LEETCODE_CPP_WORDBREAKSLN_H

@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/5/1.
 //
+// 贪心算法 分享巧克力 https://www.cnblogs.com/slowbirdoflsh/p/11738134.html
 
 #ifndef LEETCODE_CPP_DIVIDECHOCOLATESLN_HPP
 #define LEETCODE_CPP_DIVIDECHOCOLATESLN_HPP

@@ -1,6 +1,10 @@
 //
 // Created by ZHONGFEI on 2020/2/1.
 //
+// 二叉树的中序遍历 https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+// 前序遍历规则：根结点 ---> 左子树 ---> 右子树
+// 中序遍历规则：左子树---> 根结点 ---> 右子树
+// 后序遍历规则：左子树 ---> 右子树 ---> 根结点
 
 #ifndef LEETCODE_CPP_INORDERTRAVERSALSOLUTION_H
 #define LEETCODE_CPP_INORDERTRAVERSALSOLUTION_H

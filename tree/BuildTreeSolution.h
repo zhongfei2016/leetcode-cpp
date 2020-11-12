@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/2/23.
 //
+// 从前序与中序遍历序列构造二叉树 https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 
 #ifndef LEETCODE_CPP_BUILDTREESOLUTION_H
 #define LEETCODE_CPP_BUILDTREESOLUTION_H

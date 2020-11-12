@@ -1,5 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/9/6.
+// 1208. 尽可能使字符串相等
+// https://leetcode-cn.com/problems/get-equal-substrings-within-budget/
 //
 
 #ifndef LEETCODE_CPP_MINSUBARRAYLENSLN_HPP

@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/4/4.
 //
+// 最低票价 https://leetcode-cn.com/problems/minimum-cost-for-tickets/
 
 #ifndef LEETCODE_CPP_MINCOSTTICKETSSLN_H
 #define LEETCODE_CPP_MINCOSTTICKETSSLN_H

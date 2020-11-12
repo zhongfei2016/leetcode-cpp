@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/4/4.
 //
+// 目标和 https://leetcode-cn.com/problems/target-sum/
 
 #ifndef LEETCODE_CPP_FINDTARGETSUMSLN_H
 #define LEETCODE_CPP_FINDTARGETSUMSLN_H

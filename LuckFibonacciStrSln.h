@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/3/29.
 //
+// 符合斐波那契数列的子字符串
 
 #ifndef LEETCODE_CPP_LUCKFIBONACCISTRSLN_H
 #define LEETCODE_CPP_LUCKFIBONACCISTRSLN_H

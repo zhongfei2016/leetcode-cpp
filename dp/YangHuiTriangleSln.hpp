@@ -1,3 +1,6 @@
+// 杨辉三角
+
+
 class YangHuiTriangleSln {
 public:
     vector<vector<int>> generate(int numRows);

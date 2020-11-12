@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/5/3.
 //
+// 最长回文串 取给定字符串的字符凑最长回文串 https://leetcode-cn.com/problems/longest-palindrome/
 
 #ifndef LEETCODE_CPP_LONGESTPALINDROMESLN_HPP
 #define LEETCODE_CPP_LONGESTPALINDROMESLN_HPP

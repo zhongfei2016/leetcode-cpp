@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/5/2.
 //
+// 前缀和Hash 和为K的子数组 https://leetcode-cn.com/problems/subarray-sum-equals-k/
 
 #ifndef LEETCODE_CPP_SUBARRAYSUMSLN_HPP
 #define LEETCODE_CPP_SUBARRAYSUMSLN_HPP

@@ -1,6 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/5/2.
 //
+// 滑动窗口 尽可能使字符串相等 https://leetcode-cn.com/problems/get-equal-substrings-within-budget/
 
 #ifndef LEETCODE_CPP_EQUALSUBSTRSLN_HPP
 #define LEETCODE_CPP_EQUALSUBSTRSLN_HPP
