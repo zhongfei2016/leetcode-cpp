@@ -2,6 +2,7 @@
 // Created by ZHONGFEI on 2020/4/25.
 //
 // 公交路线 https://leetcode-cn.com/problems/bus-routes/
+// routes[0] = [1, 5, 7]，表示第一辆 (下标为0) 公交车会一直按照 1->5->7->1->5->7->1->... 的车站路线行驶
 
 #ifndef LEETCODE_CPP_NUMBUSTODESTSLN_HPP
 #define LEETCODE_CPP_NUMBUSTODESTSLN_HPP

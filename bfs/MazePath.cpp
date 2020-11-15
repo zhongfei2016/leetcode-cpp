@@ -75,6 +75,7 @@ int MazePath::hasPathII(vector<vector<int>> &maze, vector<int> &start, vector<in
             if (!visited[curTempY][curTempY]) {
                 visited[curTempY][curTempY] = true;
                 que.emplace(curTempY, curTempY);
+                // 需要之前curX，curY的步数，所以需要一个临时的curTempX，curTempY
                 steps[curTempX][curTempY] = steps[curX][curY] + delta;
             }
         }

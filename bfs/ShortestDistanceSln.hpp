@@ -12,6 +12,7 @@ public:
     int shortestDistance(vector<vector<int>> &grid);
 
     int shortestDistance2(vector<vector<int>> &grid);
+
 };
 
 int ShortestDistanceSln::shortestDistance(vector<vector<int>> &grid) {
@@ -94,7 +95,7 @@ int ShortestDistanceSln::shortestDistance2(vector<vector<int>> &grid) {
             minSteps = INT_MAX;
             // 当前位置是1则以当前位置为起点遍历所有为0的位置
             // 统计从当前建筑开始的步数
-            int curStep = 1;
+            int curStep = 0;
             // 设置标志位数组标识以当前建筑为起点的这一轮走过的点，避免本轮重复走，本轮结束后要重新归位
             vector<vector<bool>> visit(m, vector<bool>(n, false));
             queue<pair<int, int>> que;
@@ -102,6 +103,7 @@ int ShortestDistanceSln::shortestDistance2(vector<vector<int>> &grid) {
             while (!que.empty()) {
                 // 获取这一轮本次所需要遍历的可能的位置的个数
                 int curQueSize = que.size();
+                curStep++;
                 // 当前这一轮本次的curQueSize种可能性
                 for (int k = 0; k < curQueSize; k++) {
                     pair<int, int> curPos = que.front();
@@ -126,7 +128,6 @@ int ShortestDistanceSln::shortestDistance2(vector<vector<int>> &grid) {
                         }
                     }
                 }
-                curStep++;
             }
         }
     }

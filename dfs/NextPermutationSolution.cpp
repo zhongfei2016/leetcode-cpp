@@ -4,6 +4,8 @@
 
 #include "NextPermutationSolution.h"
 
+#include <algorithm>
+
 void swap(int *a, int *b) {
     int temp;
     temp = *a;
@@ -37,7 +39,7 @@ void NextPermutationSolution::nextPermutation(vector<int> &nums) {
             k = i;
         }
         // 找不到k说明前总大于等于后，直接翻转即可
-        if(k==-1){
+        if (k == -1) {
             continue;
         }
         // 找到第一个比nums[k]大的值得索引
@@ -61,4 +63,28 @@ void NextPermutationSolution::nextPermutation(vector<int> &nums) {
     for (int i = k + 1, j = nums.size() - 1; i < j; i++, j--) {
         swap(&nums[i], &nums[j]);
     }
+}
+
+void NextPermutationSolution::nextPermutation2(vector<int> &nums) {
+    std::next_permutation(nums.begin(), nums.end());
+}
+
+void NextPermutationSolution::nextPermutation3(vector<int> &nums) {
+    if (nums.size() < 2) {
+        return;
+    }
+    int i = nums.size() - 2;
+    int j = nums.size() - 1;
+    while (i >= 0 && nums[i] >= nums[j]) {
+        i--;
+        j--;
+    }
+    if (i >= 0) {
+        int k = nums.size() - 1;
+        while (k >= 0 && nums[k] <= nums[i]) {
+            k--;
+        }
+        swap(nums[i], nums[k]);
+    }
+    reverse(nums.begin() + j, nums.end());
 }

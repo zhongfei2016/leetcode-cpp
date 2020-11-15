@@ -1,6 +1,6 @@
 //
 // Created by ZHONGFEI on 2020/10/28.
-//
+// 统计噪声值
 
 #ifndef LEETCODE_CPP_NOISECALSLN_H
 #define LEETCODE_CPP_NOISECALSLN_H

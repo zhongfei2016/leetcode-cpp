@@ -31,6 +31,7 @@ int SnowMountainSln::snowMountainCost(vector<int> mountainHeights, int diff) {
     bool isReturn = false;
 
     while (leftAvg > 0 && rightAvg < INT_MAX) {
+        // 目的是让所有的山峰高度都维持在leftAvg和rightAvg之间
         long long temp = 0;
         for (int hei: mountainHeights) {
             if (hei - rightAvg > 0) {

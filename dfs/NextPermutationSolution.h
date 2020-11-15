@@ -13,6 +13,8 @@ using namespace std;
 class NextPermutationSolution {
 public:
     void nextPermutation(vector<int>& nums);
+    void nextPermutation2(vector<int>& nums);
+    void nextPermutation3(vector<int>& nums);
 };
 
 

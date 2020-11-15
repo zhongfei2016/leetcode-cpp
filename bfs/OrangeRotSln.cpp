@@ -53,3 +53,56 @@ int OrangeRotSln::orangesRotting(vector<vector<int>> &grid) {
     }
     return round;
 }
+
+struct Orange {
+    int x;
+    int y;
+
+    Orange(int x, int y) : x(x), y(y) {};
+};
+
+vector<vector<int>> OrangeRotSln::dirs = {{0,  1},
+                            {0,  -1},
+                            {1,  0},
+                            {-1, 0}};
+
+int OrangeRotSln::orangesRotting2(vector<vector<int>> &grid) {
+    queue<Orange> que;
+    int fresh = 0;
+    for (int i = 0; i < grid.size(); i++) {
+        for (int j = 0; j < grid[0].size(); j++) {
+            if (grid[i][j] == 2) {
+                que.push(Orange(i, j));
+            } else if (grid[i][j] == 1) {
+                fresh++;
+            }
+        }
+    }
+
+    int step = 0;
+    while (fresh > 0 && !que.empty()) {
+        int size = que.size();
+        step++;
+        for (int i = 0; i < size; i++) {
+            auto orange = que.front();
+            que.pop();
+            for (auto dir : dirs) {
+                int tempX = orange.x + dir[0];
+                int tempY = orange.y + dir[1];
+                if (tempX < 0 || tempX >= grid.size() || tempY < 0 || tempY >= grid[0].size() ||
+                    grid[tempX][tempY] != 1) {
+                    continue;
+                }
+                if (grid[tempX][tempY] == 1) {
+                    grid[tempX][tempY] = 2;
+                    que.push(Orange(tempX, tempY));
+                    fresh--;
+                }
+            }
+        }
+    }
+    if (fresh > 0) {
+        return -1;
+    }
+    return step;
+}

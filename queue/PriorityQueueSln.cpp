@@ -18,12 +18,13 @@ struct Item {
     }
 };
 
+// 优先级由大到小，占用单位从小到大排序
 struct cmp {
     bool operator()(Item x, Item y) {
         if (x.priority == y.priority) {
-            return x.count < y.count;
+            return x.count > y.count;
         }
-        return x.priority > y.priority;
+        return x.priority < y.priority;
     }
 };
 

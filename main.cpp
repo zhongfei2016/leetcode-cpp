@@ -28,6 +28,7 @@
 #include "dfs/CombinationSumSolution.h"
 #include "dfs/NextPermutationSolution.h"
 #include "dfs/FindTargetSumSln.h"
+#include "dfs/CombinationSumIISln.h"
 #include "bfs/WordBreakIIBfsSln.h"
 #include "bfs/OrangeRotSln.h"
 #include "bfs/WaterMeasureSln.hpp"
@@ -105,6 +106,7 @@
 #include "queue/PriorityQueueSln.h"
 #include "queue/RerangeStrSln.h"
 #include "queue/TaskScheduleSln.h"
+#include "queue/ReorganizeStrSln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -189,6 +191,15 @@ int main() {
     NextPermutationSolution nps;
     vector<int> npsVec = {1, 3, 2, 4};
     nps.nextPermutation(npsVec);
+    npsVec = {1,2,3,4,6,5};
+    nps.nextPermutation2(npsVec);
+    npsVec = {1,2,3,4,5,6};
+    vector<vector<int>> npsVesRes;
+    while (npsVec[0] != 6) {
+        nps.nextPermutation3(npsVec);
+        npsVesRes.push_back(npsVec);
+    }
+    int npsVesResSize = npsVesRes.size();
 
     // 最长有效括号  https://leetcode-cn.com/problems/longest-valid-parentheses/
     LongValidBracketSolution *lvbs = new LongValidBracketSolution();
@@ -212,6 +223,10 @@ int main() {
     vector<int> cssVec = {4, 5, 6, 7, 7, 2};
     css->combinationSum(cssVec, 9);
     delete[] css;
+
+    CombinationSumIISln combinationSumIiSln;
+    vector<int> cssVec2 = {2,5,2,1,2};
+    combinationSumIiSln.combinationSum2(cssVec2,5);
 
     // 接雨水 https://leetcode-cn.com/problems/trapping-rain-water/
     TrapSolution *trapSln = new TrapSolution();
@@ -788,6 +803,9 @@ int main() {
 
     TaskScheduleSln taskScheduleSln;
     taskScheduleSln.leastInterval({'A', 'A', 'A', 'B', 'B', 'B'}, 2);
+
+    ReorganizeStrSln reorganizeStrSln;
+    reorganizeStrSln.reorganizeString("aab");
 
     ShortestPathSln shortestPathSln;
     shortestPathSln.shortestPath({{0,0,1,0,0,0,0,1,0,1,1,0,0,1,1},{0,0,0,1,1,0,0,1,1,0,1,0,0,0,1},{1,1,0,0,0,0,0,1,0,1,0,0,1,0,0},{1,0,1,1,1,1,0,0,1,1,0,1,0,0,1},{1,0,0,0,1,1,0,1,1,0,0,1,1,1,1},{0,0,0,1,1,1,0,1,1,0,0,1,1,1,1},{0,0,0,1,0,1,0,0,0,0,1,1,0,1,1},{1,0,0,1,1,1,1,1,1,0,0,0,1,1,0},{0,0,1,0,0,1,1,1,1,1,0,1,0,0,0},{0,0,0,1,1,0,0,1,1,1,1,1,1,0,0},{0,0,0,0,1,1,1,0,0,1,1,1,0,1,0}}

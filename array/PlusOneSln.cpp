@@ -19,35 +19,4 @@ vector<int> PlusOneSln::plusOne(vector<int> &digits) {
     digits = vector<int>(digits.size() + 1, 0);
     digits[0] = 1;
     return digits;
-
-    reverse(digits.begin(), digits.end());
-    int flag = 0;
-    if (digits[0] + 1 == 10) {
-        flag = 1;
-        digits[0] = 0;
-    } else {
-        digits[0] += 1;
-    }
-    if (digits.size() == 1) {
-        if (flag == 1) {
-            digits.push_back(flag);
-        }
-        reverse(digits.begin(), digits.end());
-        return digits;
-    }
-    for (int i = 1; i < digits.size(); i++) {
-        if (digits[i] + flag == 10) {
-            flag = 1;
-            digits[i] = 0;
-            if (digits.size() == i + 1) {
-                digits.push_back(1);
-                flag = 0;
-            }
-        } else {
-            digits[i] += flag;
-            flag = 0;
-        }
-    }
-    reverse(digits.begin(), digits.end());
-    return digits;
 }

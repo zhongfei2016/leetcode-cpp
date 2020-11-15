@@ -19,7 +19,7 @@ struct cmp {
     }
 };
 
-std::__cxx11::string RerangeStrSln::rearrangeString(std::__cxx11::string s, int k) {
+std::string RerangeStrSln::rearrangeString(std::string s, int k) {
     // 统计字符种类及对应个数
     vector<int> map(26, 0);
     for (auto ch : s) {

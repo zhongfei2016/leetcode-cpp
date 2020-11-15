@@ -6,8 +6,18 @@
 
 #include <string>
 
+RecNode nodeTemp;
+
 bool MaxRecCoverNumSln::IsRecNodeCross(struct RecNode &node1, struct RecNode &node2) {
-    if (node1.x2 > node2.x1 && node1.x1 < node2.x2 && node1.y2 > node2.y1 && node1.y1 < node2.y2) {
+    int maxX1 = max(node1.x1, node2.x1);
+    int maxY1 = max(node1.y1, node2.y1);
+    int minX2 = min(node1.x2, node2.x2);
+    int minY2 = min(node1.y2, node2.y2);
+    if (maxX1 < minX2 && maxY1 < minY2) {
+        nodeTemp.x1 = maxX1;
+        nodeTemp.y1 = maxY1;
+        nodeTemp.x2 = minX2;
+        nodeTemp.y2 = minY2;
         return true;
     }
     return false;
@@ -29,4 +39,5 @@ int MaxRecCoverNumSln::maxRecCoverNum(int num, vector<vector<int> > recs) {
             }
         }
     }
+    return 0;
 }

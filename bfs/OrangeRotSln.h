@@ -13,6 +13,10 @@ using namespace std;
 class OrangeRotSln {
 public:
     int orangesRotting(vector<vector<int>>& grid);
+    int orangesRotting2(vector<vector<int>>& grid);
+
+private:
+    static vector<vector<int>> dirs;
 };
 
 
