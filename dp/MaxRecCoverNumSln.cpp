@@ -31,13 +31,16 @@ int MaxRecCoverNumSln::maxRecCoverNum(int num, vector<vector<int> > recs) {
         nodes[i].x2 = recs[i][2];
         nodes[i].y2 = recs[i][3];
     }
-    vector<int> coverNums(num + 1, 0);
-    for (int i = 1; i < num; i++) {
+    vector<int> coverNums(num, 0);
+    int maxVal = 0;
+    for (int i = 0; i < num; i++) {
         for (int j = 0; j < i; j++) {
-            if (IsRecNodeCross(nodes[i], nodes[j])) {
-                coverNums[i] = max(coverNums[i], coverNums[j] + 1);
+            coverNums[i] = 1;
+            if (IsRecNodeCross(nodes[i], nodes[j]) && coverNums[i] < coverNums[j] + 1) {
+                coverNums[i] = coverNums[j] + 1;
+                maxVal = max(maxVal, coverNums[i]);
             }
         }
     }
-    return 0;
+    return maxVal;
 }

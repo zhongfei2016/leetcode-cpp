@@ -191,9 +191,9 @@ int main() {
     NextPermutationSolution nps;
     vector<int> npsVec = {1, 3, 2, 4};
     nps.nextPermutation(npsVec);
-    npsVec = {1,2,3,4,6,5};
+    npsVec = {1, 2, 3, 4, 6, 5};
     nps.nextPermutation2(npsVec);
-    npsVec = {1,2,3,4,5,6};
+    npsVec = {1, 2, 3, 4, 5, 6};
     vector<vector<int>> npsVesRes;
     while (npsVec[0] != 6) {
         nps.nextPermutation3(npsVec);
@@ -225,8 +225,8 @@ int main() {
     delete[] css;
 
     CombinationSumIISln combinationSumIiSln;
-    vector<int> cssVec2 = {2,5,2,1,2};
-    combinationSumIiSln.combinationSum2(cssVec2,5);
+    vector<int> cssVec2 = {2, 5, 2, 1, 2};
+    combinationSumIiSln.combinationSum2(cssVec2, 5);
 
     // 接雨水 https://leetcode-cn.com/problems/trapping-rain-water/
     TrapSolution *trapSln = new TrapSolution();
@@ -808,10 +808,61 @@ int main() {
     reorganizeStrSln.reorganizeString("aab");
 
     ShortestPathSln shortestPathSln;
-    shortestPathSln.shortestPath({{0,0,1,0,0,0,0,1,0,1,1,0,0,1,1},{0,0,0,1,1,0,0,1,1,0,1,0,0,0,1},{1,1,0,0,0,0,0,1,0,1,0,0,1,0,0},{1,0,1,1,1,1,0,0,1,1,0,1,0,0,1},{1,0,0,0,1,1,0,1,1,0,0,1,1,1,1},{0,0,0,1,1,1,0,1,1,0,0,1,1,1,1},{0,0,0,1,0,1,0,0,0,0,1,1,0,1,1},{1,0,0,1,1,1,1,1,1,0,0,0,1,1,0},{0,0,1,0,0,1,1,1,1,1,0,1,0,0,0},{0,0,0,1,1,0,0,1,1,1,1,1,1,0,0},{0,0,0,0,1,1,1,0,0,1,1,1,0,1,0}}
-   , 27);
+    shortestPathSln.shortestPath({{0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1},
+                                  {0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1},
+                                  {1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0},
+                                  {1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1},
+                                  {1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1},
+                                  {0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1},
+                                  {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1},
+                                  {1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0},
+                                  {0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0},
+                                  {0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0},
+                                  {0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0}}, 27);
 
     WordBreakIIBfsSln wordBreakIiBfsSln;
-    wordBreakIiBfsSln.wordBreak("catsanddog",{"cat", "cats", "and", "sand", "dog"});
+    wordBreakIiBfsSln.wordBreak("catsanddog", {"cat", "cats", "and", "sand", "dog"});
+
+    set<int> testSet = {0, 0, 1, 2, 0, 4, 6, 8, 0, 0, 0, 9, 10, 0};
+    for (auto iter = testSet.begin(); iter != testSet.end();) {
+        if (*iter == 0) {
+            iter = testSet.erase(iter);
+        } else {
+            iter++;
+        }
+    }
+    for (auto item : testSet) {
+        std::cout << item << " ";
+    }
+    std::cout << std::endl;
+    vector<int> testVector = {0, 0, 1, 2, 0, 4, 6, 8, 0, 0, 0, 9, 10, 0};
+    for (auto iter = testVector.begin(); iter != testVector.end();) {
+        if (*iter == 0) {
+            iter = testVector.erase(iter);
+        } else {
+            iter++;
+        }
+    }
+    for (auto item : testVector) {
+        std::cout << item << " ";
+    }
+    std::cout << std::endl;
+    std::map<int, int> testMap = {{1, 9},
+                                  {2, 5},
+                                  {0, 1},
+                                  {5, 8},
+                                  {3, 9},
+                                  {0, 1},
+                                  {2, 7},
+                                  {4, 5},
+                                  {1, 0}};
+    for (auto iter = testMap.begin(); iter != testMap.end();iter++) {
+        if (iter->first < 4) {
+            testMap.erase(iter);
+        }
+    }
+    for (auto item : testMap) {
+        std::cout << item.first << ":" << item.second << std::endl;
+    }
     return 0;
 }
