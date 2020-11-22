@@ -12,7 +12,7 @@
 #include "string/StringConvertSln.h"
 #include "string/MaxSameStrSln.h"
 #include "string/MaxUnduplicateStrSln.h"
-#include "SolutionPatternMatch.h"
+#include "regex/SolutionPatternMatch.h"
 #include "SolutionMaxArea.h"
 #include "SolutionThreeSum.h"
 #include "LetterCombiSolution.h"
@@ -57,7 +57,7 @@
 #include "dp/LongestPalindromeSequenceSln.h"
 #include "dp/YangHuiTriangleSln.hpp"
 #include "ClimbStairSolution.h"
-#include "SortColorSolution.h"
+#include "DoublePoint/SortColorSolution.h"
 #include "MinWindowSolution.h"
 #include "SubsetSolution.h"
 #include "WordExistSolution.h"
@@ -70,7 +70,7 @@
 #include "tree/BuildTreeSolution.h"
 #include "tree/FlattenSolution.h"
 #include "MaxProfitSolution.h"
-#include "LongestConsecutiveSln.h"
+#include "hash/LongestConsecutiveSln.h"
 #include "WordBreakSln.h"
 #include "LuckFibonacciStrSln.h"
 #include "list/HasCycleSln.h"
@@ -78,7 +78,6 @@
 #include "list/ReverseListSln.hpp"
 #include "LRU/LRUCache.h"
 #include "IncDecArraySln.h"
-#include "LongestSeqSln.h"
 #include "array/CenterIndexSln.h"
 #include "array/DominantIndexSln.h"
 #include "array/RemoveElementSln.h"
@@ -547,12 +546,6 @@ int main() {
     IncDecArraySln incDecArraySln;
     vector<int> incDecArrayVec = {5, 3, 4, 4, 5};
     incDecArraySln.GetIncDecNum(incDecArrayVec);
-
-    LongestSeqSln longestSeqSln;
-//    longestSeqSln.LongestSeq("cbacdcdac");
-//    vector<string> test = {"1","2","3"};
-//    std::for_each(test.begin(), test.end(), [} (std::string &t) {std::cout << t << " ";});
-//    copy(test.begin(),test.end(),std::ostream_iterator<string>(cout," "));
 
     // 寻找中位数 https://leetcode-cn.com/problems/find-pivot-index/
     CenterIndexSln centerIndexSln;
