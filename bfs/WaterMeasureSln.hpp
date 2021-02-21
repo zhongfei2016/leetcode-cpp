@@ -5,29 +5,19 @@
 using namespace std;
 
 class WaterMeasureSln {
-    struct State {
-        State(int x, int y) {
-            this->x = x;
-            this->y = y;
-        }
-
-        int x;
-        int y;
-    };
-
-    // 自定义对象的hash函数
-    struct StateHash {
-        size_t operator()(const State &state) const {
-            return (size_t(state.x) << 31) | size_t(state.y);
-        };
-    };
-
-    // 自定义对象的比较函数
-    struct StateCmp {
-        bool operator()(const State &lState, const State &rState) const {
-            return lState.x == rState.x && lState.y == rState.y;
-        }
-    };
+//    // 自定义对象的hash函数
+//    struct StateHash {
+//        size_t operator()(const State &state) const {
+//            return (size_t(state.x) << 31) | size_t(state.y);
+//        };
+//    };
+//
+//    // 自定义对象的比较函数
+//    struct StateCmp {
+//        bool operator()(const State &lState, const State &rState) const {
+//            return lState.x == rState.x && lState.y == rState.y;
+//        }
+//    };
 
 public:
     bool canMeasureWater(int x, int y, int z);
@@ -35,7 +25,7 @@ public:
     bool canMeasureWater2(int x, int y, int z);
 
 private:
-    vector<State> GetNextStates(int curX, int curY, int x, int y);
+    pair<int, int> op(int type, const pair<int, int> &state, int x, int y);
 };
 
 inline int gcd(int a, int b) {
@@ -64,79 +54,55 @@ bool WaterMeasureSln::canMeasureWater2(int x, int y, int z) {
     return false;
 }
 
+inline int64_t Hash(int x, int y) {
+    return int64_t(x) << 32 | y;
+}
+
 bool WaterMeasureSln::canMeasureWater(int x, int y, int z) {
-    if (z == 0) {
-        return true;
-    }
-    if (x + y < z) {
+    if (x + y < z) {   //加了一个很蠢的剪枝，作用比较大。
         return false;
     }
-    queue<State> que;
-    unordered_set<State, StateHash, StateCmp> visitSet;
-    State initState(0, 0);
-    que.push(initState);
-    visitSet.insert(initState);
-    while (!que.empty()) {
-        auto state = que.front();
-        que.pop();
-        int curX = state.x;
-        int curY = state.y;
-        if (curX == z || curY == z || curX + curY == z) {
+    unordered_set<int64_t> mark; //pair<int, int> 换成int64_t, 但是意义不大。
+    queue<pair<int, int>> q;
+    q.push(make_pair(0, 0));
+    while (q.empty() == false) {
+        auto f = q.front();
+        q.pop();
+        if (f.first + f.second == z) {
             return true;
         }
-        vector<State> nextStates = GetNextStates(curX, curY, x, y);
-        for (auto &nextState : nextStates) {
-            if (visitSet.find(nextState) == visitSet.end()) {
-                que.push(nextState);
-                visitSet.insert(nextState);
+        for (int i = 0; i < 6; i++) {
+            auto next = op(i, f, x, y);
+            int64_t h = Hash(next.first, next.second);
+            if (mark.find(h) != mark.end()) {
+                continue;
             }
+            mark.insert(h);
+            q.push(next);
         }
     }
     return false;
 }
 
-vector<WaterMeasureSln::State> WaterMeasureSln::GetNextStates(int curX, int curY, int x, int y) {
-    vector<WaterMeasureSln::State> nextStates;
-    // 分八种情况讨论
-    // 1、curX少于x满额值时把X倒满
-    if (curX < x) {
-        State state(x, curY);
-        nextStates.push_back(state);
+pair<int, int> WaterMeasureSln::op(int type, const pair<int, int> &state, int x, int y) {
+    switch (type) {
+        case 0 :
+            return make_pair(x, state.second);
+        case 1 :
+            return make_pair(state.first, y);
+        case 2 :
+            return make_pair(0, state.second);
+        case 3 :
+            return make_pair(state.first, 0);
+        case 4 : {
+            // 看下curX和y-curY的大小，curX小，说明可以清空x，倒入y，y-curY小，说明可以将x的一部分倒入y，倒满y
+            int move = min(state.first, y - state.second);
+            return make_pair(state.first - move, state.second + move);
+        }
+        case 5 : {
+            int move = min(x - state.first, state.second);
+            return make_pair(state.first + move, state.second - move);
+        }
     }
-    // 2、curY少于y满额值时把Y倒满
-    if (curY < y) {
-        State state(curX, y);
-        nextStates.push_back(state);
-    }
-    // X有水时把X清空
-    if (curX > 0) {
-        State state(0, curY);
-        nextStates.push_back(state);
-    }
-    // Y有水时把Y清空
-    if (curY > 0) {
-        State state(curX, 0);
-        nextStates.push_back(state);
-    }
-    // X的水倒入Y，Y满，X有剩余
-    if (curX - (y - curY) > 0) {
-        State state(curX - (y - curY), y);
-        nextStates.push_back(state);
-    }
-    // 同样X倒入Y，但Y不满，X倒空
-    if (curX + curY < y) {
-        State state(0, curX + curY);
-        nextStates.push_back(state);
-    }
-    // Y的水倒入X，X满，Y有剩余
-    if (curY - (x - curX) > 0) {
-        State state(x, curY - (x - curX));
-        nextStates.push_back(state);
-    }
-    // 同样Y倒入X，但X不满，Y倒空
-    if (curX + curY < x) {
-        State state(curX + curY, 0);
-        nextStates.push_back(state);
-    }
-    return nextStates;
+    return make_pair(0, 0);
 }

@@ -12,6 +12,7 @@
 #include "string/StringConvertSln.h"
 #include "string/MaxSameStrSln.h"
 #include "string/MaxUnduplicateStrSln.h"
+#include "string/ValidIPAddrSln.h"
 #include "regex/SolutionPatternMatch.h"
 #include "SolutionMaxArea.h"
 #include "SolutionThreeSum.h"
@@ -71,6 +72,7 @@
 #include "tree/FlattenSolution.h"
 #include "MaxProfitSolution.h"
 #include "hash/LongestConsecutiveSln.h"
+#include "hash/UndergroundSystem.h"
 #include "WordBreakSln.h"
 #include "LuckFibonacciStrSln.h"
 #include "list/HasCycleSln.h"
@@ -90,6 +92,7 @@
 #include "topology/FindCourseOrderSln.hpp"
 #include "topology/CanFinCourseSln.hpp"
 #include "topology/SeqReconstructSln.hpp"
+#include "topology/AlienOrderSln.h"
 #include "SlideWindow/EqualSubStrSln.hpp"
 #include "SlideWindow/MinSubArrayLenSln.h"
 #include "PrefixSumHash/SubArraySumSln.hpp"
@@ -101,11 +104,16 @@
 #include "dichotomy/SearchMatrixSln.hpp"
 #include "dichotomy/SolutionFindMedianSortedArrays.h"
 #include "dichotomy/SnowMountainSln.h"
+#include "dichotomy/ReversePairSln.h"
 #include "operation/SuffixOperationSln.h"
 #include "queue/PriorityQueueSln.h"
 #include "queue/RerangeStrSln.h"
 #include "queue/TaskScheduleSln.h"
 #include "queue/ReorganizeStrSln.h"
+#include "stack/DailyTempSln.h"
+#include "stack/FindLenOfLCISSln.h"
+#include "stack/MaxNumSln.h"
+#include "stack/MostCompetitiveSln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -116,12 +124,13 @@ int main() {
 
     // 计算右侧小于当前元素的个数 https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/
     std::vector<int> nums = {5, 3, 6, 1};
-    SolutionCountSmaller *cs = new SolutionCountSmaller();
-    vector<int> calNums = cs->countSmaller(nums);
+    SolutionCountSmaller cs;
+    vector<int> calNums = cs.countSmaller(nums);
     for (int i = 0; i < calNums.size(); i++) {
         cout << calNums[i] << endl;
     }
-    delete[] cs;
+    nums = {5, 3, 6, 1};
+    calNums = cs.countSmaller2(nums);
 
     // 两数组中位数 https://leetcode-cn.com/problems/median-of-two-sorted-arrays/
     std::vector<int> nums1 = {5, 3, 6, 1};
@@ -849,13 +858,57 @@ int main() {
                                   {2, 7},
                                   {4, 5},
                                   {1, 0}};
-    for (auto iter = testMap.begin(); iter != testMap.end();iter++) {
-        if (iter->first < 4) {
-            testMap.erase(iter);
-        }
-    }
+//    for (auto iter = testMap.begin(); iter != testMap.end();iter++) {
+//        if (iter->first < 4) {
+//            testMap.erase(iter);
+//        }
+//    }
     for (auto item : testMap) {
         std::cout << item.first << ":" << item.second << std::endl;
     }
+
+    DailyTempSln dailyTempSln;
+    vector<int> dailyTempVec = {73, 74, 75, 71, 69, 72, 76, 73};
+    dailyTempSln.dailyTemperatures(dailyTempVec);
+
+    FindLenOfLCISSln findLenOfLcisSln;
+    vector<int> findLenOfLcisVec = {1, 3, 5, 4, 7};
+    findLenOfLcisSln.findLengthOfLCIS(findLenOfLcisVec);
+
+    MaxNumSln maxNumSln;
+    maxNumSln.maxNumber({3, 4, 6, 5}, {9, 1, 2, 5, 8, 3}, 5);
+    maxNumSln.maxNumber({6, 7}, {6, 0, 4}, 5);
+
+    MostCompetitiveSln mostCompetitiveSln;
+    vector<int> mostCompetitiveVec = {3, 5, 2, 6};
+    mostCompetitiveSln.mostCompetitive(mostCompetitiveVec, 2);
+
+    ReversePairSln reversePairSln;
+    vector<int> reversePairVec = {7, 5, 6, 4};
+    int reverseNum = reversePairSln.reversePairs(reversePairVec);
+
+    UndergroundSystem undergroundSystem;
+    undergroundSystem.checkIn(45, "Leyton", 3);
+    undergroundSystem.checkIn(32, "Paradise", 8);
+    undergroundSystem.checkIn(27, "Leyton", 10);
+    undergroundSystem.checkOut(45, "Waterloo", 15);
+    undergroundSystem.checkOut(27, "Waterloo", 20);
+    undergroundSystem.checkOut(32, "Cambridge", 22);
+    undergroundSystem.getAverageTime("Paradise",
+                                     "Cambridge");       // 返回 14.0。从 "Paradise"（时刻 8）到 "Cambridge"(时刻 22)的行程只有一趟
+    undergroundSystem.getAverageTime("Leyton",
+                                     "Waterloo");          // 返回 11.0。总共有 2 躺从 "Leyton" 到 "Waterloo" 的行程，编号为 id=45 的乘客出发于 time=3 到达于 time=15，编号为 id=27 的乘客于 time=10 出发于 time=20 到达。所以平均时间为 ( (15-3) + (20-10) ) / 2 = 11.0
+    undergroundSystem.checkIn(10, "Leyton", 24);
+    undergroundSystem.getAverageTime("Leyton", "Waterloo");          // 返回 11.0
+    undergroundSystem.checkOut(10, "Waterloo", 38);
+    undergroundSystem.getAverageTime("Leyton", "Waterloo");          // 返回 12.0
+
+    ValidIPAddrSln validIpAddrSln;
+    validIpAddrSln.validIPAddress("172.16.254.1");
+    validIpAddrSln.validIPAddress("2001:0db8:85a3:0000:0000:8a2e:0370:7334");
+
+    AlienOrderSln alienOrderSln;
+    vector<string> alienWords = {"wrt", "wrf", "er", "ett", "rftt"};
+    alienOrderSln.alienOrder(alienWords);
     return 0;
 }
