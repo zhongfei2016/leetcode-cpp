@@ -14,6 +14,7 @@ class TrapSolution {
 public:
     int trap(vector<int>& height);
     int trap2(vector<int>& height);
+    int trap3(vector<int>& height);
 };
 
 

@@ -42,6 +42,7 @@ string BinaryStrToDecimalStr(string str) {
     int res = std::stoi(str, &idx, 2);
     // method 2
     uint32_t ulRes = std::bitset<32>(str).to_ulong();
+    auto test = std::bitset<32>(str).to_string();
 
     // int res to string
     string strRes = std::to_string(res);

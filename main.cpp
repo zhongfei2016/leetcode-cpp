@@ -13,6 +13,7 @@
 #include "string/MaxSameStrSln.h"
 #include "string/MaxUnduplicateStrSln.h"
 #include "string/ValidIPAddrSln.h"
+#include "string/MultiStringSln.h"
 #include "regex/SolutionPatternMatch.h"
 #include "SolutionMaxArea.h"
 #include "SolutionThreeSum.h"
@@ -30,6 +31,10 @@
 #include "dfs/NextPermutationSolution.h"
 #include "dfs/FindTargetSumSln.h"
 #include "dfs/CombinationSumIISln.h"
+#include "dfs/NumIsIslandSln.h"
+#include "dfs/LargestIsLandSln.h"
+#include "dfs/LandPeremiterSln.h"
+#include "dfs/ExistPathSln.h"
 #include "bfs/WordBreakIIBfsSln.h"
 #include "bfs/OrangeRotSln.h"
 #include "bfs/WaterMeasureSln.hpp"
@@ -41,6 +46,7 @@
 #include "bfs/RescueSln.h"
 #include "bfs/NoiseCalSln.h"
 #include "bfs/ShortestPathSln.h"
+#include "bfs/WallAndGateSln.h"
 #include "RotateSolution.h"
 #include "GroupAnagramsSolution.h"
 #include "MaxSubArraySolution.h"
@@ -89,6 +95,7 @@
 #include "UnionFound/UnionFoundSln.hpp"
 #include "greedy/DivideChocolateSln.hpp"
 #include "greedy/FindMinArrowShotSln.h"
+#include "greedy/AdvantageCountSln.h"
 #include "topology/FindCourseOrderSln.hpp"
 #include "topology/CanFinCourseSln.hpp"
 #include "topology/SeqReconstructSln.hpp"
@@ -114,6 +121,7 @@
 #include "stack/FindLenOfLCISSln.h"
 #include "stack/MaxNumSln.h"
 #include "stack/MostCompetitiveSln.h"
+#include "stack/NextGreatElementSln.h"
 
 int main() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
@@ -656,6 +664,7 @@ int main() {
     vector<vector<int>> rescueVec = {{0, 1, 0, 1, 0},
                                      {0, 0, 0, 0, 0}};
     rescueSln.rescue(rescueVec, 0, 0, 0, 4);
+    rescueSln.rescue2(rescueVec, 0, 0, 0, 4);
     // 并查集 朋友圈 https://leetcode-cn.com/problems/friend-circles/
     UnionFoundSln unionFoundSln;
     vector<vector<int>> unionFoundVec = {{1, 0, 0, 1},
@@ -858,14 +867,25 @@ int main() {
                                   {2, 7},
                                   {4, 5},
                                   {1, 0}};
-//    for (auto iter = testMap.begin(); iter != testMap.end();iter++) {
-//        if (iter->first < 4) {
-//            testMap.erase(iter);
-//        }
-//    }
+    for (auto iter = testMap.begin(); iter != testMap.end();) {
+        if (iter->first < 4) {
+            iter = testMap.erase(iter);
+        } else {
+            iter++;
+        }
+    }
     for (auto item : testMap) {
         std::cout << item.first << ":" << item.second << std::endl;
     }
+    std::vector<int> copyVec{1, 2, 3, 4, 5, 3};
+    std::copy(copyVec.begin(), copyVec.end(), std::ostream_iterator<int>(cout, " "));
+    cout << endl;
+    std::reverse(copyVec.begin(), copyVec.end());// 3,5,4,3,2,1
+    std::rotate(copyVec.begin(), copyVec.begin()+2, copyVec.end());//4,3,2,1,3,5
+    std::copy(copyVec.begin() + 1, copyVec.begin() + 6, copyVec.begin());// 3,2,1,3,5,5
+    std::next_permutation(copyVec.begin(), copyVec.end());// 3,2,1,5,3,5
+    std::fill(copyVec.begin(), copyVec.end(), 0); // 0,0,0,0,0,0
+    // inner_product 内积计算 http://c.biancheng.net/view/683.html
 
     DailyTempSln dailyTempSln;
     vector<int> dailyTempVec = {73, 74, 75, 71, 69, 72, 76, 73};
@@ -910,5 +930,46 @@ int main() {
     AlienOrderSln alienOrderSln;
     vector<string> alienWords = {"wrt", "wrf", "er", "ett", "rftt"};
     alienOrderSln.alienOrder(alienWords);
+
+    NumIsIslandSln numIsIslandSln;
+    vector<vector<char>> numIsIslandVec = {{'1', '1', '1', '1', '0'},
+                                           {'1', '1', '0', '1', '0'},
+                                           {'1', '1', '0', '0', '0'},
+                                           {'0', '0', '0', '0', '0'}};
+    numIsIslandSln.numIslands(numIsIslandVec);
+
+    LargestIsLandSln largestIsLandSln;
+    vector<vector<int>> largestIsLandVec = {{1, 0},
+                                            {0, 1}};
+    largestIsLandSln.largestIsland(largestIsLandVec);
+
+    LandPeremiterSln landPeremiterSln;
+    vector<vector<int>> landPeremiterVec = {{0, 1, 0, 0},
+                                            {1, 1, 1, 0},
+                                            {0, 1, 0, 0},
+                                            {1, 1, 0, 0}};
+    int landPeremiter = landPeremiterSln.islandPerimeter(landPeremiterVec);
+    WallAndGateSln wallAndGateSln;
+    vector<vector<int>> wallAndGateVec = {{INT_MAX, -1, 0,            INT_MAX},
+                                          {INT_MAX, INT_MAX, INT_MAX, -1},
+                                          {INT_MAX, -1,      INT_MAX, -1},
+                                          {0,       -1,      INT_MAX, INT_MAX}};
+    wallAndGateSln.wallsAndGates2(wallAndGateVec);
+
+    NextGreatElementSln nextGreatElementSln;
+    vector<int> nextGreatEleVec = {1,2,1};
+    nextGreatElementSln.nextGreaterElements(nextGreatEleVec);
+
+    ExistPathSln existPathSln;
+    vector<vector<char>> existPathVec = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+    existPathSln.exist(existPathVec, "ABCCED");
+
+    AdvantageCountSln advantageCountSln;
+    vector<int> advantageVecA = {12,24,8,32};
+    vector<int> advantageVecB = {13,25,32,11};
+    advantageCountSln.advantageCount(advantageVecA, advantageVecB);
+
+    MultiStringSln multiStringSln;
+    multiStringSln.multiply("123","456");
     return 0;
 }

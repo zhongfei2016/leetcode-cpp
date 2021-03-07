@@ -27,6 +27,12 @@ void reverse(vector<int> &vec) {
     }
 }
 
+/**
+ * 先找出最大的索引 k 满足 nums[k] < nums[k+1]，如果不存在，就翻转整个数组；
+再找出另一个最大索引 l 满足 nums[l] > nums[k]；
+交换 nums[l] 和 nums[k]；
+最后翻转 nums[k+1:]。
+ */
 void NextPermutationSolution::nextPermutation(vector<int> &nums) {
     if (nums.size() <= 1) {
         return;
@@ -69,6 +75,11 @@ void NextPermutationSolution::nextPermutation2(vector<int> &nums) {
     std::next_permutation(nums.begin(), nums.end());
 }
 
+/**
+ * 先找到最后一个递增的前数和后数，这个前数要被换掉，换成从后面开始找第一个比他大的数
+ * 这两个数找到后互换，之后从上面找到的后数开始的数翻转即可
+ * @param nums
+ */
 void NextPermutationSolution::nextPermutation3(vector<int> &nums) {
     if (nums.size() < 2) {
         return;

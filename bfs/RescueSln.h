@@ -10,6 +10,14 @@
 
 using namespace std;
 
+struct PathStep {
+    PathStep(int x, int y, int isPrivilege) : x(x), y(y), isPrivilege(isPrivilege) {}
+
+    int x;
+    int y;
+    int isPrivilege;
+};
+
 class Status {
 public:
     Status(int posX, int posY, bool usePrivilege, int step) {
@@ -29,7 +37,13 @@ class RescueSln {
 public:
     int rescue(vector<vector<int>> &path, int startX, int startY, int endX, int endY);
 
-    void TryNextStatus(vector<vector<int> > &path, queue<Status> &que, Status& status, int nextPosX, int nextPosY);
+    int rescue2(vector<vector<int>> &path, int startX, int startY, int endX, int endY);
+
+    void TryNextStatus(vector<vector<int> > &path, queue<Status> &que, Status &status, int nextPosX, int nextPosY);
+
+    bool
+    ProcessNextStep(vector<vector<int>> &path, queue<PathStep> &que, vector<vector<vector<bool>>> &visited, int endX,
+                    int endY);
 };
 
 #endif //LEETCODE_CPP_RESCUESLN_H

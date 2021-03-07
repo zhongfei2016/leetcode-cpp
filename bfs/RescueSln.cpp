@@ -52,3 +52,59 @@ void RescueSln::TryNextStatus(vector<vector<int>> &path, queue<Status> &que, Sta
         visited[status.posX][status.posY] = true;
     }
 }
+
+bool RescueSln::ProcessNextStep(vector<vector<int>> &path, queue<PathStep> &que, vector<vector<vector<bool>>> &visited, int endX, int endY) {
+    vector<vector<int>> dirs = {{1,  0},
+                                {-1, 0},
+                                {0,  1},
+                                {0,  -1}};
+    auto item = que.front();
+    que.pop();
+    for (auto &dir : dirs) {
+        int tempX = item.x + dir[0];
+        int tempY = item.y + dir[1];
+        if (tempX < 0 || tempX >= path.size() || tempY < 0 || tempY >= path[0].size()) {
+            continue;
+        }
+        if (tempX == endX && tempY == endY) {
+            return true;
+        }
+        if (path[tempX][tempY] == 1) {
+            if (item.isPrivilege <= 0) {
+                continue;
+            } else {
+                if (visited[tempX][tempY][item.isPrivilege - 1]) {
+                    continue;
+                }
+                visited[tempX][tempY][item.isPrivilege - 1] = true;
+                que.push({tempX, tempY, item.isPrivilege - 1});
+            }
+        } else {
+            if (visited[tempX][tempY][item.isPrivilege]) {
+                continue;
+            }
+            visited[tempX][tempY][item.isPrivilege] = true;
+            que.push({tempX, tempY, item.isPrivilege});
+        }
+    }
+    return false;
+}
+
+int RescueSln::rescue2(vector<vector<int> > &path, int startX, int startY, int endX, int endY) {
+    int m = path.size();
+    int n = path[0].size();
+    vector<vector<vector<bool>>> visited(m, vector<vector<bool>>(n, vector<bool>(2, false)));
+    queue<PathStep> que;
+    que.push({startX, startY, 1});
+    int step = 0;
+    while (!que.empty()) {
+        int size = que.size();
+        step++;
+        for (int i = 0; i < size; i++) {
+            if (ProcessNextStep(path, que, visited, endX, endY)) {
+                return step;
+            }
+        }
+    }
+    return -1;
+}
