@@ -79,6 +79,7 @@
 #include "MaxProfitSolution.h"
 #include "hash/LongestConsecutiveSln.h"
 #include "hash/UndergroundSystem.h"
+#include "hash/FrequencySortSln.h"
 #include "WordBreakSln.h"
 #include "LuckFibonacciStrSln.h"
 #include "list/HasCycleSln.h"
@@ -971,5 +972,8 @@ int main() {
 
     MultiStringSln multiStringSln;
     multiStringSln.multiply("123","456");
+
+    FrequencySortSln frequencySortSln;
+    frequencySortSln.frequencySort2("tree");
     return 0;
 }
