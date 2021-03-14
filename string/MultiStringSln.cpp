@@ -16,8 +16,8 @@ std::string MultiStringSln::multiply(std::string num1, std::string num2) {
     // 用num2的每个数字去乘以num1，从个位也就是倒序往前算
     for (int i = m - 1; i >= 0; i--) {
         string temp;
-        // 从个位开始，没往前进一步，temp字符串要先补足够的0
-        for (int j = 0; j < m - 1 - i; j++) {
+        // 从个位开始，每往前进一步，temp字符串要先补足够的0
+        for (int j = 0; j < (m - 1) - i; j++) {
             temp += '0';
         }
         int curNum2 = num2[i] - '0';

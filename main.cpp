@@ -118,6 +118,7 @@
 #include "queue/RerangeStrSln.h"
 #include "queue/TaskScheduleSln.h"
 #include "queue/ReorganizeStrSln.h"
+#include "queue/CarPoolSln.h"
 #include "stack/DailyTempSln.h"
 #include "stack/FindLenOfLCISSln.h"
 #include "stack/MaxNumSln.h"
@@ -723,6 +724,9 @@ int main() {
                                        {3, 7, 9},
                                        {8, 3, 9}};
     carPoolingSln.carPooling(carPoolTrip, 11);
+
+    CarPoolSln carPoolSln;
+    carPoolSln.carPooling(carPoolTrip, 11);
 
     // 单词的压缩编码 820 拓扑排序
     MinLengthEncodeSln minLengthEncodeSln;

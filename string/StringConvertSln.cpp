@@ -79,10 +79,27 @@ void StringConvertSln::StringConvertTest() {
     string search = "x";
     string replace = "a";
     while ((pos = testReplace.find(search)) != string::npos) {
-        testReplace.replace(pos,search.length(),replace);
-        pos+=replace.length();
+        testReplace.replace(pos, search.length(), replace);
+        pos += replace.length();
     }
     regex reg("[a-zA-Z]");
     string replaceRes = std::regex_replace(testReplace, reg, "x");
     std::cout << "srcStr: " << testReplace << ", destStr: " << replaceRes << std::endl;
+
+    regex rgxSearch("[a-zA-Z0-9]+");
+    string rgxSearchStr = "|-ABc32|-4rFd";
+    string tempRgxSearchStr = rgxSearchStr;
+    smatch sm;
+    while (regex_search(tempRgxSearchStr, sm, rgxSearch)) {
+        std::cout << sm.str() << std::endl;
+        tempRgxSearchStr = sm.suffix().str();
+    }
+    string::const_iterator iterStart = rgxSearchStr.begin();
+    string::const_iterator iterEnd = rgxSearchStr.end();
+    string tempRgxSearch;
+    while (regex_search(iterStart, iterEnd, sm, rgxSearch)) {
+        tempRgxSearch = sm[0];
+        cout << tempRgxSearch << " " << endl;
+        iterStart = sm[0].second;    //更新搜索起始位置,搜索剩下的字符串
+    }
 }

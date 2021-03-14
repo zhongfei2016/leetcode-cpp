@@ -19,6 +19,12 @@ struct Passenger {
     }
 };
 
+struct cmpStart {
+    bool operator()(const Passenger &lhs, const Passenger &rhs) {
+        return lhs.start < rhs.start;
+    }
+};
+
 struct cmp {
     bool operator()(const Passenger &lhs, const Passenger &rhs) {
         return lhs.end > rhs.end;
@@ -30,7 +36,7 @@ bool CarPoolSln::carPooling(vector<vector<int>> &trips, int capacity) {
     for (int i = 0; i < trips.size(); i++) {
         sortTrips.push_back(Passenger(trips[i][0], trips[i][1], trips[i][2]));
     }
-    std::sort(sortTrips.begin(), sortTrips.end());
+    std::sort(sortTrips.begin(), sortTrips.end(), cmpStart());
 
     priority_queue<Passenger, vector<Passenger>, cmp> que;
     for (int i = 0; i < sortTrips.size(); i++) {

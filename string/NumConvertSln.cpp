@@ -8,6 +8,7 @@
 #include <sstream>
 #include <bitset>
 #include <cmath>
+#include <list>
 
 using namespace std;
 
@@ -51,7 +52,9 @@ string BinaryStrToDecimalStr(string str) {
 }
 
 void NumConvertSln::NumConvertTest() {
+    string str = std::to_string(255);
     char *str2dPtr = nullptr;
+    list<int> testList(10);
     double d1 = strtod("123.5", &str2dPtr);
     double d2 = strtod("123.5abc", &str2dPtr);
     double d3 = strtod("-123.5abc", &str2dPtr);
@@ -76,6 +79,8 @@ void NumConvertSln::NumConvertTest() {
     bool isInt3 = IsNum("-123");
     bool isInt4 = IsNum("-123a");
     bool isInt5 = IsNum("123ab");
+    bool isInt6 = IsNum("123.5");
+    bool isInt7 = IsNum("-123.5");
 
     string bsStr = std::bitset<8>(255).to_string();
     string binaryStr = DecimalStrToBinaryStr("255");

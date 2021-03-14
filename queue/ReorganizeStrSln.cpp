@@ -1,5 +1,6 @@
 //
 // Created by ZHONGFEI on 2020/11/15.
+// 重构字符串 https://leetcode-cn.com/problems/reorganize-string/
 //
 
 #include "ReorganizeStrSln.h"
