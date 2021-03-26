@@ -17,7 +17,6 @@
 #include "regex/SolutionPatternMatch.h"
 #include "SolutionMaxArea.h"
 #include "SolutionThreeSum.h"
-#include "LetterCombiSolution.h"
 #include "SolutionBracketValid.h"
 #include "GenerateBacktraceSolution.h"
 #include "list/MergeKListsSolution.h"
@@ -35,30 +34,15 @@
 #include "dfs/LargestIsLandSln.h"
 #include "dfs/LandPeremiterSln.h"
 #include "dfs/ExistPathSln.h"
-#include "bfs/WordBreakIIBfsSln.h"
-#include "bfs/OrangeRotSln.h"
-#include "bfs/WaterMeasureSln.hpp"
-#include "bfs/WaterMeasureSln2.hpp"
-#include "bfs/ShortestDistanceSln.hpp"
-#include "bfs/NumBusToDestSln.hpp"
-#include "bfs/LadderLengthSln.hpp"
-#include "bfs/WordBreakBfsSln.hpp"
-#include "bfs/RescueSln.h"
-#include "bfs/NoiseCalSln.h"
-#include "bfs/ShortestPathSln.h"
-#include "bfs/WallAndGateSln.h"
-#include "RotateSolution.h"
 #include "GroupAnagramsSolution.h"
 #include "MaxSubArraySolution.h"
 #include "CanJumpSolution.h"
-#include "MergeIntervalSolution.h"
 #include "UniquePathSolution.h"
 #include "dp/MinPathSumSolution.h"
 #include "dp/MinDistanceSolution.h"
 #include "dp/CoinChangeSln.h"
 #include "dp/CoinChangeIISln.h"
 #include "dp/MinCostTicketsSln.h"
-#include "dp/NumTreesSolution.h"
 #include "dp/UniquePathWithObstacleSln.h"
 #include "dp/CountSubstrSln.h"
 #include "dp/LongestPalindromeSequenceSln.h"
@@ -69,13 +53,6 @@
 #include "SubsetSolution.h"
 #include "WordExistSolution.h"
 #include "MaxRecSolution.h"
-#include "tree/InorderTraversalSolution.h"
-#include "tree/ValidBSTSolution.h"
-#include "tree/SymmetricSolution.h"
-#include "tree/LevelOrderSolution.h"
-#include "tree/MaxDepthSolution.h"
-#include "tree/BuildTreeSolution.h"
-#include "tree/FlattenSolution.h"
 #include "MaxProfitSolution.h"
 #include "hash/LongestConsecutiveSln.h"
 #include "hash/UndergroundSystem.h"
@@ -87,20 +64,11 @@
 #include "list/ReverseListSln.hpp"
 #include "LRU/LRUCache.h"
 #include "IncDecArraySln.h"
-#include "array/CenterIndexSln.h"
-#include "array/DominantIndexSln.h"
-#include "array/RemoveElementSln.h"
-#include "array/PlusOneSln.h"
-#include "array/RotateSln.hpp"
 #include "string/AddBinarySln.h"
 #include "UnionFound/UnionFoundSln.hpp"
 #include "greedy/DivideChocolateSln.hpp"
 #include "greedy/FindMinArrowShotSln.h"
 #include "greedy/AdvantageCountSln.h"
-#include "topology/FindCourseOrderSln.hpp"
-#include "topology/CanFinCourseSln.hpp"
-#include "topology/SeqReconstructSln.hpp"
-#include "topology/AlienOrderSln.h"
 #include "SlideWindow/EqualSubStrSln.hpp"
 #include "SlideWindow/MinSubArrayLenSln.h"
 #include "PrefixSumHash/SubArraySumSln.hpp"
@@ -125,7 +93,7 @@
 #include "stack/MostCompetitiveSln.h"
 #include "stack/NextGreatElementSln.h"
 
-int main() {
+int main1() {
     // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
     string str = "abcabdcdd";
     SolutionLengthOfLongestSubstring *lols = new SolutionLengthOfLongestSubstring();
@@ -176,10 +144,7 @@ int main() {
     ts->threeSum(numsTs);
     delete[] ts;
 
-    // 电话号码数字组合 https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
-    LetterCombiSolution *lcs = new LetterCombiSolution();
-    lcs->letterCombinations("23");
-    delete[] lcs;
+
 
     // 判断有效的括号，比如{}[]()  [[()]]
     SolutionBracketValid *sbv = new SolutionBracketValid();
@@ -262,18 +227,6 @@ int main() {
     vector<int> permuteSlnIIVec = {3, 3, 0, 3};
     permuteSlnII.permuteUnique(permuteSlnIIVec);
 
-    // 旋转图像 https://leetcode-cn.com/problems/rotate-image/
-    RotateSolution *rotateSln = new RotateSolution();
-    vector<vector<int>> rotateVec;
-    vector<int> rotateVec1 = {1, 2, 3};
-    vector<int> rotateVec2 = {4, 5, 6};
-    vector<int> rotateVec3 = {7, 8, 9};
-    rotateVec.push_back(rotateVec1);
-    rotateVec.push_back(rotateVec2);
-    rotateVec.push_back(rotateVec3);
-    rotateSln->rotate(rotateVec);
-    delete[] rotateSln;
-
     // 字母异位词分组 https://leetcode-cn.com/problems/group-anagrams/
     vector<string> groupAnaVec = {"eat", "tea", "tan", "ate", "nat", "bat"};
     GroupAnagramsSolution *groupAnaSln = new GroupAnagramsSolution();
@@ -301,19 +254,6 @@ int main() {
     canJumpVec = {1, 0, 0, 0, 0};
     int jumpSteps = canJumpSln.canJump2(canJumpVec);
     CommonUtils::ExpectEqual("CanJumpSolution", jumpSteps, 3);
-
-
-    // 合并区间 https://leetcode-cn.com/problems/merge-intervals/
-    MergeIntervalSolution *mergeIntervalSln = new MergeIntervalSolution();
-    vector<vector<int>> mergeIntervalVec;
-    vector<int> mergeIntervalVec1 = {1, 3};
-    vector<int> mergeIntervalVec2 = {2, 6};
-    vector<int> mergeIntervalVec3 = {8, 11};
-    mergeIntervalVec.push_back(mergeIntervalVec1);
-    mergeIntervalVec.push_back(mergeIntervalVec2);
-    mergeIntervalVec.push_back(mergeIntervalVec3);
-    mergeIntervalSln->merge(mergeIntervalVec);
-    delete[] mergeIntervalSln;
 
     // 不同路径 https://leetcode-cn.com/problems/unique-paths/
     UniquePathSolution *uniPathSln = new UniquePathSolution();
@@ -390,87 +330,6 @@ int main() {
     maxRecSln->maximalRectangle(maxRecVec);
     maxRecSln->maximalRectangle2(maxRecVec);
     delete[] maxRecSln;
-
-    // 二叉树的中序遍历 https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
-    // 前序遍历规则：根结点 ---> 左子树 ---> 右子树
-    // 中序遍历规则：左子树---> 根结点 ---> 右子树
-    // 后序遍历规则：左子树 ---> 右子树 ---> 根结点
-    InorderTraversalSolution *inorderTraversalSln = new InorderTraversalSolution();
-    TreeNode *nodeRL = new TreeNode(3);
-    TreeNode *nodeR = new TreeNode(2);
-    nodeR->left = nodeRL;
-    TreeNode *node = new TreeNode(1);
-    node->right = nodeR;
-    inorderTraversalSln->inorderTraversal(node);
-    delete[] nodeRL;
-    delete[] nodeR;
-    delete[] node;
-    delete[] inorderTraversalSln;
-
-    // 不同的二叉搜索树 https://leetcode-cn.com/problems/unique-binary-search-trees/
-    NumTreesSolution *numTreesSln = new NumTreesSolution();
-    int numTreesRes = numTreesSln->numTrees(3);
-    delete[] numTreesSln;
-
-    // 验证二叉搜索树 https://leetcode-cn.com/problems/validate-binary-search-tree/
-    ValidBSTSolution *validBstSln = new ValidBSTSolution();
-    TreeNode *validBstNodeR = new TreeNode(2147483647);
-    TreeNode *validBstNode = new TreeNode(-2147483648);
-    validBstNode->right = validBstNodeR;
-    bool validBstFlag = validBstSln->isValidBST(validBstNode);
-    delete[] validBstSln;
-
-    // 对称二叉树 https://leetcode-cn.com/problems/symmetric-tree/
-    SymmetricSolution *symmetricSln = new SymmetricSolution();
-    TreeNode *symmetricNode = new TreeNode(1);
-    TreeNode *symmetricNodeL = new TreeNode(2);
-    TreeNode *symmetricNodeR = new TreeNode(2);
-    TreeNode *symmetricNodeLR = new TreeNode(3);
-    TreeNode *symmetricNodeRR = new TreeNode(3);
-    symmetricNodeL->right = symmetricNodeLR;
-    symmetricNodeR->right = symmetricNodeRR;
-    symmetricNode->left = symmetricNodeL;
-    symmetricNode->right = symmetricNodeR;
-    bool isSymmetric = symmetricSln->isSymmetric(symmetricNode);
-    delete[] symmetricSln;
-
-    // 二叉树层次遍历 https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
-    LevelOrderSolution *levelOrderSln = new LevelOrderSolution();
-    TreeNode *levelOrderNode = new TreeNode(3);
-    TreeNode *levelOrderNodeL = new TreeNode(9);
-    TreeNode *levelOrderNodeR = new TreeNode(20);
-    TreeNode *levelOrderNodeRL = new TreeNode(15);
-    TreeNode *levelOrderNodeRR = new TreeNode(7);
-    levelOrderNode->left = levelOrderNodeL;
-    levelOrderNode->right = levelOrderNodeR;
-    levelOrderNodeR->left = levelOrderNodeRL;
-    levelOrderNodeR->right = levelOrderNodeRR;
-    levelOrderSln->levelOrder(levelOrderNode);
-    delete[] levelOrderSln;
-
-    //  二叉树的最大深度 https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
-    MaxDepthSolution *maxDepthSln = new MaxDepthSolution();
-    maxDepthSln->maxDepth(levelOrderNode);
-    delete[] maxDepthSln;
-
-    // 从前序与中序遍历序列构造二叉树 https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
-    BuildTreeSolution buildTreeSln;
-    vector<int> preOrder = {3, 9, 20, 15, 7};
-    vector<int> inOrder = {9, 3, 15, 20, 7};
-    TreeNode *root = buildTreeSln.buildTree(preOrder, inOrder);
-
-    // 二叉树展开为链表 https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
-    FlattenSolution flattenSln;
-    TreeNode *flattenNode = new TreeNode(3);
-    TreeNode *flattenNodeL = new TreeNode(9);
-    TreeNode *flattenNodeR = new TreeNode(20);
-    TreeNode *flattenNodeRL = new TreeNode(15);
-    TreeNode *flattenNodeRR = new TreeNode(7);
-    flattenNode->left = flattenNodeL;
-    flattenNode->right = flattenNodeR;
-    flattenNodeR->left = flattenNodeRL;
-    flattenNodeR->right = flattenNodeRR;
-    flattenSln.flatten(flattenNode);
 
     // 买股票最佳时机 https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
     MaxProfitSolution maxProfitSln;
@@ -553,33 +412,10 @@ int main() {
     LongestPalindromeSequenceSln longestPalindromeSequenceSln;
     longestPalindromeSequenceSln.longestPalindromeSubseq("bbbab");
 
-    // 腐烂的橘子 https://leetcode-cn.com/problems/rotting-oranges/
-    OrangeRotSln orangeRotSln;
-    vector<vector<int>> orangeRotVec = {{1},
-                                        {2},
-                                        {1},
-                                        {1}};
-    orangeRotSln.orangesRotting(orangeRotVec);
-
     // 给定一个数组，如果去掉一个数后数组非严格单调增/减，则求出这个数，如果有多种方案，求最小值
     IncDecArraySln incDecArraySln;
     vector<int> incDecArrayVec = {5, 3, 4, 4, 5};
     incDecArraySln.GetIncDecNum(incDecArrayVec);
-
-    // 寻找中位数 https://leetcode-cn.com/problems/find-pivot-index/
-    CenterIndexSln centerIndexSln;
-    vector<int> pivotIndexVec = {1, 2, 3};
-    centerIndexSln.pivotIndex(pivotIndexVec);
-
-    // 至少是其他数字两倍的最大数 https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/
-    DominantIndexSln dominantIndexSln;
-    vector<int> dominantIndexVec = {0, 0, 2, 3};
-    dominantIndexSln.dominantIndex(dominantIndexVec);
-
-    // 加一 https://leetcode-cn.com/problems/plus-one/
-    PlusOneSln plusOneSln;
-    vector<int> plusOneVec = {9, 9};
-    plusOneSln.plusOne(plusOneVec);
 
     // 二进制求和 https://leetcode-cn.com/problems/add-binary/
     AddBinarySln addBinarySln;
@@ -590,16 +426,6 @@ int main() {
     vector<char> reverseVec = {'H'};
     // 使用双指针翻转字符串
     addBinarySln.reverseString(reverseVec);
-
-    // 使用快慢双指针移除指定元素
-    RemoveElementSln removeElementSln;
-    vector<int> rmEleVec = {6, 1, 4, 5, 7, 6, 2, 6};
-    removeElementSln.removeElement(rmEleVec, 6);
-
-    // 旋转数组 https://leetcode-cn.com/problems/rotate-array/
-    RotateSln rotateArrSln;
-    vector<int> rotateArrVec = {1, 2, 3, 4, 5, 6, 7};
-    rotateArrSln.rotate(rotateArrVec, 3);
 
     // 旋转链表
     RotateListNodeSln rotateListNodeSln;
@@ -631,42 +457,6 @@ int main() {
     YangHuiTriangleSln yangHuiTriangleSln;
     yangHuiTriangleSln.generate(5);
 
-    // 水壶问题
-    WaterMeasureSln waterMeasureSln;
-    waterMeasureSln.canMeasureWater(5, 3, 4);
-    waterMeasureSln.canMeasureWater2(5, 3, 4);
-
-    WaterMeasureSln2 waterMeasureSln2;
-    waterMeasureSln2.canMeasureWater(5, 4, 3);
-
-    // 离建筑物最近的距离 https://www.cnblogs.com/FdWzy/p/12382657.html
-    ShortestDistanceSln shortestDistanceSln;
-    vector<vector<int>> shortDistanceVec = {{1, 0, 2, 0, 1},
-                                            {0, 0, 0, 0, 0},
-                                            {0, 0, 1, 0, 0}};
-    shortestDistanceSln.shortestDistance2(shortDistanceVec);
-
-    // 公交路线 https://leetcode-cn.com/problems/bus-routes/
-    NumBusToDestSln numBusToDestSln;
-    vector<vector<int>> numBusToDestVec = {{1, 2, 7},
-                                           {3, 6, 7}};
-    numBusToDestSln.numBusesToDestination(numBusToDestVec, 1, 6);
-
-    // 单词接龙 https://leetcode-cn.com/problems/word-ladder/
-    LadderLengthSln ladderLengthSln;
-    vector<string> ladderLengthWordList = {"hot", "dot", "dog", "lot", "log", "cog"};
-    ladderLengthSln.ladderLength("hit", "cog", ladderLengthWordList);
-
-    // 单词拆分 https://leetcode-cn.com/problems/word-break/
-    WordBreakBfsSln wordBreakBfsSln;
-    vector<string> wordBreakBfsVec = {"leet", "code"};
-    wordBreakBfsSln.wordBreak("leetcode", wordBreakBfsVec);
-
-    RescueSln rescueSln;
-    vector<vector<int>> rescueVec = {{0, 1, 0, 1, 0},
-                                     {0, 0, 0, 0, 0}};
-    rescueSln.rescue(rescueVec, 0, 0, 0, 4);
-    rescueSln.rescue2(rescueVec, 0, 0, 0, 4);
     // 并查集 朋友圈 https://leetcode-cn.com/problems/friend-circles/
     UnionFoundSln unionFoundSln;
     vector<vector<int>> unionFoundVec = {{1, 0, 0, 1},
@@ -682,31 +472,9 @@ int main() {
     divideChocolateVec = {2, 2, 2, 2, 2};
     divideChocolateSln.maximizeSweetness(divideChocolateVec, 1);
 
-    // 拓扑排序 课程表II https://leetcode-cn.com/problems/course-schedule-ii/
-    FindCourseOrderSln findCourseOrderSln;
-    vector<vector<int>> findCourseVec = {{1, 0},
-                                         {2, 0},
-                                         {3, 1},
-                                         {3, 2}};
-    findCourseOrderSln.findOrder(4, findCourseVec);
-
     // 滑动窗口 尽可能使字符串相等 https://leetcode-cn.com/problems/get-equal-substrings-within-budget/
     EqualSubStrSln equalSubStrSln;
     equalSubStrSln.equalSubstring("pxezla", "loewbi", 25);
-
-    // 拓扑排序 课程表I https://leetcode-cn.com/problems/course-schedule/
-    CanFinCourseSln canFinCourseSln;
-    vector<vector<int>> canFinCourseVec = {{1, 0},
-                                           {2, 0},
-                                           {3, 1},
-                                           {3, 2}};
-    canFinCourseSln.canFinish(4, canFinCourseVec);
-
-    SeqReconstructSln seqReconstructSln;
-    vector<int> seqReconstructOrg = {4, 1, 5, 2, 6, 3};
-    vector<vector<int>> seqReconstructSeqs = {{5, 2, 6, 3},
-                                              {4, 1, 5, 2}};
-    seqReconstructSln.sequenceReconstruction(seqReconstructOrg, seqReconstructSeqs);
 
     // 前缀和Hash 和为K的子数组 https://leetcode-cn.com/problems/subarray-sum-equals-k/
     SubArraySumSln subArraySumSln;
@@ -806,10 +574,6 @@ int main() {
     MaxSameStrSln maxSameStrSln;
     maxSameStrSln.maxSameStr("abcadgbcs", "vavcadgbccacsvb");
 
-    NoiseCalSln noiseCalSln;
-    noiseCalSln.calculateNoise(5, 6, {{3, 4, 3},
-                                      {1, 1, 4}});
-
     RerangeStrSln rerangeStrSln;
     rerangeStrSln.rearrangeString("aabbcc", 3);
 
@@ -822,22 +586,6 @@ int main() {
 
     ReorganizeStrSln reorganizeStrSln;
     reorganizeStrSln.reorganizeString("aab");
-
-    ShortestPathSln shortestPathSln;
-    shortestPathSln.shortestPath({{0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1},
-                                  {0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1},
-                                  {1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0},
-                                  {1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1},
-                                  {1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1},
-                                  {0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1},
-                                  {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1},
-                                  {1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0},
-                                  {0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0},
-                                  {0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0},
-                                  {0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0}}, 27);
-
-    WordBreakIIBfsSln wordBreakIiBfsSln;
-    wordBreakIiBfsSln.wordBreak("catsanddog", {"cat", "cats", "and", "sand", "dog"});
 
     set<int> testSet = {0, 0, 1, 2, 0, 4, 6, 8, 0, 0, 0, 9, 10, 0};
     for (auto iter = testSet.begin(); iter != testSet.end();) {
@@ -932,10 +680,6 @@ int main() {
     validIpAddrSln.validIPAddress("172.16.254.1");
     validIpAddrSln.validIPAddress("2001:0db8:85a3:0000:0000:8a2e:0370:7334");
 
-    AlienOrderSln alienOrderSln;
-    vector<string> alienWords = {"wrt", "wrf", "er", "ett", "rftt"};
-    alienOrderSln.alienOrder(alienWords);
-
     NumIsIslandSln numIsIslandSln;
     vector<vector<char>> numIsIslandVec = {{'1', '1', '1', '1', '0'},
                                            {'1', '1', '0', '1', '0'},
@@ -954,12 +698,6 @@ int main() {
                                             {0, 1, 0, 0},
                                             {1, 1, 0, 0}};
     int landPeremiter = landPeremiterSln.islandPerimeter(landPeremiterVec);
-    WallAndGateSln wallAndGateSln;
-    vector<vector<int>> wallAndGateVec = {{INT_MAX, -1, 0,            INT_MAX},
-                                          {INT_MAX, INT_MAX, INT_MAX, -1},
-                                          {INT_MAX, -1,      INT_MAX, -1},
-                                          {0,       -1,      INT_MAX, INT_MAX}};
-    wallAndGateSln.wallsAndGates2(wallAndGateVec);
 
     NextGreatElementSln nextGreatElementSln;
     vector<int> nextGreatEleVec = {1,2,1};

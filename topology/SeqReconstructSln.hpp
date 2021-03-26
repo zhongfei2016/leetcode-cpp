@@ -5,6 +5,7 @@
 #ifndef LEETCODE_CPP_SEQRECONSTRUCTSLN_HPP
 #define LEETCODE_CPP_SEQRECONSTRUCTSLN_HPP
 
+#include <unordered_map>
 // 拓扑排序 序列重建 LeetCode 444 https://blog.csdn.net/weixin_30319097/article/details/95986939
 class SeqReconstructSln {
 public:

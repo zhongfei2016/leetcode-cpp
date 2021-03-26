@@ -5,6 +5,9 @@
 
 #ifndef LEETCODE_CPP_CANFINCOURSESLN_HPP
 #define LEETCODE_CPP_CANFINCOURSESLN_HPP
+
+#include <unordered_set>
+#include <queue>
 // 课程表I 拓扑排序 https://leetcode-cn.com/problems/course-schedule/
 class CanFinCourseSln {
 public:
