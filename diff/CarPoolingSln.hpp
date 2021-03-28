@@ -6,6 +6,8 @@
 #ifndef LEETCODE_CPP_CARPOOLINGSLN_HPP
 #define LEETCODE_CPP_CARPOOLINGSLN_HPP
 
+#include <vector>
+using namespace std;
 class CarPoolingSln {
 public:
     bool carPooling(vector<vector<int>> &trips, int capacity);

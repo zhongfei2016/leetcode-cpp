@@ -5,6 +5,11 @@
 
 #ifndef LEETCODE_CPP_MINLENGTHENCODESLN_HPP
 #define LEETCODE_CPP_MINLENGTHENCODESLN_HPP
+
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
 struct TrieNode {
     bool isLeaf = false;
     TrieNode *childNodes[26];

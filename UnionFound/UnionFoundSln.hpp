@@ -5,6 +5,10 @@
 
 #ifndef LEETCODE_CPP_UNIONFOUNDSLN_HPP
 #define LEETCODE_CPP_UNIONFOUNDSLN_HPP
+
+#include <vector>
+
+using namespace std;
 // 朋友圈 https://leetcode-cn.com/problems/friend-circles/
 class UnionFoundSln {
 public:

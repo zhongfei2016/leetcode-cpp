@@ -6,6 +6,8 @@
 #ifndef LEETCODE_CPP_DIVIDECHOCOLATESLN_HPP
 #define LEETCODE_CPP_DIVIDECHOCOLATESLN_HPP
 
+#include <algorithm>
+
 // 贪心算法 分享巧克力 https://www.cnblogs.com/slowbirdoflsh/p/11738134.html
 class DivideChocolateSln {
 public:
