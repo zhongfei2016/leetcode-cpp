@@ -12,7 +12,9 @@ using namespace std;
 
 class N_NodePreOrderSln {
 public:
+    void dfs(class Node * root, vector<int>& result);
     vector<int> preorder(Node* root);
+    vector<int> preorder2(Node* root);
 };
 
 

@@ -11,9 +11,11 @@
 #include "BuildTreeSolution.h"
 #include "FlattenSolution.h"
 #include "NumTreesSolution.h"
+#include "N_NodePreOrderSln.h"
+#include "DirTreeSln.h"
+#include "N_NodeLevelOrderSln.h"
 
-int main()
-{
+int main() {
     // 二叉树的中序遍历 https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
     // 前序遍历规则：根结点 ---> 左子树 ---> 右子树
     // 中序遍历规则：左子树---> 根结点 ---> 右子树
@@ -68,9 +70,8 @@ int main()
     delete[] levelOrderSln;
 
     //  二叉树的最大深度 https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
-    MaxDepthSolution *maxDepthSln = new MaxDepthSolution();
-    maxDepthSln->maxDepth(levelOrderNode);
-    delete[] maxDepthSln;
+    MaxDepthSolution maxDepthSln;
+    maxDepthSln.maxDepth(levelOrderNode);
 
     // 从前序与中序遍历序列构造二叉树 https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
     BuildTreeSolution buildTreeSln;
@@ -80,15 +81,48 @@ int main()
 
     // 二叉树展开为链表 https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
     FlattenSolution flattenSln;
-    TreeNode *flattenNode = new TreeNode(3);
-    TreeNode *flattenNodeL = new TreeNode(9);
-    TreeNode *flattenNodeR = new TreeNode(20);
-    TreeNode *flattenNodeRL = new TreeNode(15);
-    TreeNode *flattenNodeRR = new TreeNode(7);
-    flattenNode->left = flattenNodeL;
-    flattenNode->right = flattenNodeR;
-    flattenNodeR->left = flattenNodeRL;
-    flattenNodeR->right = flattenNodeRR;
-    flattenSln.flatten(flattenNode);
+    TreeNode flattenNode(3);
+    TreeNode flattenNodeL(9);
+    TreeNode flattenNodeR(20);
+    TreeNode flattenNodeRL(15);
+    TreeNode flattenNodeRR(7);
+    flattenNode.left = &flattenNodeL;
+    flattenNode.right = &flattenNodeR;
+    flattenNodeR.left = &flattenNodeRL;
+    flattenNodeR.right = &flattenNodeRR;
+    flattenSln.flatten(&flattenNode);
+
+    Node n_nodeRoot(1);
+    Node n_nodeChild1(3);
+    Node n_nodeChild2(2);
+    Node n_nodeChild3(4);
+    Node n_nodeChild11(5);
+    Node n_nodeChild12(6);
+    n_nodeChild1.children.push_back(&n_nodeChild11);
+    n_nodeChild1.children.push_back(&n_nodeChild12);
+    n_nodeRoot.children.push_back(&n_nodeChild1);
+    n_nodeRoot.children.push_back(&n_nodeChild2);
+    n_nodeRoot.children.push_back(&n_nodeChild3);
+
+    N_NodePreOrderSln n_nodePreOrderSln;
+    auto preResults1 = n_nodePreOrderSln.preorder(&n_nodeRoot);
+    auto preResults2 = n_nodePreOrderSln.preorder2(&n_nodeRoot);
+
+    N_NodeLevelOrderSln nNodeLevelOrderSln;
+    nNodeLevelOrderSln.levelOrder(&n_nodeRoot);
+
+    DirTreeSln dirTreeSln;
+    vector<string> dirTrees = {
+            "|-B",
+            "A",
+            "|-B",
+            "|-|-B",
+            "|-C",
+            "|-lib",
+            "|-|-|-C",
+            "|-|-D",
+            "|-|-|-E"
+    };
+    StrNode* strNodeRoot = dirTreeSln.BuildNodeTree(dirTrees);
     return 0;
 }

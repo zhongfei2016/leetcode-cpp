@@ -7,6 +7,9 @@
 
 #include <clocale>
 #include <vector>
+#include <string>
+
+using namespace std;
 
 class Node {
 public:
@@ -20,6 +23,23 @@ public:
     }
 
     Node(int _val, std::vector<Node *> _children) {
+        val = _val;
+        children = _children;
+    }
+};
+
+class StrNode {
+public:
+    string val;
+    std::vector<StrNode *> children;
+
+    StrNode() {}
+
+    StrNode(string _val) {
+        val = _val;
+    }
+
+    StrNode(string _val, std::vector<StrNode *> _children) {
         val = _val;
         children = _children;
     }
