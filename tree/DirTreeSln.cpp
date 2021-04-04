@@ -62,3 +62,23 @@ int DirTreeSln::getIdx(std::string dir) {
     auto idx = dir.find_first_not_of("|-");
     return (static_cast<int>(idx) + 1) / 2;
 }
+
+bool DirTreeSln::dfsDeleteDirs(StrNode *parent, const unordered_set<string> &delDirs, vector<string> &result) {
+    if (parent == nullptr) {
+        return false;
+    }
+    for (auto iter = parent->children.begin(); iter != parent->children.end();) {
+        if (dfsDeleteDirs(*iter, delDirs, result)) {
+            iter = parent->children.erase(iter);
+        } else {
+            iter++;
+        }
+    }
+    if (parent->children.empty()) {
+        if (delDirs.find(parent->val) != delDirs.end()) {
+            result.push_back(parent->val);
+            return true;
+        }
+    }
+    return false;
+}

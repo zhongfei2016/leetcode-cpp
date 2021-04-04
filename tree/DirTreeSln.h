@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <string>
+#include <unordered_set>
 #include "Common.h"
 
 using namespace std;
@@ -16,6 +17,7 @@ public:
     StrNode *BuildNodeTree(vector<string> &dirs);
     int getIdx(string dir);
     string getDirName(string dir);
+    bool dfsDeleteDirs(StrNode *parent, const unordered_set<string> &delDirs, vector<string>&result);
 };
 
 

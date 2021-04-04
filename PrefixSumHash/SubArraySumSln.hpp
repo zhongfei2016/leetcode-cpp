@@ -6,6 +6,11 @@
 #ifndef LEETCODE_CPP_SUBARRAYSUMSLN_HPP
 #define LEETCODE_CPP_SUBARRAYSUMSLN_HPP
 
+#include <unordered_map>
+#include <vector>
+
+using namespace std;
+
 class SubArraySumSln {
 public:
     int subarraySum(vector<int> &nums, int k);

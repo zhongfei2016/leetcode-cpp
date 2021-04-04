@@ -14,6 +14,10 @@
 #include "N_NodePreOrderSln.h"
 #include "DirTreeSln.h"
 #include "N_NodeLevelOrderSln.h"
+#include "N_NodeMaxDepthSln.h"
+#include "N_NodeSerializeSln.h"
+#include "HasPathSumSln.h"
+#include "SortArrayToBSTSln.h"
 
 int main() {
     // 二叉树的中序遍历 https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
@@ -81,16 +85,16 @@ int main() {
 
     // 二叉树展开为链表 https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
     FlattenSolution flattenSln;
-    TreeNode flattenNode(3);
-    TreeNode flattenNodeL(9);
-    TreeNode flattenNodeR(20);
-    TreeNode flattenNodeRL(15);
-    TreeNode flattenNodeRR(7);
-    flattenNode.left = &flattenNodeL;
-    flattenNode.right = &flattenNodeR;
-    flattenNodeR.left = &flattenNodeRL;
-    flattenNodeR.right = &flattenNodeRR;
-    flattenSln.flatten(&flattenNode);
+    TreeNode treeNode(3);
+    TreeNode treeNodeL(9);
+    TreeNode treeNodeR(20);
+    TreeNode treeNodeRL(15);
+    TreeNode treeNodeRR(7);
+    treeNode.left = &treeNodeL;
+    treeNode.right = &treeNodeR;
+    treeNodeR.left = &treeNodeRL;
+    treeNodeR.right = &treeNodeRR;
+    flattenSln.flatten(&treeNode);
 
     Node n_nodeRoot(1);
     Node n_nodeChild1(3);
@@ -123,6 +127,33 @@ int main() {
             "|-|-D",
             "|-|-|-E"
     };
-    StrNode* strNodeRoot = dirTreeSln.BuildNodeTree(dirTrees);
+    StrNode *strNodeRoot = dirTreeSln.BuildNodeTree(dirTrees);
+    std::unordered_set<string> delDirs = {"B", "C", "E"};
+    vector<string> delResult;
+    dirTreeSln.dfsDeleteDirs(strNodeRoot, delDirs, delResult);
+
+    N_NodeMaxDepthSln nNodeMaxDepthSln;
+    nNodeMaxDepthSln.maxDepth(&n_nodeRoot);
+    nNodeMaxDepthSln.maxDepth2(&n_nodeRoot);
+
+    N_NodeSerializeSln nNodeSerializeSln;
+    auto serialData = nNodeSerializeSln.serialize(&n_nodeRoot);
+    nNodeSerializeSln.deserialize(serialData);
+
+    TreeNode hasPathTreeNode(3);
+    TreeNode hasPathTreeNodeL(9);
+    TreeNode hasPathTreeNodeR(20);
+    TreeNode hasPathTreeNodeRL(15);
+    TreeNode hasPathTreeNodeRR(7);
+    hasPathTreeNode.left = &hasPathTreeNodeL;
+    hasPathTreeNode.right = &hasPathTreeNodeR;
+    hasPathTreeNodeR.left = &hasPathTreeNodeRL;
+    hasPathTreeNodeR.right = &hasPathTreeNodeRR;
+    HasPathSumSln hasPathSumSln;
+    hasPathSumSln.hasPathSum(&hasPathTreeNode, 30);
+
+    vector<int> sortedNumsForBST = {-10, -3, 0, 5, 9};
+    SortArrayToBSTSln sortArrayToBstSln;
+    sortArrayToBstSln.sortedArrayToBST(sortedNumsForBST);
     return 0;
 }

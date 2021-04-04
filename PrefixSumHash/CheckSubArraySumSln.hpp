@@ -6,9 +6,12 @@
 #ifndef LEETCODE_CPP_CHECKSUBARRAYSUMSLN_HPP
 #define LEETCODE_CPP_CHECKSUBARRAYSUMSLN_HPP
 
+#include <unordered_map>
+
 class CheckSubArraySumSln {
 public:
     bool checkSubarraySum(vector<int> &nums, int k);
+
     bool checkSubarraySum2(vector<int> &nums, int k);
 };
 
