@@ -6,6 +6,7 @@
 
 #include <stack>
 #include <algorithm>
+#include <climits>
 
 int IncDecArraySln::GetIncDecNum(vector<int> nums) {
     vector<int> incTempVec;

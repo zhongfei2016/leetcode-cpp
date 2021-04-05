@@ -4,6 +4,7 @@
 
 #include "MinWindowSolution.h"
 #include <unordered_map>
+#include <climits>
 
 // 滑动窗口方式处理，基本思路：
 //int left = 0, right = 0;

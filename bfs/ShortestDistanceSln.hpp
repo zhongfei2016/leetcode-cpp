@@ -5,6 +5,7 @@
 
 #ifndef LEETCODE_CPP_SHORTESTDISTANCESLN_HPP
 #define LEETCODE_CPP_SHORTESTDISTANCESLN_HPP
+#include <climits>
 
 //  离建筑物最近的距离 317
 class ShortestDistanceSln {

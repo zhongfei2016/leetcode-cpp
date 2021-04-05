@@ -6,6 +6,7 @@
 
 #include <algorithm>
 #include <math.h>
+#include <climits>
 
 int Mean(vector<int> &mountainHeights) {
     int ans = 0;
