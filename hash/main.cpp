@@ -4,6 +4,7 @@
 #include "LongestConsecutiveSln.h"
 #include "UndergroundSystem.h"
 #include "FrequencySortSln.h"
+#include "NumRabbitSln.h"
 
 int main() {
     // 最长连续序列 https://leetcode-cn.com/problems/longest-consecutive-sequence/
@@ -27,9 +28,11 @@ int main() {
     undergroundSystem.checkOut(10, "Waterloo", 38);
     undergroundSystem.getAverageTime("Leyton", "Waterloo");          // 返回 12.0
 
-
-
     FrequencySortSln frequencySortSln;
     frequencySortSln.frequencySort2("tree");
+
+    NumRabbitSln numRabbitSln;
+    vector<int> rabbitAns = {1, 1, 2};
+    numRabbitSln.numRabbits(rabbitAns);
     return 0;
 }

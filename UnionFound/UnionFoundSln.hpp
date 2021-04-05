@@ -91,14 +91,22 @@ int UnionFoundSln::findParent(int p) {
 }
 
 void UnionFoundSln::unionPoint(int p, int q) {
+    // 联合p/q，即要求p/q同源，其父节点也要求同源
     int rootP = findParent(p);
     int rootQ = findParent(q);
+    // 所以需要把一个父节点挂在另一个父节点上，为保证平衡，要把多的挂在少的上
     if (rootP != rootQ) {
+        // 以rootQ为根的节点个数多余以rootP为根的节点个数
+        // 所以rootQ认新的节点rootP作为父节点，并将其子节点数都挂着rootP下
+        // 并且少了一个分支，连通数减1
         if (m_size[rootQ] > m_size[rootP]) {
             m_parents[rootP] = rootQ;
             m_size[rootP] += m_size[rootQ];
             m_count--;
         } else {
+            // 两者权重相同，则可以随便挂
+            // 此处是将rootP认新的节点rootQ作为父节点，并将其子节点数都挂着rootQ下
+            // 并且少了一个分支，连通数减1
             m_parents[rootQ] = rootP;
             m_size[rootQ] += m_size[rootP];
             m_count--;

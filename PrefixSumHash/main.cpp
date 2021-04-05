@@ -4,7 +4,10 @@
 #include "SubArraySumSln.hpp"
 #include "CheckSubArraySumSln.hpp"
 #include "PathSumIIISln.h"
+#include "SubStrInWraproundStrSln.h"
+#include "BoundSunArrayNumSln.h"
 #include <vector>
+
 using namespace std;
 
 int main() {
@@ -38,5 +41,12 @@ int main() {
     PathSumIIISln pathSumIiiSln;
     int pathSum1 = pathSumIiiSln.pathSum(&treeNode, 8);
     int pathSum2 = pathSumIiiSln.pathSum2(&treeNode, 8);
+
+    SubStrInWraproundStrSln subStrInWraproundStrSln;
+    subStrInWraproundStrSln.findSubstringInWraproundString("zab");
+
+    BoundSunArrayNumSln boundSunArrayNumSln;
+    vector<int> boundVec = {2, 1, 4, 3};
+    boundSunArrayNumSln.numSubarrayBoundedMax(boundVec, 2, 3);
     return 0;
 }

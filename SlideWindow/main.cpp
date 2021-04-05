@@ -6,6 +6,8 @@
 #include "MinWindowSolution.h"
 #include "EqualSubStrSln.hpp"
 #include "MinSubArrayLenSln.h"
+#include "TotalFruitSln.h"
+#include "SubArrWithDistinctSln.h"
 
 using namespace std;
 
@@ -26,5 +28,15 @@ int main() {
     MinSubArrayLenSln minSubArrayLenSln;
     vector<int> minSubArrayLenVec = {1, 2, 1, 3, 4};
     minSubArrayLenSln.minSubArrayLen(7, minSubArrayLenVec);
+
+    TotalFruitSln totalFruitSln;
+    vector<int> fruitVec = {1, 2, 1};
+    totalFruitSln.totalFruit(fruitVec);
+    fruitVec = {3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4};
+    totalFruitSln.totalFruit(fruitVec);
+
+    vector<int> subArrDistinctVec = {1, 2, 1, 2, 3};
+    SubArrWithDistinctSln subArrWithDistinctSln;
+    subArrWithDistinctSln.subarraysWithKDistinct(subArrDistinctVec, 2);
     return 0;
 }
