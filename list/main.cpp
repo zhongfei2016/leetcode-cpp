@@ -5,6 +5,7 @@
 #include "HasCycleSln.h"
 #include "RotateListNodeSln.hpp"
 #include "ReverseListSln.hpp"
+#include "MiddleNodeSln.h"
 
 int main() {
     // 合并 k 个排序链表，返回合并后的排序链表  https://leetcode-cn.com/problems/merge-k-sorted-lists/
@@ -58,5 +59,19 @@ int main() {
     reverseListNode3.next = &reverseListNode4;
     reverseListNode4.next = &reverseListNode5;
     reverseListSln.reverseList(&reverseListNode1);
+
+    ListNode listNode1(1);
+    ListNode listNode2(2);
+    ListNode listNode3(3);
+    ListNode listNode4(4);
+    ListNode listNode5(5);
+    ListNode listNode6(6);
+    listNode1.next = &listNode2;
+    listNode2.next = &listNode3;
+    listNode3.next = &listNode4;
+    listNode4.next = &listNode5;
+    listNode5.next = &listNode6;
+    MiddleNodeSln middleNodeSln;
+    auto* resultNode = middleNodeSln.middleNode(&listNode1);
     return 0;
 }
