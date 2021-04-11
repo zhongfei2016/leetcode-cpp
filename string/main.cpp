@@ -13,6 +13,7 @@
 #include "GroupAnagramsSolution.h"
 #include "LuckFibonacciStrSln.h"
 #include "AddBinarySln.h"
+#include "ConvertZSln.h"
 
 using namespace std;
 
@@ -56,7 +57,7 @@ int main() {
     validIpAddrSln.validIPAddress("2001:0db8:85a3:0000:0000:8a2e:0370:7334");
 
     MultiStringSln multiStringSln;
-    multiStringSln.multiply("123","456");
+    multiStringSln.multiply("123", "456");
 
     // 二进制求和 https://leetcode-cn.com/problems/add-binary/
     AddBinarySln addBinarySln;
@@ -67,5 +68,8 @@ int main() {
     vector<char> reverseVec = {'H'};
     // 使用双指针翻转字符串
     addBinarySln.reverseString(reverseVec);
+
+    ConvertZSln convertZSln;
+    convertZSln.convert("PAYPALISHIRING", 3);
     return 0;
 }

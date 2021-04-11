@@ -6,6 +6,7 @@
 #include "RotateListNodeSln.hpp"
 #include "ReverseListSln.hpp"
 #include "MiddleNodeSln.h"
+#include "RemvNthFromEndSln.h"
 
 int main() {
     // 合并 k 个排序链表，返回合并后的排序链表  https://leetcode-cn.com/problems/merge-k-sorted-lists/
@@ -73,5 +74,12 @@ int main() {
     listNode5.next = &listNode6;
     MiddleNodeSln middleNodeSln;
     auto* resultNode = middleNodeSln.middleNode(&listNode1);
+
+    RemvNthFromEndSln remvNthFromEndSln;
+    remvNthFromEndSln.removeNthFromEnd(&listNode1, 2);
+    ListNode remvNode1(1);
+    ListNode remvNode2(2);
+    remvNode1.next = &remvNode2;
+    remvNthFromEndSln.removeNthFromEnd(&remvNode1, 1);
     return 0;
 }

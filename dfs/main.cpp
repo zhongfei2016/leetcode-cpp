@@ -14,6 +14,7 @@
 #include "LargestIsLandSln.h"
 #include "LandPeremiterSln.h"
 #include "ExistPathSln.h"
+#include "RedudentConnectSln.h"
 
 int main() {
 //给出 n 生成全部有效括号组合，回溯法 https://leetcode-cn.com/problems/generate-parentheses/
@@ -54,7 +55,9 @@ int main() {
     permuteSlnII.permuteUnique(permuteSlnIIVec);
 
     ExistPathSln existPathSln;
-    vector<vector<char>> existPathVec = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+    vector<vector<char>> existPathVec = {{'A', 'B', 'C', 'E'},
+                                         {'S', 'F', 'C', 'S'},
+                                         {'A', 'D', 'E', 'E'}};
     existPathSln.exist(existPathVec, "ABCCED");
 
     LandPeremiterSln landPeremiterSln;
@@ -84,5 +87,12 @@ int main() {
     FindTargetSumSln findTargetSumSln;
     vector<int> findTargetSumVec = {1, 1, 1, 1, 1};
     findTargetSumSln.findTargetSumWays(findTargetSumVec, 3);
+    vector<vector<int>> redudentVec = {{1, 2},
+                                       {2, 3},
+                                       {3, 4},
+                                       {1, 4},
+                                       {1, 5}};
+    RedudentConnectSln redudentConnectSln;
+    redudentConnectSln.findRedundantConnection(redudentVec);
     return 0;
 }
