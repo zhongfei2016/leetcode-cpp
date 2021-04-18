@@ -1,7 +1,7 @@
 //
 // Created by ZHONGFEI on 2020/4/6.
 // 被围绕的区域 https://leetcode-cn.com/problems/surrounded-regions/
-//
+// 找出所有不被围绕的O置为特殊符号，剩下的就都是会被围绕的
 
 #include "BroadSolveSln.h"
 

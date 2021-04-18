@@ -15,6 +15,8 @@
 #include "LandPeremiterSln.h"
 #include "ExistPathSln.h"
 #include "RedudentConnectSln.h"
+#include "BroadSolveSln.h"
+#include "LadderLengthIISln.h"
 
 int main() {
 //给出 n 生成全部有效括号组合，回溯法 https://leetcode-cn.com/problems/generate-parentheses/
@@ -94,5 +96,23 @@ int main() {
                                        {1, 5}};
     RedudentConnectSln redudentConnectSln;
     redudentConnectSln.findRedundantConnection(redudentVec);
+
+    BroadSolveSln broadSolveSln;
+    vector<vector<char>> boardVec = {{'X', 'X', 'X', 'X'},
+                                     {'X', 'O', 'O', 'X'},
+                                     {'X', 'X', 'O', 'X'},
+                                     {'X', 'O', 'X', 'X'}};
+    broadSolveSln.solve(boardVec);
+    boardVec = {{'X', 'O', 'X', 'O', 'X', 'O'},
+                {'O', 'X', 'O', 'X', 'O', 'X'},
+                {'X', 'O', 'X', 'O', 'X', 'O'},
+                {'O', 'X', 'O', 'X', 'O', 'X'}};
+    broadSolveSln.solve(boardVec);
+
+    LadderLengthIISln ladderLengthIiSln;
+    vector<string> ladderWordList = {"hot", "dot", "dog", "lot", "log", "cog"};
+    ladderLengthIiSln.findLadders("hit", "cog", ladderWordList);
+    ladderWordList = {"hot","dog","dot"};
+    ladderLengthIiSln.findLadders("hot", "dog", ladderWordList);
     return 0;
 }
