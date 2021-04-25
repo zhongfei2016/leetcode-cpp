@@ -11,6 +11,8 @@
 #include "LongValidBracketSolution.h"
 #include "TrapSolution.h"
 #include "IncDecArraySln.h"
+#include "CheckPossibleSln.h"
+#include "RemoveKdigitsSln.h"
 
 using namespace std;
 
@@ -50,7 +52,15 @@ int main() {
     mostCompetitiveSln.mostCompetitive(mostCompetitiveVec, 2);
 
     NextGreatElementSln nextGreatElementSln;
-    vector<int> nextGreatEleVec = {1,2,1};
+    vector<int> nextGreatEleVec = {1, 2, 1};
     nextGreatElementSln.nextGreaterElements(nextGreatEleVec);
+
+    CheckPossibleSln checkPossibleSln;
+    vector<int> checkPossibleVec = {3, 4, 2, 3};
+    checkPossibleSln.checkPossibility(checkPossibleVec);
+
+    RemoveKdigitsSln removeKdigitsSln;
+    removeKdigitsSln.removeKdigits("1432219", 3);
+    removeKdigitsSln.removeKdigits("10200", 1);
     return 0;
 }

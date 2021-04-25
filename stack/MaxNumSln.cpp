@@ -47,15 +47,18 @@ vector<int> merge(vector<int> vec1, vector<int> vec2) {
 
 vector<int> findMaxNums(vector<int> nums, int k) {
     vector<int> res;
+    // 表示可以丢弃消耗的数字个数
     int remains = nums.size() - k;
     for (int i = 0; i < nums.size(); i++) {
         while (remains > 0 && res.size() > 0 && res.back() < nums[i]) {
+            // 从结果里弹出丢弃，可丢弃数减1
             res.pop_back();
             remains--;
         }
         if (res.size() < k) {
             res.push_back(nums[i]);
         } else {
+            // 未加入结果集，自动丢弃，可丢弃数也减1
             remains--;
         }
     }
