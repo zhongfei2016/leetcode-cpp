@@ -13,6 +13,7 @@
 #include "IncDecArraySln.h"
 #include "CheckPossibleSln.h"
 #include "RemoveKdigitsSln.h"
+#include "SmallSubSeqSln.h"
 
 using namespace std;
 
@@ -62,5 +63,11 @@ int main() {
     RemoveKdigitsSln removeKdigitsSln;
     removeKdigitsSln.removeKdigits("1432219", 3);
     removeKdigitsSln.removeKdigits("10200", 1);
+
+    SmallSubSeqSln smallSubSeqSln;
+    smallSubSeqSln.smallestSubsequence("bcabc");// abc
+    smallSubSeqSln.smallestSubsequence("cbacdcbc"); // acdb
+    smallSubSeqSln.smallestSubsequence("cbaacabcaaccaacababa"); // abc
+    smallSubSeqSln.smallestSubsequence("bcbcbcababa"); // bca
     return 0;
 }
