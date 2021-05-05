@@ -14,6 +14,9 @@
 #include "CheckPossibleSln.h"
 #include "RemoveKdigitsSln.h"
 #include "SmallSubSeqSln.h"
+#include "RemoveDuplicateLetterSln.h"
+#include "NumberOfMountainSeenSln.h"
+#include "CycleMountainSeenSln.h"
 
 using namespace std;
 
@@ -69,5 +72,16 @@ int main() {
     smallSubSeqSln.smallestSubsequence("cbacdcbc"); // acdb
     smallSubSeqSln.smallestSubsequence("cbaacabcaaccaacababa"); // abc
     smallSubSeqSln.smallestSubsequence("bcbcbcababa"); // bca
+
+    RemoveDuplicateLetterSln removeDuplicateLetterSln;
+    removeDuplicateLetterSln.removeDuplicateLetters("bcabc"); // abc
+    removeDuplicateLetterSln.removeDuplicateLetters("cbacdcbc"); // acdb
+
+    vector<int> mountains = {16,5,3,10,21,7}; // 8
+    NumberOfMountainSeenSln numberOfMountainSeenSln;
+    numberOfMountainSeenSln.NumberOfMountainSeen(mountains);
+
+    CycleMountainSeenSln cycleMountainSeenSln;
+    cycleMountainSeenSln.countCycleMountainSeen({3,1,2,4,5});
     return 0;
 }

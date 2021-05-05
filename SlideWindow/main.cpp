@@ -8,6 +8,7 @@
 #include "MinSubArrayLenSln.h"
 #include "TotalFruitSln.h"
 #include "SubArrWithDistinctSln.h"
+#include "MaxSpecialStrSln.h"
 
 using namespace std;
 
@@ -38,5 +39,9 @@ int main() {
     vector<int> subArrDistinctVec = {1, 2, 1, 2, 3};
     SubArrWithDistinctSln subArrWithDistinctSln;
     subArrWithDistinctSln.subarraysWithKDistinct(subArrDistinctVec, 2);
+
+    MaxSpecialStrSln maxSpecialStrSln;
+    maxSpecialStrSln.GetMaxSpecialStr("70016"); // 7001
+    maxSpecialStrSln.GetMaxSpecialStr("abbbccccccdee"); // abbbccccccdee
     return 0;
 }

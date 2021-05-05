@@ -6,6 +6,7 @@
 #include "DivideChocolateSln.hpp"
 #include "FindMinArrowShotSln.h"
 #include "AdvantageCountSln.h"
+#include "LatestTimeSln.h"
 
 int main() {
 // 跳跃游戏 https://leetcode-cn.com/problems/jump-game/
@@ -65,5 +66,8 @@ int main() {
     vector<int> advantageVecA = {12,24,8,32};
     vector<int> advantageVecB = {13,25,32,11};
     advantageCountSln.advantageCount(advantageVecA, advantageVecB);
+
+    LatestTimeSln latestTimeSln;
+    int latestTime = latestTimeSln.latestTime({22,30}, 4, {13,22,22,22,22,25,30,30,41}); // 29
     return 0;
 }

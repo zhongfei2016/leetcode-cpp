@@ -13,6 +13,7 @@ using namespace std;
 class MinCostSln {
 public:
     int minCost(string s, vector<int>& cost);
+    int minCost2(string s, vector<int>& cost);
 };
 
 

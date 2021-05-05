@@ -5,6 +5,7 @@
 #include <map>
 #include <iterator>
 #include <vector>
+#include "ManageTimeSln.h"
 
 using namespace std;
 
@@ -61,5 +62,14 @@ int main() {
     std::next_permutation(copyVec.begin(), copyVec.end());// 3,2,1,5,3,5
     std::fill(copyVec.begin(), copyVec.end(), 0); // 0,0,0,0,0,0
     // inner_product 内积计算 http://c.biancheng.net/view/683.html
+
+    ManageTimeSln manageTimeSln;
+    manageTimeSln.manageTime({{2,  5},
+                              {1,  10},
+                              {4,  5},
+                              {2,  3},
+                              {6,  9},
+                              {12, 13},
+                              {12, 15}}, {3, 6, 10, 5, 11});
     return 0;
 }

@@ -14,6 +14,7 @@
 #include "LuckFibonacciStrSln.h"
 #include "AddBinarySln.h"
 #include "ConvertZSln.h"
+#include "InsertDigitalSln.h"
 
 using namespace std;
 
@@ -71,5 +72,9 @@ int main() {
 
     ConvertZSln convertZSln;
     convertZSln.convert("PAYPALISHIRING", 3);
+
+    InsertDigitalSln insertDigitalSln;
+    insertDigitalSln.insertDigit("8784","785");
+    insertDigitalSln.insertDigit("8988349","88349");
     return 0;
 }
