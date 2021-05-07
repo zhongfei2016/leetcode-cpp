@@ -3,7 +3,19 @@
 #include <unordered_set>
 
 using namespace std;
-
+/**
+关于 std::unordered_set ：
+std::unordered_set 与 std::set 的区别:
+实现方面
+std::unordered_set 是基于 hash 实现的。
+std::set 是基于红黑树实现的。
+遍历是否有序：
+std::unordered_set 从名字可知不支持有序遍历。
+std::set 可以有序遍历。
+效率比较：
+空间方面两者都是 o(n)o(n)。
+时间方面，增删改查操作，set 都是 o(logn)，unordered_set 都是 o(1)o(1)。
+ */
 class WaterMeasureSln {
 //    // 自定义对象的hash函数
 //    struct StateHash {
@@ -62,10 +74,10 @@ bool WaterMeasureSln::canMeasureWater(int x, int y, int z) {
     if (x + y < z) {   //加了一个很蠢的剪枝，作用比较大。
         return false;
     }
-    unordered_set<int64_t> mark; //pair<int, int> 换成int64_t, 但是意义不大。
+    unordered_set<int64_t> mark; //自定义hash算法，set里就直接存hash值
     queue<pair<int, int>> q;
     q.push(make_pair(0, 0));
-    while (q.empty() == false) {
+    while (!q.empty()) {
         auto f = q.front();
         q.pop();
         if (f.first + f.second == z) {
@@ -74,7 +86,7 @@ bool WaterMeasureSln::canMeasureWater(int x, int y, int z) {
         for (int i = 0; i < 6; i++) {
             auto next = op(i, f, x, y);
             int64_t h = Hash(next.first, next.second);
-            if (mark.find(h) != mark.end()) {
+            if (mark.find(h) != mark.end()) {// unordered_set查找时间快，所以用unordered_set
                 continue;
             }
             mark.insert(h);
@@ -85,21 +97,26 @@ bool WaterMeasureSln::canMeasureWater(int x, int y, int z) {
 }
 
 pair<int, int> WaterMeasureSln::op(int type, const pair<int, int> &state, int x, int y) {
-    switch (type) {
-        case 0 :
+    switch (type) {// 有六种方式
+        case 0 :// x倒满，y保持现有值
             return make_pair(x, state.second);
-        case 1 :
+        case 1 :// y倒满，x保持现有值
             return make_pair(state.first, y);
-        case 2 :
+        case 2 :// x清空，y保持现有值
             return make_pair(0, state.second);
-        case 3 :
+        case 3 :// y清空，x保持现有值
             return make_pair(state.first, 0);
         case 4 : {
-            // 看下curX和y-curY的大小，curX小，说明可以清空x，倒入y，y-curY小，说明可以将x的一部分倒入y，倒满y
+            // 看下curX和y-curY的大小，目的也是看下能不能清空一个杯子，或者倒满一个杯子
+            // curX小，说明可以把curX倒入y，这样可以清空x
+            // y-curY小，说明可以将curX的一部分倒入y，倒满y
             int move = min(state.first, y - state.second);
             return make_pair(state.first - move, state.second + move);
         }
         case 5 : {
+            // 看下curY和x-curX大小
+            // curY小，就将y清空，即将curY都倒入x
+            // x-curX小，就用curY将x倒满，y还剩一点
             int move = min(x - state.first, state.second);
             return make_pair(state.first + move, state.second - move);
         }

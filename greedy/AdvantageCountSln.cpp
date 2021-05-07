@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/3/7.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/advantage-shuffle/ 田忌赛马  优势洗牌
 //
 

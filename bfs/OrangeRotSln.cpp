@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/6.
+// leetcode-cpp
 //
 
 #include "OrangeRotSln.h"

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/10/17.
+// leetcode-cpp
 //
 
 #include "SuffixOperationSln.h"

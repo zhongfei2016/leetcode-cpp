@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/24.
+// leetcode-cpp
 // 非递减数列 https://leetcode-cn.com/problems/non-decreasing-array/
 
 #include <stack>

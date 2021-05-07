@@ -1,5 +1,5 @@
 //
-// Created by fei on 2019/12/29.
+// leetcode-cpp
 //
 
 #include "LetterCombiSolution.h"

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/10/18.
+// leetcode-cpp
 //
 
 #include "StringConvertSln.h"
@@ -91,6 +91,9 @@ void StringConvertSln::StringConvertTest() {
     string tempRgxSearchStr = rgxSearchStr;
     smatch sm;
     while (regex_search(tempRgxSearchStr, sm, rgxSearch)) {
+        auto size = sm.size();
+        // 第一轮prefix、str、suffix分别是|-、ABc32和|-4rFd
+        auto temp = sm.prefix().str();
         std::cout << sm.str() << std::endl;
         tempRgxSearchStr = sm.suffix().str();
     }
@@ -98,8 +101,10 @@ void StringConvertSln::StringConvertTest() {
     string::const_iterator iterEnd = rgxSearchStr.end();
     string tempRgxSearch;
     while (regex_search(iterStart, iterEnd, sm, rgxSearch)) {
+        auto size = sm.size();
         tempRgxSearch = sm[0];
         cout << tempRgxSearch << " " << endl;
+        auto temp = sm[0].first;
         iterStart = sm[0].second;    //更新搜索起始位置,搜索剩下的字符串
     }
 }

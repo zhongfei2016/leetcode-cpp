@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/30.
+// leetcode-cpp
 //
 // 最小路径和 https://leetcode-cn.com/problems/minimum-path-sum/
 

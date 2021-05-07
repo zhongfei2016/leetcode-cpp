@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/30.
+// leetcode-cpp
 //
 
 #include "CanJumpSolution.h"

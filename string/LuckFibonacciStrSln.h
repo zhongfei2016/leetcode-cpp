@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/3/29.
+// leetcode-cpp
 //
 // 符合斐波那契数列的子字符串
 

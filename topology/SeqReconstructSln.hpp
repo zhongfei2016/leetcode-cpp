@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/5/4.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_SEQRECONSTRUCTSLN_HPP

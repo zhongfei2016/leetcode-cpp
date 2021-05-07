@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/5.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/unique-substrings-in-wraparound-string
 
 #ifndef LEETCODE_CPP_SUBSTRINWRAPROUNDSTRSLN_H

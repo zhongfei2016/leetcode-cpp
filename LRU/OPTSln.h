@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/4.
+// leetcode-cpp
 // 缺页中断 OPT置换算法 https://blog.csdn.net/u011080472/article/details/51206332
 
 #ifndef LEETCODE_CPP_OPTSLN_H

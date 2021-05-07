@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/3.
+// leetcode-cpp
 // 力扣428 N叉树的序列化和反序列化 https://www.cnblogs.com/xym4869/p/12856123.html
 //
 

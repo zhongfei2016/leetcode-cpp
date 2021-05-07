@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/1.
+// leetcode-cpp
 //
 // 最长有效括号  https://leetcode-cn.com/problems/longest-valid-parentheses/
 

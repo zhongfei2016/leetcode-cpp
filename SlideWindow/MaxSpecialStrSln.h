@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/5/2.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_MAXSPECIALSTRSLN_H

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/9/6.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_MINSUBARRAYLENSLN_HPP

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/4.
+// leetcode-cpp
 // 路径总和 根节点到叶子结点之和正好等于targetNumhttps://leetcode-cn.com/problems/path-sum/
 //
 

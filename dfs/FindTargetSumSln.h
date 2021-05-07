@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/4.
+// leetcode-cpp
 //
 // 目标和 https://leetcode-cn.com/problems/target-sum/
 

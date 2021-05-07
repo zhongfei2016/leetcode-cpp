@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/3/8.
+// leetcode-cpp
 //
 // 买股票最佳时机 https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
 

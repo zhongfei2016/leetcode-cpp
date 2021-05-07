@@ -1,5 +1,5 @@
 //
-// Created by fei on 2019/12/21.
+// leetcode-cpp
 //
 #include "SolutionCountSmaller.h"
 

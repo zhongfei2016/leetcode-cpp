@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/1.
+// leetcode-cpp
 //
 // 合并 k 个排序链表，返回合并后的排序链表  https://leetcode-cn.com/problems/merge-k-sorted-lists/
 

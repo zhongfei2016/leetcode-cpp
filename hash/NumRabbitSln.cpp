@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/4.
+// leetcode-cpp
 // 森林中的兔子 https://leetcode-cn.com/problems/rabbits-in-forest/
 
 #include <unordered_map>

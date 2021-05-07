@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/3/7.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_NATURALSORTSLN_H

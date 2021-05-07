@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/3/15.
+// leetcode-cpp
 //
 
 #include "HasCycleSln.h"

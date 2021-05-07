@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/5/5.
+// leetcode-cpp
 // https://blog.csdn.net/qq_33369979/article/details/111056334
 // 一个不含有负数的数组可以代表环形一圈的山峰
 // 山峰 A 和 山峰 B 能够相互看见的条件为:

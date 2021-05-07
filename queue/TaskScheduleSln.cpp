@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/11/1.
+// leetcode-cpp
 //
 
 #include "TaskScheduleSln.h"

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/12.
+// leetcode-cpp
 //
 // 二进制求和 https://leetcode-cn.com/problems/add-binary/
 

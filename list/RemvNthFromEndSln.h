@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/11.
+// leetcode-cpp
 // 快慢指针 删除链表的倒数第 N 个结点 https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
 
 #ifndef LEETCODE_CPP_REMVNTHFROMENDSLN_H

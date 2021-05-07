@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/10/28.
+// leetcode-cpp
 // 噪声的传播，入参是n×m坐标的矩阵和噪声源坐标及噪声值，每个噪声源的噪声值向八个方向传播，没走一个减小一个值，求整个矩阵所有噪声值（叠加的地方取最高值）
 
 #include "NoiseCalSln.h"

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/1/23.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_MAKECONNECTEDSLN_H

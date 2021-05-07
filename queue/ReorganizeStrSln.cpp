@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/11/15.
+// leetcode-cpp
 // 重构字符串 https://leetcode-cn.com/problems/reorganize-string/
 //
 

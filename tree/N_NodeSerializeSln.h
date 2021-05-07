@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/3.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_N_NODESERIALIZESLN_H

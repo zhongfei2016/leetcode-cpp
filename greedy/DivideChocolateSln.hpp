@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/5/1.
+// leetcode-cpp
 //
 // 贪心算法 分享巧克力 https://www.cnblogs.com/slowbirdoflsh/p/11738134.html
 

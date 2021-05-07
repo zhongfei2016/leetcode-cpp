@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/5/1.
+// leetcode-cpp
 //
 // 并查集 朋友圈 https://leetcode-cn.com/problems/friend-circles/
 

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/1.
+// leetcode-cpp
 //
 
 #include "NextPermutationSolution.h"

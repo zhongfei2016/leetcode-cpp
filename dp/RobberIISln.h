@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/11/18.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_ROBBERIISLN_H

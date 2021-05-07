@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/5/2.
+// leetcode-cpp
 //
 // 前缀和Hash 和为K的子数组 https://leetcode-cn.com/problems/subarray-sum-equals-k/
 

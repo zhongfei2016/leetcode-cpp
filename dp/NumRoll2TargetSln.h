@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/4.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_NUMROLL2TARGETSLN_H

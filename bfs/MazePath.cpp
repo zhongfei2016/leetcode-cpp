@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/9/20.
+// leetcode-cpp
 //
 
 #include "MazePath.h"

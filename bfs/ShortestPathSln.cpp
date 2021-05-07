@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/11/1.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/  网格中的最短路径
 //
 /**

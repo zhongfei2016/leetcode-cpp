@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/5.
+// leetcode-cpp
 //
 // 最长回文子序列 https://leetcode-cn.com/problems/longest-palindromic-subsequence/
 

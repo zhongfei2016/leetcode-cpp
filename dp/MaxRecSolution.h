@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/2/1.
+// leetcode-cpp
 //
 // 最大矩形 https://leetcode-cn.com/problems/maximal-rectangle/
 

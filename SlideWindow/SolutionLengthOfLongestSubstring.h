@@ -1,5 +1,5 @@
 //
-// Created by fei on 2019/12/22.
+// leetcode-cpp
 // 最长不重复子串 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
 //
 

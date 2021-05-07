@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/5.
+// leetcode-cpp
 //
 
 #include "LongestPalindromeSequenceSln.h"

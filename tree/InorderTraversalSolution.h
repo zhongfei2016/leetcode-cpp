@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/2/1.
+// leetcode-cpp
 //
 // 二叉树的中序遍历 https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
 // 前序遍历规则：根结点 ---> 左子树 ---> 右子树

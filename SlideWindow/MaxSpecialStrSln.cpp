@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/5/2.
+// leetcode-cpp
 // 给定一个字符串，获取其中只有两个字符个数为1个（其他字符无要求）的最长子字符串
 
 #include <unordered_map>

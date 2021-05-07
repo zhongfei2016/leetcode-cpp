@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/2/2.
+// leetcode-cpp
 //
 // 对称二叉树 https://leetcode-cn.com/problems/symmetric-tree/
 

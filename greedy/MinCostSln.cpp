@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/10/18.
+// leetcode-cpp
 // 避免重复字母的最小删除成本 https://leetcode-cn.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/
 // s = "abaac", cost = [1,2,3,4,5]
 

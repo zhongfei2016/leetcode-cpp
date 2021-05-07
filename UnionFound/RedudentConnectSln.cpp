@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/10.
+// leetcode-cpp
 //
 
 #include "RedudentConnectSln.h"

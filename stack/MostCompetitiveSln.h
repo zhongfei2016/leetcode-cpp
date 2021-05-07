@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/2/15.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_MOSTCOMPETITIVESLN_H

@@ -1,5 +1,6 @@
 //
-// Created by ZHONGFEI on 2021/3/7.
+// leetcode-cpp
+// 字符串相乘 https://leetcode-cn.com/problems/multiply-strings/
 //
 
 #include <algorithm>
@@ -46,6 +47,7 @@ std::string MultiStringSln::addString(std::string str1, std::string str2) {
         str2.insert(str2.begin(), vec.begin(), vec.end());
         maxSize = n;
     }
+    // 当前是正序，补0是为了两数相加时不会越界访问
     if (m > n) {
         str1.insert(str1.begin(), vec.begin(), vec.end());
     }

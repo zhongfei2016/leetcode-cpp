@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/31.
+// leetcode-cpp
 //
 // 最小覆盖子串 https://leetcode-cn.com/problems/minimum-window-substring/
 

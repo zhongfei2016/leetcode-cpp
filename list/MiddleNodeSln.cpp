@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/7.
+// leetcode-cpp
 //
 
 #include "MiddleNodeSln.h"

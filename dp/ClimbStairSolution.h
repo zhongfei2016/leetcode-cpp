@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/31.
+// leetcode-cpp
 //
 // 爬楼梯 https://leetcode-cn.com/problems/climbing-stairs/
 

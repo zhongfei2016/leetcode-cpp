@@ -1,5 +1,5 @@
 //
-// Created by fei on 2019/12/22.
+// leetcode-cpp
 //
 // 最长回文子串 https://leetcode-cn.com/problems/longest-palindromic-substring/
 
@@ -13,6 +13,7 @@ using namespace std;
 class SolutionLongestPalindrome {
 public:
     string longestPalindrome(string s);
+    string longestPalindrome2(string s);
 };
 
 

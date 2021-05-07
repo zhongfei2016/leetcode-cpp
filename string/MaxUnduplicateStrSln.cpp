@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/10/25.
+// leetcode-cpp
 //
 
 #include "MaxUnduplicateStrSln.h"
@@ -7,7 +7,7 @@
 #include <map>
 #include <set>
 
-// https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/   最长不含重复字符的子字符串
+// 最长不含重复字符的子字符串 双指针 https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/   最长不含重复字符的子字符串
 //"abcabcbb"
 //"bbbbb"
 int MaxUnduplicateStrSln::lengthOfLongestSubstring(std::__cxx11::string s) {

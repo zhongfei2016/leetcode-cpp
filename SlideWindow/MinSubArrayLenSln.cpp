@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/9/6.
+// leetcode-cpp
 // 长度最小的子数组 https://leetcode-cn.com/problems/minimum-size-subarray-sum/
 //
 

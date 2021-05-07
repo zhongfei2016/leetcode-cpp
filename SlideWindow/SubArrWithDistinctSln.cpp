@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/5.
+// leetcode-cpp
 // 题解 ：https://leetcode-cn.com/problems/subarrays-with-k-different-integers/solution/cong-zui-jian-dan-de-wen-ti-yi-bu-bu-tuo-7f4v/
 /**
 给定一个正整数数组 A，如果 A 的某个子数组中不同整数的个数恰好为 K

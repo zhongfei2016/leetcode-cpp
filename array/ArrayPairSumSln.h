@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/13.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_ARRAYPAIRSUMSLN_H

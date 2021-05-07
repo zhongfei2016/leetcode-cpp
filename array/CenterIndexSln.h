@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/12.
+// leetcode-cpp
 //
 // 寻找中位数 https://leetcode-cn.com/problems/find-pivot-index/
 

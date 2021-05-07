@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/25.
+// leetcode-cpp
 //  移除K个数 https://leetcode-cn.com/problems/remove-k-digits/
 
 #include <stack>

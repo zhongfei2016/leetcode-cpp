@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/10/21.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/queue-reconstruction-by-height/
 // 每个 people[i] = [hi, ki] 表示第 i 个人的身高为 hi ，前面 正好 有 ki 个身高大于或等于 hi 的人。
 

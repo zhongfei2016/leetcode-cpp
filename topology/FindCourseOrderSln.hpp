@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/5/1.
+// leetcode-cpp
 //
 // 拓扑排序 课程表II https://leetcode-cn.com/problems/course-schedule-ii/
 

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/2/28.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/number-of-islands/ 岛屿的数量
 //
 

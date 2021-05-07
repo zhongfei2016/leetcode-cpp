@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/11.
+// leetcode-cpp
 // dfs 深度优先遍历 https://leetcode-cn.com/problems/redundant-connection/
 
 #ifndef LEETCODE_CPP_REDUDENTCONNECTSLN_H

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/2/21.
+// leetcode-cpp
 //
 
 #include "ValidIPAddrSln.h"

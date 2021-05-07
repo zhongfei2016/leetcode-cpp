@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/3/8.
+// leetcode-cpp
 //
 // 最长连续序列 https://leetcode-cn.com/problems/longest-consecutive-sequence/
 

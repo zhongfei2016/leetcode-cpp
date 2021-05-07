@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/3/29.
+// leetcode-cpp
 // 全排列2 https://leetcode-cn.com/problems/permutations-ii/
 //
 

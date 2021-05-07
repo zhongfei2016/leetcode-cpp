@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/12.
+// leetcode-cpp
 //
 // 使用快慢双指针移除指定元素
 

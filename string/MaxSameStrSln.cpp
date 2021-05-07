@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/10/25.
+// leetcode-cpp
 //
 
 #include "MaxSameStrSln.h"

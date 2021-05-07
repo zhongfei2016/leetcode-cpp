@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/11/18.
+// leetcode-cpp
 // 打家劫舍II 几户人家围起来，相邻的不能偷，https://leetcode-cn.com/problems/house-robber-ii/
 //
 

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/3/15.
+// leetcode-cpp
 //
 // 单词拆分 动态规划 https://leetcode-cn.com/problems/word-break/
 

@@ -1,5 +1,5 @@
 //
-// Created by fei on 2020/1/1.
+// leetcode-cpp
 //
 // 判断有效的括号，比如{}[]()  [[()]]
 

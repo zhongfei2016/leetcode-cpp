@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/5.
+// leetcode-cpp
 //
 // 组合总和 回溯算法 https://leetcode-cn.com/problems/combination-sum/
 

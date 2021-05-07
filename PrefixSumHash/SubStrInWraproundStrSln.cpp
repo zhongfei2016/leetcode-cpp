@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/5.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/unique-substrings-in-wraparound-string/solution/dong-tai-gui-hua-java-by-zyxwmj-dn12/
 
 #include <vector>

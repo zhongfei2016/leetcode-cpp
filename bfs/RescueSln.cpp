@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/9/18.
+// leetcode-cpp
 //
 
 #include "RescueSln.h"

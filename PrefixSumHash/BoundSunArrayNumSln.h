@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/5.
+// leetcode-cpp
 // 区间子数组个数 https://leetcode-cn.com/problems/number-of-subarrays-with-bounded-maximum/
 
 #ifndef LEETCODE_CPP_BOUNDSUNARRAYNUMSLN_H

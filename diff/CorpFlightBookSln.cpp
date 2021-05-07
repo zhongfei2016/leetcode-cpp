@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/4.
+// leetcode-cpp
 // 航班统计 https://leetcode-cn.com/problems/corporate-flight-bookings/
 // 差分 https://leetcode-cn.com/problems/corporate-flight-bookings/solution/you-deng-chai-shu-lie-xiang-dao-de-chai-fen-si-xia/
 
@@ -13,6 +13,7 @@ vector<int> CorpFlightBookSln::corpFlightBookings(vector<vector<int>> &bookings,
     vector<int> answers(n, 0);
     for (int i = 0; i < bookings.size(); i++) {
         diff[bookings[i][0] - 1] += bookings[i][2];
+        // 坐到第n站就是终点站，所以始终不下，就不需要减掉了，只减小于n的
         if (bookings[i][1] < n) {
             diff[bookings[i][1]] -= bookings[i][2];
         }

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/2/21.
+// leetcode-cpp
 // 拓扑排序，火星词典 https://michael.blog.csdn.net/article/details/107346218
 //
 

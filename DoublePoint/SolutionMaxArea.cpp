@@ -1,5 +1,5 @@
 //
-// Created by fei on 2019/12/22.
+// leetcode-cpp
 //
 // 盛水最多的容器 https://leetcode-cn.com/problems/container-with-most-water/
 

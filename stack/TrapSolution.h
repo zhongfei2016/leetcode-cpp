@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/29.
+// leetcode-cpp
 //
 // 接雨水 https://leetcode-cn.com/problems/trapping-rain-water/
 

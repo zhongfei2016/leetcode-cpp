@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/11/15.
+// leetcode-cpp
 // 组合总和II https://leetcode-cn.com/problems/combination-sum-ii/
 
 #ifndef LEETCODE_CPP_COMBINATIONSUMIISLN_H

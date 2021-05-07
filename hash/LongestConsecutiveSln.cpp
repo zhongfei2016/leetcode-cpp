@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/3/8.
+// leetcode-cpp
 //
 
 #include "LongestConsecutiveSln.h"

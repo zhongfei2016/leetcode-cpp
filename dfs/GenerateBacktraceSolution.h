@@ -1,5 +1,5 @@
 //
-// Created by fei on 2020/1/1.
+// leetcode-cpp
 //
 //给出 n 生成全部有效括号组合，回溯法 https://leetcode-cn.com/problems/generate-parentheses/
 

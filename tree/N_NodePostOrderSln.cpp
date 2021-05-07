@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/3/30.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/solution/che-di-chi-tou-shu-de-qian-zhong-hou-xu-di-gui-fa-/
 //
 

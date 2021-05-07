@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/1.
+// leetcode-cpp
 //
 // 获取当前排列的下一排字典序的排列 https://leetcode-cn.com/problems/next-permutation/
 

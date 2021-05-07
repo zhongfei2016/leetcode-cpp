@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/5/5.
+// leetcode-cpp
 // 将digit不改变字符顺序不拆散的情况下插入score，获得最大值
 
 #include <cstring>

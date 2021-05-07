@@ -1,6 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/3/7.
-// https://leetcode-cn.com/problems/multiply-strings/
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_MULTISTRINGSLN_H

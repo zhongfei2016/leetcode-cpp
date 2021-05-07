@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/1/24.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/
 //
 

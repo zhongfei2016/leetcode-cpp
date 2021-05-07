@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/3.
+// leetcode-cpp
 //
 
 #include "N_NodeMaxDepthSln.h"

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/3/26.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/ N叉树前序遍历
 // N叉树的遍历 https://www.cnblogs.com/vincent1997/p/11194100.html
 //

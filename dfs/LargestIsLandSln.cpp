@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/2/28.
+// leetcode-cpp
 // 最大岛屿面积 https://leetcode-cn.com/problems/making-a-large-island/
 // 解法：https://leetcode-cn.com/problems/number-of-islands/solution/dao-yu-lei-wen-ti-de-tong-yong-jie-fa-dfs-bian-li-/
 //

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/10/18.
+// leetcode-cpp
 //
 
 #include "NumConvertSln.h"

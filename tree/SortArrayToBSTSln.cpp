@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/4.
+// leetcode-cpp
 //https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/
 
 #include "SortArrayToBSTSln.h"

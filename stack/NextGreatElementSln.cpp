@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/3/7.
+// leetcode-cpp
 //  下一个更大元素 II https://leetcode-cn.com/problems/next-greater-element-ii/
 //
 

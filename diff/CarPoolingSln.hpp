@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/5/2.
+// leetcode-cpp
 //
 // 拼车 差分 1094 https://leetcode-cn.com/problems/car-pooling/
 

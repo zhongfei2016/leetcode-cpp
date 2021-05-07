@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/11/14.
+// leetcode-cpp
 //
 
 #include "LadderLengthIISln.h"

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/30.
+// leetcode-cpp
 //
 // 最大子序和 https://leetcode-cn.com/problems/maximum-subarray
 

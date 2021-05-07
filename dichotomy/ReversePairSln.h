@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/2/17.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/
 //
 

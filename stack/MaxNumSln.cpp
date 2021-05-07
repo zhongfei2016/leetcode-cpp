@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/2/13.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/create-maximum-number/
 //
 

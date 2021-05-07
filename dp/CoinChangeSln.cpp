@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/4.
+// leetcode-cpp
 //
 
 #include "CoinChangeSln.h"

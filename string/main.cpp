@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/3/26.
+// leetcode-cpp
 //
 #include "SolutionLongestPalindrome.h"
 #include "LongestPalindromeSln.hpp"

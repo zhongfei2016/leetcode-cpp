@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/11/1.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/task-scheduler/submissions/  任务调度
 //
 

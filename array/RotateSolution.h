@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/1/29.
+// leetcode-cpp
 //
 // 旋转图像 https://leetcode-cn.com/problems/rotate-image/
 

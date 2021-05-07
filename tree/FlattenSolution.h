@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/2/23.
+// leetcode-cpp
 //
 // 二叉树展开为链表 https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
 

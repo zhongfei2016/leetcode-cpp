@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/4/13.
+// leetcode-cpp
 //
 
 #include "ArrayPairSumSln.h"

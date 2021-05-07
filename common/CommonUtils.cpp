@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/9/13.
+// leetcode-cpp
 //
 
 #include "CommonUtils.h"

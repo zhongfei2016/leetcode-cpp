@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/5/3.
+// leetcode-cpp
 // 使用最小花费爬楼梯 https://leetcode-cn.com/problems/min-cost-climbing-stairs/
 //
 // 到达第i级台阶的阶梯顶部的最小花费，有两个选择：

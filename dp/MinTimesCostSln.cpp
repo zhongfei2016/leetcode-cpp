@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/11/7.
+// leetcode-cpp
 //
 
 #include "MinTimesCostSln.h"

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/3/8.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/single-number/ 只出现一次的数字
 //
 

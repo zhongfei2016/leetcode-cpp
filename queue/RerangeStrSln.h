@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/10/30.
+// leetcode-cpp
 // 字符串按要求间隔数重排 https://www.cnblogs.com/FdWzy/p/12389956.html
 /**
  * 给你一个非空的字符串 s 和一个整数 k，你要将这个字符串中的字母进行重新排列，使得重排后的字符串中相同字母的位置间隔距离至少为 k。

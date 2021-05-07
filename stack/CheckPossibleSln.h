@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/24.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_CHECKPOSSIBLESLN_H

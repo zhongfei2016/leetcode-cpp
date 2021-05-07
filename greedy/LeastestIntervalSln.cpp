@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2020/9/13.
+// leetcode-cpp
 // 任务调度器 https://leetcode-cn.com/problems/task-scheduler/  题解：https://leetcode-cn.com/problems/task-scheduler/solution/tong-zi-by-popopop/
 // 计算所有任务所需要的时间，要保证相同任务间要有n个冷却时间
 //

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/11.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/redundant-connection-ii/
 
 #ifndef LEETCODE_CPP_REDUDENTCONNECTIISLN_H

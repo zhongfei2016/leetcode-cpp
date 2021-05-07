@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/18.
+// leetcode-cpp
 // bfs+dfs https://leetcode-cn.com/problems/word-ladder-ii/
 
 #ifndef LEETCODE_CPP_LADDERLENGTHIISLN_H

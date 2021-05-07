@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/4/28.
+// leetcode-cpp
 // https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/
 
 #include <vector>
