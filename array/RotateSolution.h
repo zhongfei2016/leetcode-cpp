@@ -13,6 +13,7 @@ using namespace std;
 class RotateSolution {
 public:
     void rotate(vector<vector<int>>& matrix);
+    void rotate2(vector<vector<int>>& matrix);
 };
 
 

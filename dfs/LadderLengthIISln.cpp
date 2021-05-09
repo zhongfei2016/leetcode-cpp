@@ -1,6 +1,7 @@
 //
 // leetcode-cpp
-//
+// 单词接龙 II bfs+dfs https://leetcode-cn.com/problems/word-ladder-ii/
+
 
 #include <queue>
 #include "LadderLengthIISln.h"

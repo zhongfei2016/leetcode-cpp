@@ -1,6 +1,6 @@
 //
 // leetcode-cpp
-// bfs+dfs https://leetcode-cn.com/problems/word-ladder-ii/
+// 单词接龙 II bfs+dfs https://leetcode-cn.com/problems/word-ladder-ii/
 
 #ifndef LEETCODE_CPP_LADDERLENGTHIISLN_H
 #define LEETCODE_CPP_LADDERLENGTHIISLN_H

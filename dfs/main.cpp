@@ -17,6 +17,7 @@
 #include "RedudentConnectSln.h"
 #include "BroadSolveSln.h"
 #include "LadderLengthIISln.h"
+#include "CombiantionSumIIISln.h"
 
 int main() {
 //给出 n 生成全部有效括号组合，回溯法 https://leetcode-cn.com/problems/generate-parentheses/
@@ -112,7 +113,12 @@ int main() {
     LadderLengthIISln ladderLengthIiSln;
     vector<string> ladderWordList = {"hot", "dot", "dog", "lot", "log", "cog"};
     ladderLengthIiSln.findLadders("hit", "cog", ladderWordList);
-    ladderWordList = {"hot","dog","dot"};
+    ladderWordList = {"hot", "dog", "dot"};
     ladderLengthIiSln.findLadders("hot", "dog", ladderWordList);
+
+    CombiantionSumIIISln combinationSumIiiSln;
+    combinationSumIiiSln.combinationSum3(3, 7);
+    combinationSumIiiSln.combinationSum3(3, 9);
+    combinationSumIiiSln.combinationSum3(9, 45);
     return 0;
 }

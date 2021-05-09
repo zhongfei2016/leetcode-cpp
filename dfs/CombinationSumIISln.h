@@ -1,6 +1,5 @@
 //
 // leetcode-cpp
-// 组合总和II https://leetcode-cn.com/problems/combination-sum-ii/
 
 #ifndef LEETCODE_CPP_COMBINATIONSUMIISLN_H
 #define LEETCODE_CPP_COMBINATIONSUMIISLN_H

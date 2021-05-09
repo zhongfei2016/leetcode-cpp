@@ -14,16 +14,18 @@
 int main()
 {
     // 旋转图像 https://leetcode-cn.com/problems/rotate-image/
-    RotateSolution *rotateSln = new RotateSolution();
+    RotateSolution rotateSln;
     vector<vector<int>> rotateVec;
+    vector<vector<int>> rotateVecReverse;
     vector<int> rotateVec1 = {1, 2, 3};
     vector<int> rotateVec2 = {4, 5, 6};
     vector<int> rotateVec3 = {7, 8, 9};
     rotateVec.push_back(rotateVec1);
     rotateVec.push_back(rotateVec2);
     rotateVec.push_back(rotateVec3);
-    rotateSln->rotate(rotateVec);
-    delete[] rotateSln;
+    rotateVecReverse = rotateVec;
+    rotateSln.rotate(rotateVec);
+    rotateSln.rotate2(rotateVecReverse);
 
     // 合并区间 https://leetcode-cn.com/problems/merge-intervals/
     MergeIntervalSolution *mergeIntervalSln = new MergeIntervalSolution();
@@ -61,5 +63,11 @@ int main()
     RotateSln rotateArrSln;
     vector<int> rotateArrVec = {1, 2, 3, 4, 5, 6, 7};
     rotateArrSln.rotate(rotateArrVec, 3);
+
+    MergeIntervalSolution mergeIntervalSolution;
+    vector<vector<int>> removeIntervals = {{1,4},{3,6},{2,8}};
+    mergeIntervalSolution.removeCoveredIntervals(removeIntervals);
+    vector<vector<int>> removeIntervals2 = {{1,2},{1,4},{3,4}};
+    mergeIntervalSolution.removeCoveredIntervals(removeIntervals2);
     return 0;
 }

@@ -1,7 +1,7 @@
 //
 // leetcode-cpp
-//
-#include <algorithm>
+// 组合总和 回溯算法 https://leetcode-cn.com/problems/combination-sum/
+
 #include "CombinationSumSolution.h"
 
 void merge(vector<int> &nums, int start, int mid, int end) {

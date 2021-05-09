@@ -1,6 +1,7 @@
 //
 // leetcode-cpp
-//
+// 组合总和II https://leetcode-cn.com/problems/combination-sum-ii/
+// 给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
 
 #include "CombinationSumIISln.h"
 
@@ -28,6 +29,29 @@ void combinationSum2Dfs(vector<int> &candidates, vector<vector<int>> &res, vecto
         combinationSum2Dfs(candidates, res, path, i + 1, target - candidates[i], visited);
         path.pop_back();
         visited[i] = false;
+    }
+}
+
+
+void combinationSum2Dfs2(vector<int> &candidates, vector<vector<int>> &res, vector<int> &path, int startPos, int target) {
+    if (startPos > candidates.size()) {
+        return;
+    }
+    if (target == 0) {
+        res.push_back(path);
+        return;
+    }
+    for (int i = startPos; i < candidates.size(); i++) {
+        if (target - candidates[i] < 0) {
+            continue;
+        }
+        // 两个相同的值放在同一层，一定有重复，直接跳过
+        if (i > startPos && candidates[i - 1] == candidates[i]) {
+            continue;
+        }
+        path.push_back(candidates[i]);
+        combinationSum2Dfs2(candidates, res, path, i + 1, target - candidates[i]);
+        path.pop_back();
     }
 }
 

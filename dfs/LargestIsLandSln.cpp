@@ -49,6 +49,7 @@ int LargestIsLandSln::largestIsland(vector<vector<int> > &grid) {
             if (grid[i][j] != 0) {
                 continue;
             }
+            // 遍历每一个为0的坐标，看他的四个方向有没有岛屿，有就可以连接起来，并计算出本轮面积值
             unordered_set<int> seen;
             int area = 1;
             for (auto dir : dirs) {
@@ -58,6 +59,7 @@ int LargestIsLandSln::largestIsland(vector<vector<int> > &grid) {
                     continue;
                 }
                 if (idxVec[tempX][tempY] != 0) {
+                    // 本轮四个方向的当前方向的岛屿标号本轮之前未访问则计入本轮面积
                     if (seen.insert(idxVec[tempX][tempY]).second) {
                         area += idxAreaMap[idxVec[tempX][tempY]];
                     }
