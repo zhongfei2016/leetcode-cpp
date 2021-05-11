@@ -26,7 +26,7 @@ int LargestIsLandSln::largestIsland(vector<vector<int> > &grid) {
     int m = grid.size();
     int n = grid[0].size();
     int size = min(m, n);
-    // 用于存每一片岛屿对应的编号
+    // 用于存每一片岛屿的坐标对应的编号
     vector<vector<int> > idxVec(size, vector<int>(size, 0));
     int idx = 0;
     // 用于存每一个编号对应的岛屿面积
