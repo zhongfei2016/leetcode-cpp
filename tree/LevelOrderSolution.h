@@ -14,6 +14,7 @@ using namespace std;
 class LevelOrderSolution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root);
+    vector<vector<int>> levelOrder2(TreeNode* root);
 };
 
 

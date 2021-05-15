@@ -18,6 +18,7 @@
 #include "N_NodeSerializeSln.h"
 #include "HasPathSumSln.h"
 #include "SortArrayToBSTSln.h"
+#include "MaxPathSumSln.h"
 
 int main() {
     // 二叉树的中序遍历 https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
@@ -155,5 +156,9 @@ int main() {
     vector<int> sortedNumsForBST = {-10, -3, 0, 5, 9};
     SortArrayToBSTSln sortArrayToBstSln;
     sortArrayToBstSln.sortedArrayToBST(sortedNumsForBST);
+
+    TreeNode* maxPathSum = convertToTreeNode({-10, 9, 20, INT_MIN, INT_MIN, 15, 7});
+    MaxPathSumSln maxPathSumSln;
+    maxPathSumSln.maxPathSum(maxPathSum);
     return 0;
 }

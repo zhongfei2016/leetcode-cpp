@@ -23,7 +23,7 @@ int ReversePairSln::merge(vector<int> &nums, int start, int end) {
     vector<int> temp(end - start + 1, 0);
     while (left <= mid && right <= end) {
         // 如果当前左大于右值，又因为左右分组各有序，所以，左分组从当前左值开始的所有左值，都大于当前右值，所以计数加上mid + 1 - left
-        count += nums[left] > nums[right] ? mid + 1 - left : 0;
+        count += nums[left] > nums[right] ? mid - left + 1 : 0;
         temp[idx++] = nums[left] <= nums[right] ? nums[left++] : nums[right++];
     }
     while (left <= mid) {
@@ -64,4 +64,49 @@ int ReversePairSln::reversePairs2(vector<int> &nums) {
         bit.update(nums[i]);
     }
     return ans;
+}
+
+int ReversePairSln::reversePairs3(vector<int> &nums) {
+    int n = nums.size();
+    int res = sort3(nums, 0, n - 1);
+    return res;
+}
+
+int ReversePairSln::merge3(vector<int> &nums, int start, int end) {
+    int mid = start + (end - start) / 2;
+    int idx = 0;
+    vector<int> temp(end - start + 1);
+    int left = start;
+    int right = mid + 1;
+    int res = 0;
+    while (left <= mid && right <= end) {
+        if (nums[left] > nums[right]) {
+            // 当前左值后面的所有左值，都大于当前的右值
+            res += mid - left + 1;
+            temp[idx++] = nums[right++];
+        } else {
+            temp[idx++] = nums[left++];
+        }
+    }
+    while (left <= mid) {
+        temp[idx++] = nums[left++];
+    }
+    while (right <= end) {
+        temp[idx++] = nums[right++];
+    }
+    std::copy(temp.begin(), temp.end(), nums.begin() + start);
+    return res;
+}
+
+int ReversePairSln::sort3(vector<int> &nums, int start, int end) {
+    if (end <= start) {
+        return 0;
+    }
+    int mid = start + (end - start) / 2;
+    int res = 0;
+    // 左半边排序得到的逆序对+右半边排序得到的逆序对+当前左右分组排序得到的逆序对
+    res += sort3(nums, start, mid);
+    res += sort3(nums, mid + 1, end);
+    res += merge3(nums, start, end);
+    return res;
 }

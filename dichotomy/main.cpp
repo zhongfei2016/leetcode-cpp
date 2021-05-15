@@ -8,6 +8,7 @@
 #include "SolutionFindMedianSortedArrays.h"
 #include "SnowMountainSln.h"
 #include "ReversePairSln.h"
+#include "FindInMountainArraySln.h"
 
 int main() {
 // 计算右侧小于当前元素的个数 https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/
@@ -54,5 +55,11 @@ int main() {
     ReversePairSln reversePairSln;
     vector<int> reversePairVec = {7, 5, 6, 4};
     int reverseNum = reversePairSln.reversePairs(reversePairVec);
+    vector<int> reversePairVec3 = {7, 5, 6, 4};
+    int reverseNum3 = reversePairSln.reversePairs3(reversePairVec3);
+
+    FindInMountainArraySln findInMountainArraySln;
+    MountainArray mountainArray({1, 5,2});
+    findInMountainArraySln.findInMountainArray(2, mountainArray);
     return 0;
 }

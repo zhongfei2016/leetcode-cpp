@@ -8,6 +8,7 @@
 #include <clocale>
 #include <vector>
 #include <string>
+#include <queue>
 
 using namespace std;
 
@@ -52,5 +53,8 @@ struct TreeNode {
 
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
+
+
+TreeNode *convertToTreeNode(vector<int> nodes);
 
 #endif //LEETCODE_CPP_COMMON_H

@@ -1,5 +1,5 @@
 //
-// Created by ZHONGFEI on 2021/5/9.
+// leetcode-cpp
 //
 
 #ifndef LEETCODE_CPP_COMBIANTIONSUMIIISLN_H

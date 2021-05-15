@@ -11,6 +11,10 @@
 class MaxDepthSolution {
 public:
     int maxDepth(TreeNode* root);
+    int maxDepth2(TreeNode* root);
+
+private:
+    int curMaxDepth(TreeNode *node);
 };
 
 

@@ -45,8 +45,12 @@ public:
 
     int reversePairs2(vector<int> &nums);
 
+    int reversePairs3(vector<int> &nums);
+
 private:
     int merge(vector<int> &nums, int start, int end);
+    int merge3(vector<int> &nums, int start, int end);
+    int sort3(vector<int> &nums, int start, int end);
 };
 
 
