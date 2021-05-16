@@ -16,6 +16,8 @@ using namespace std;
 class CoinChangeIISln {
 public:
     int change(int amount, vector<int>& coins);
+
+    int change2(int amount, vector<int>& coins);
 };
 
 

@@ -14,6 +14,7 @@ int CoinChangeIISln::change(int amount, vector<int> &coins) {
             if (i < coin) {
                 continue;
             }
+            // 第一次dp[i]是0，循环加上dp[i-coin]就得到了dp[i]的值
             dp[i] = dp[i] + dp[i - coin];
         }
     }

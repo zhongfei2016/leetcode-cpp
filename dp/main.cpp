@@ -17,6 +17,7 @@
 #include "MaxRecSolution.h"
 #include "MaxProfitSolution.h"
 #include "WordBreakSln.h"
+#include "MaxCoinsSln.h"
 
 int main() {
 // 最大子序和 https://leetcode-cn.com/problems/maximum-subarray
@@ -112,5 +113,10 @@ int main() {
     // 杨辉三角
     YangHuiTriangleSln yangHuiTriangleSln;
     yangHuiTriangleSln.generate(5);
+
+    MaxCoinsSln maxCoinsSln;
+    vector<int> maxCoinVec = {3,1,5,8};
+    maxCoinsSln.maxCoins2(maxCoinVec);
+    maxCoinsSln.maxCoins3(maxCoinVec);
     return 0;
 }

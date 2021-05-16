@@ -17,6 +17,7 @@
 #include "RemoveDuplicateLetterSln.h"
 #include "NumberOfMountainSeenSln.h"
 #include "CycleMountainSeenSln.h"
+#include "AsteroidCollisionSln.h"
 
 using namespace std;
 
@@ -83,5 +84,13 @@ int main() {
 
     CycleMountainSeenSln cycleMountainSeenSln;
     cycleMountainSeenSln.countCycleMountainSeen({3,1,2,4,5});
+
+    AsteroidCollisionSln asteroidCollisionSln;
+    vector<int> AsteroidCollisionVec = {5,10,-5};
+    asteroidCollisionSln.asteroidCollision(AsteroidCollisionVec);
+    AsteroidCollisionVec = {10,2,-5};
+    asteroidCollisionSln.asteroidCollision(AsteroidCollisionVec);
+    AsteroidCollisionVec = {5,-5};
+    asteroidCollisionSln.asteroidCollision(AsteroidCollisionVec);
     return 0;
 }

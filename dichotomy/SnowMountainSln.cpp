@@ -34,11 +34,14 @@ int SnowMountainSln::snowMountainCost(vector<int> mountainHeights, int diff) {
     while (leftAvg > 0 && rightAvg < INT_MAX) {
         // 目的是让所有的山峰高度都维持在leftAvg和rightAvg之间
         long long temp = 0;
+        // 当前值大于右边界,或者当前值小于左边界,都要计算其差值平方
         for (int hei: mountainHeights) {
+            // 当前值大于右边界
             if (hei - rightAvg > 0) {
                 long long tempR = hei - rightAvg;
                 temp += tempR * tempR;
             }
+            // 或者当前值小于左边界
             if (leftAvg - hei > 0) {
                 long long tempL =leftAvg- hei;
                 temp += tempL * tempL;
